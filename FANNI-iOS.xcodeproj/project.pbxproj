@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5201E01346E13802D46963FA /* Pods_FANNI_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AED4DE771E31000676F197E /* Pods_FANNI_iOSTests.framework */; };
+		7FAF329169E341BDB541F61A /* Pods_FANNI_iOS_FANNI_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5C6D2236BB239EA86431BAA /* Pods_FANNI_iOS_FANNI_iOSUITests.framework */; };
+		AC31C3EB8B867AA450BCB6B8 /* Pods_FANNI_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D9235962052B2694D7EAE4 /* Pods_FANNI_iOS.framework */; };
 		EDB7C3F9298FC9C100D60A9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3F8298FC9C100D60A9E /* AppDelegate.swift */; };
 		EDB7C3FB298FC9C100D60A9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3FA298FC9C100D60A9E /* SceneDelegate.swift */; };
 		EDB7C3FD298FC9C100D60A9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3FC298FC9C100D60A9E /* ViewController.swift */; };
@@ -15,6 +18,7 @@
 		EDB7C410298FC9C200D60A9E /* FANNI_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C40F298FC9C200D60A9E /* FANNI_iOSTests.swift */; };
 		EDB7C41A298FC9C200D60A9E /* FANNI_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C419298FC9C200D60A9E /* FANNI_iOSUITests.swift */; };
 		EDB7C41C298FC9C200D60A9E /* FANNI_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C41B298FC9C200D60A9E /* FANNI_iOSUITestsLaunchTests.swift */; };
+		EDB7C431298FDA0F00D60A9E /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EDB7C430298FDA0F00D60A9E /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1383C74EC97E37B022EE6D53 /* Pods-FANNI-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FANNI-iOS.debug.xcconfig"; path = "Target Support Files/Pods-FANNI-iOS/Pods-FANNI-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		16F6B2F4F9557851417FA24D /* Pods-FANNI-iOS-FANNI-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FANNI-iOS-FANNI-iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-FANNI-iOS-FANNI-iOSUITests/Pods-FANNI-iOS-FANNI-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1AED4DE771E31000676F197E /* Pods_FANNI_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FANNI_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		30F5EAFECD49C961B31E43CA /* Pods-FANNI-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FANNI-iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-FANNI-iOSTests/Pods-FANNI-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B9D9235962052B2694D7EAE4 /* Pods_FANNI_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FANNI_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C01F0E1E90526330A260CB27 /* Pods-FANNI-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FANNI-iOS.release.xcconfig"; path = "Target Support Files/Pods-FANNI-iOS/Pods-FANNI-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		C82B1C940FE4960C36FA7CBB /* Pods-FANNI-iOS-FANNI-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FANNI-iOS-FANNI-iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-FANNI-iOS-FANNI-iOSUITests/Pods-FANNI-iOS-FANNI-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DACD483FBA15B2469A5E958F /* Pods-FANNI-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FANNI-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-FANNI-iOSTests/Pods-FANNI-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		E5C6D2236BB239EA86431BAA /* Pods_FANNI_iOS_FANNI_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FANNI_iOS_FANNI_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB7C3F5298FC9C100D60A9E /* FANNI-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FANNI-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB7C3F8298FC9C100D60A9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDB7C3FA298FC9C100D60A9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +60,7 @@
 		EDB7C415298FC9C200D60A9E /* FANNI-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FANNI-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB7C419298FC9C200D60A9E /* FANNI_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FANNI_iOSUITests.swift; sourceTree = "<group>"; };
 		EDB7C41B298FC9C200D60A9E /* FANNI_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FANNI_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EDB7C430298FDA0F00D60A9E /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC31C3EB8B867AA450BCB6B8 /* Pods_FANNI_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5201E01346E13802D46963FA /* Pods_FANNI_iOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,19 +84,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FAF329169E341BDB541F61A /* Pods_FANNI_iOS_FANNI_iOSUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		462A28DC88E00DA264879790 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B9D9235962052B2694D7EAE4 /* Pods_FANNI_iOS.framework */,
+				E5C6D2236BB239EA86431BAA /* Pods_FANNI_iOS_FANNI_iOSUITests.framework */,
+				1AED4DE771E31000676F197E /* Pods_FANNI_iOSTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC069C8759A3ED040879BF84 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1383C74EC97E37B022EE6D53 /* Pods-FANNI-iOS.debug.xcconfig */,
+				C01F0E1E90526330A260CB27 /* Pods-FANNI-iOS.release.xcconfig */,
+				16F6B2F4F9557851417FA24D /* Pods-FANNI-iOS-FANNI-iOSUITests.debug.xcconfig */,
+				C82B1C940FE4960C36FA7CBB /* Pods-FANNI-iOS-FANNI-iOSUITests.release.xcconfig */,
+				30F5EAFECD49C961B31E43CA /* Pods-FANNI-iOSTests.debug.xcconfig */,
+				DACD483FBA15B2469A5E958F /* Pods-FANNI-iOSTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		EDB7C3EC298FC9C100D60A9E = {
 			isa = PBXGroup;
 			children = (
+				EDB7C430298FDA0F00D60A9E /* .swiftlint.yml */,
 				EDB7C3F7298FC9C100D60A9E /* FANNI-iOS */,
 				EDB7C40E298FC9C200D60A9E /* FANNI-iOSTests */,
 				EDB7C418298FC9C200D60A9E /* FANNI-iOSUITests */,
 				EDB7C3F6298FC9C100D60A9E /* Products */,
+				EC069C8759A3ED040879BF84 /* Pods */,
+				462A28DC88E00DA264879790 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -187,9 +230,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDB7C41F298FC9C200D60A9E /* Build configuration list for PBXNativeTarget "FANNI-iOS" */;
 			buildPhases = (
+				CA3386ABA2C7C0E823D12022 /* [CP] Check Pods Manifest.lock */,
+				EDB7C42F298FD87F00D60A9E /* SwiftLint Script */,
 				EDB7C3F1298FC9C100D60A9E /* Sources */,
 				EDB7C3F2298FC9C100D60A9E /* Frameworks */,
 				EDB7C3F3298FC9C100D60A9E /* Resources */,
+				391DD5755D8BEA3DEBE895B3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -204,6 +250,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDB7C422298FC9C200D60A9E /* Build configuration list for PBXNativeTarget "FANNI-iOSTests" */;
 			buildPhases = (
+				03DDF754D65C900A7F8D43D7 /* [CP] Check Pods Manifest.lock */,
 				EDB7C407298FC9C200D60A9E /* Sources */,
 				EDB7C408298FC9C200D60A9E /* Frameworks */,
 				EDB7C409298FC9C200D60A9E /* Resources */,
@@ -222,9 +269,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDB7C425298FC9C200D60A9E /* Build configuration list for PBXNativeTarget "FANNI-iOSUITests" */;
 			buildPhases = (
+				4ECB28ABCC32842A53727BAA /* [CP] Check Pods Manifest.lock */,
 				EDB7C411298FC9C200D60A9E /* Sources */,
 				EDB7C412298FC9C200D60A9E /* Frameworks */,
 				EDB7C413298FC9C200D60A9E /* Resources */,
+				BF1BBD48762283325B32860C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -284,6 +333,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDB7C431298FDA0F00D60A9E /* .swiftlint.yml in Resources */,
 				EDB7C405298FC9C200D60A9E /* LaunchScreen.storyboard in Resources */,
 				EDB7C402298FC9C200D60A9E /* Assets.xcassets in Resources */,
 			);
@@ -304,6 +354,128 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		03DDF754D65C900A7F8D43D7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FANNI-iOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		391DD5755D8BEA3DEBE895B3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FANNI-iOS/Pods-FANNI-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FANNI-iOS/Pods-FANNI-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FANNI-iOS/Pods-FANNI-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4ECB28ABCC32842A53727BAA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FANNI-iOS-FANNI-iOSUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF1BBD48762283325B32860C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FANNI-iOS-FANNI-iOSUITests/Pods-FANNI-iOS-FANNI-iOSUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FANNI-iOS-FANNI-iOSUITests/Pods-FANNI-iOS-FANNI-iOSUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FANNI-iOS-FANNI-iOSUITests/Pods-FANNI-iOS-FANNI-iOSUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA3386ABA2C7C0E823D12022 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FANNI-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDB7C42F298FD87F00D60A9E /* SwiftLint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EDB7C3F1298FC9C100D60A9E /* Sources */ = {
@@ -476,6 +648,7 @@
 		};
 		EDB7C420298FC9C200D60A9E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1383C74EC97E37B022EE6D53 /* Pods-FANNI-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -503,6 +676,7 @@
 		};
 		EDB7C421298FC9C200D60A9E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C01F0E1E90526330A260CB27 /* Pods-FANNI-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -530,6 +704,7 @@
 		};
 		EDB7C423298FC9C200D60A9E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30F5EAFECD49C961B31E43CA /* Pods-FANNI-iOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -550,6 +725,7 @@
 		};
 		EDB7C424298FC9C200D60A9E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DACD483FBA15B2469A5E958F /* Pods-FANNI-iOSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -570,6 +746,7 @@
 		};
 		EDB7C426298FC9C200D60A9E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16F6B2F4F9557851417FA24D /* Pods-FANNI-iOS-FANNI-iOSUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -588,6 +765,7 @@
 		};
 		EDB7C427298FC9C200D60A9E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C82B1C940FE4960C36FA7CBB /* Pods-FANNI-iOS-FANNI-iOSUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
