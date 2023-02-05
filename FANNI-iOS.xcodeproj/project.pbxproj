@@ -1,0 +1,607 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EDB7C3F9298FC9C100D60A9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3F8298FC9C100D60A9E /* AppDelegate.swift */; };
+		EDB7C3FB298FC9C100D60A9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3FA298FC9C100D60A9E /* SceneDelegate.swift */; };
+		EDB7C3FD298FC9C100D60A9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3FC298FC9C100D60A9E /* ViewController.swift */; };
+		EDB7C400298FC9C100D60A9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB7C3FE298FC9C100D60A9E /* Main.storyboard */; };
+		EDB7C402298FC9C200D60A9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB7C401298FC9C200D60A9E /* Assets.xcassets */; };
+		EDB7C405298FC9C200D60A9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB7C403298FC9C200D60A9E /* LaunchScreen.storyboard */; };
+		EDB7C410298FC9C200D60A9E /* FANNI_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C40F298FC9C200D60A9E /* FANNI_iOSTests.swift */; };
+		EDB7C41A298FC9C200D60A9E /* FANNI_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C419298FC9C200D60A9E /* FANNI_iOSUITests.swift */; };
+		EDB7C41C298FC9C200D60A9E /* FANNI_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C41B298FC9C200D60A9E /* FANNI_iOSUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EDB7C40C298FC9C200D60A9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDB7C3ED298FC9C100D60A9E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDB7C3F4298FC9C100D60A9E;
+			remoteInfo = "FANNI-iOS";
+		};
+		EDB7C416298FC9C200D60A9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDB7C3ED298FC9C100D60A9E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDB7C3F4298FC9C100D60A9E;
+			remoteInfo = "FANNI-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EDB7C3F5298FC9C100D60A9E /* FANNI-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FANNI-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDB7C3F8298FC9C100D60A9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EDB7C3FA298FC9C100D60A9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EDB7C3FC298FC9C100D60A9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EDB7C3FF298FC9C100D60A9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EDB7C401298FC9C200D60A9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EDB7C404298FC9C200D60A9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EDB7C406298FC9C200D60A9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDB7C40B298FC9C200D60A9E /* FANNI-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FANNI-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDB7C40F298FC9C200D60A9E /* FANNI_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FANNI_iOSTests.swift; sourceTree = "<group>"; };
+		EDB7C415298FC9C200D60A9E /* FANNI-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FANNI-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDB7C419298FC9C200D60A9E /* FANNI_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FANNI_iOSUITests.swift; sourceTree = "<group>"; };
+		EDB7C41B298FC9C200D60A9E /* FANNI_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FANNI_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EDB7C3F2298FC9C100D60A9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDB7C408298FC9C200D60A9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDB7C412298FC9C200D60A9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EDB7C3EC298FC9C100D60A9E = {
+			isa = PBXGroup;
+			children = (
+				EDB7C3F7298FC9C100D60A9E /* FANNI-iOS */,
+				EDB7C40E298FC9C200D60A9E /* FANNI-iOSTests */,
+				EDB7C418298FC9C200D60A9E /* FANNI-iOSUITests */,
+				EDB7C3F6298FC9C100D60A9E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EDB7C3F6298FC9C100D60A9E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EDB7C3F5298FC9C100D60A9E /* FANNI-iOS.app */,
+				EDB7C40B298FC9C200D60A9E /* FANNI-iOSTests.xctest */,
+				EDB7C415298FC9C200D60A9E /* FANNI-iOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EDB7C3F7298FC9C100D60A9E /* FANNI-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				EDB7C3F8298FC9C100D60A9E /* AppDelegate.swift */,
+				EDB7C3FA298FC9C100D60A9E /* SceneDelegate.swift */,
+				EDB7C3FC298FC9C100D60A9E /* ViewController.swift */,
+				EDB7C3FE298FC9C100D60A9E /* Main.storyboard */,
+				EDB7C401298FC9C200D60A9E /* Assets.xcassets */,
+				EDB7C403298FC9C200D60A9E /* LaunchScreen.storyboard */,
+				EDB7C406298FC9C200D60A9E /* Info.plist */,
+			);
+			path = "FANNI-iOS";
+			sourceTree = "<group>";
+		};
+		EDB7C40E298FC9C200D60A9E /* FANNI-iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				EDB7C40F298FC9C200D60A9E /* FANNI_iOSTests.swift */,
+			);
+			path = "FANNI-iOSTests";
+			sourceTree = "<group>";
+		};
+		EDB7C418298FC9C200D60A9E /* FANNI-iOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EDB7C419298FC9C200D60A9E /* FANNI_iOSUITests.swift */,
+				EDB7C41B298FC9C200D60A9E /* FANNI_iOSUITestsLaunchTests.swift */,
+			);
+			path = "FANNI-iOSUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EDB7C3F4298FC9C100D60A9E /* FANNI-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDB7C41F298FC9C200D60A9E /* Build configuration list for PBXNativeTarget "FANNI-iOS" */;
+			buildPhases = (
+				EDB7C3F1298FC9C100D60A9E /* Sources */,
+				EDB7C3F2298FC9C100D60A9E /* Frameworks */,
+				EDB7C3F3298FC9C100D60A9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FANNI-iOS";
+			productName = "FANNI-iOS";
+			productReference = EDB7C3F5298FC9C100D60A9E /* FANNI-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EDB7C40A298FC9C200D60A9E /* FANNI-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDB7C422298FC9C200D60A9E /* Build configuration list for PBXNativeTarget "FANNI-iOSTests" */;
+			buildPhases = (
+				EDB7C407298FC9C200D60A9E /* Sources */,
+				EDB7C408298FC9C200D60A9E /* Frameworks */,
+				EDB7C409298FC9C200D60A9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDB7C40D298FC9C200D60A9E /* PBXTargetDependency */,
+			);
+			name = "FANNI-iOSTests";
+			productName = "FANNI-iOSTests";
+			productReference = EDB7C40B298FC9C200D60A9E /* FANNI-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EDB7C414298FC9C200D60A9E /* FANNI-iOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDB7C425298FC9C200D60A9E /* Build configuration list for PBXNativeTarget "FANNI-iOSUITests" */;
+			buildPhases = (
+				EDB7C411298FC9C200D60A9E /* Sources */,
+				EDB7C412298FC9C200D60A9E /* Frameworks */,
+				EDB7C413298FC9C200D60A9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDB7C417298FC9C200D60A9E /* PBXTargetDependency */,
+			);
+			name = "FANNI-iOSUITests";
+			productName = "FANNI-iOSUITests";
+			productReference = EDB7C415298FC9C200D60A9E /* FANNI-iOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EDB7C3ED298FC9C100D60A9E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					EDB7C3F4298FC9C100D60A9E = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					EDB7C40A298FC9C200D60A9E = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = EDB7C3F4298FC9C100D60A9E;
+					};
+					EDB7C414298FC9C200D60A9E = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = EDB7C3F4298FC9C100D60A9E;
+					};
+				};
+			};
+			buildConfigurationList = EDB7C3F0298FC9C100D60A9E /* Build configuration list for PBXProject "FANNI-iOS" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EDB7C3EC298FC9C100D60A9E;
+			productRefGroup = EDB7C3F6298FC9C100D60A9E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EDB7C3F4298FC9C100D60A9E /* FANNI-iOS */,
+				EDB7C40A298FC9C200D60A9E /* FANNI-iOSTests */,
+				EDB7C414298FC9C200D60A9E /* FANNI-iOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EDB7C3F3298FC9C100D60A9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDB7C405298FC9C200D60A9E /* LaunchScreen.storyboard in Resources */,
+				EDB7C402298FC9C200D60A9E /* Assets.xcassets in Resources */,
+				EDB7C400298FC9C100D60A9E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDB7C409298FC9C200D60A9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDB7C413298FC9C200D60A9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EDB7C3F1298FC9C100D60A9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDB7C3FD298FC9C100D60A9E /* ViewController.swift in Sources */,
+				EDB7C3F9298FC9C100D60A9E /* AppDelegate.swift in Sources */,
+				EDB7C3FB298FC9C100D60A9E /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDB7C407298FC9C200D60A9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDB7C410298FC9C200D60A9E /* FANNI_iOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDB7C411298FC9C200D60A9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDB7C41A298FC9C200D60A9E /* FANNI_iOSUITests.swift in Sources */,
+				EDB7C41C298FC9C200D60A9E /* FANNI_iOSUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EDB7C40D298FC9C200D60A9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EDB7C3F4298FC9C100D60A9E /* FANNI-iOS */;
+			targetProxy = EDB7C40C298FC9C200D60A9E /* PBXContainerItemProxy */;
+		};
+		EDB7C417298FC9C200D60A9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EDB7C3F4298FC9C100D60A9E /* FANNI-iOS */;
+			targetProxy = EDB7C416298FC9C200D60A9E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EDB7C3FE298FC9C100D60A9E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDB7C3FF298FC9C100D60A9E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EDB7C403298FC9C200D60A9E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDB7C404298FC9C200D60A9E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EDB7C41D298FC9C200D60A9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EDB7C41E298FC9C200D60A9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EDB7C420298FC9C200D60A9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 82J7RU93V4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "FANNI-iOS/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JongHoon.FANNI-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EDB7C421298FC9C200D60A9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 82J7RU93V4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "FANNI-iOS/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JongHoon.FANNI-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EDB7C423298FC9C200D60A9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 82J7RU93V4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JongHoon.FANNI-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FANNI-iOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FANNI-iOS";
+			};
+			name = Debug;
+		};
+		EDB7C424298FC9C200D60A9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 82J7RU93V4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JongHoon.FANNI-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FANNI-iOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FANNI-iOS";
+			};
+			name = Release;
+		};
+		EDB7C426298FC9C200D60A9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 82J7RU93V4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JongHoon.FANNI-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "FANNI-iOS";
+			};
+			name = Debug;
+		};
+		EDB7C427298FC9C200D60A9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 82J7RU93V4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JongHoon.FANNI-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "FANNI-iOS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EDB7C3F0298FC9C100D60A9E /* Build configuration list for PBXProject "FANNI-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDB7C41D298FC9C200D60A9E /* Debug */,
+				EDB7C41E298FC9C200D60A9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDB7C41F298FC9C200D60A9E /* Build configuration list for PBXNativeTarget "FANNI-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDB7C420298FC9C200D60A9E /* Debug */,
+				EDB7C421298FC9C200D60A9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDB7C422298FC9C200D60A9E /* Build configuration list for PBXNativeTarget "FANNI-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDB7C423298FC9C200D60A9E /* Debug */,
+				EDB7C424298FC9C200D60A9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDB7C425298FC9C200D60A9E /* Build configuration list for PBXNativeTarget "FANNI-iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDB7C426298FC9C200D60A9E /* Debug */,
+				EDB7C427298FC9C200D60A9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EDB7C3ED298FC9C100D60A9E /* Project object */;
+}
