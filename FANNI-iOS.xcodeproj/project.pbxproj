@@ -10,7 +10,6 @@
 		EDB7C3F9298FC9C100D60A9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3F8298FC9C100D60A9E /* AppDelegate.swift */; };
 		EDB7C3FB298FC9C100D60A9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3FA298FC9C100D60A9E /* SceneDelegate.swift */; };
 		EDB7C3FD298FC9C100D60A9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3FC298FC9C100D60A9E /* ViewController.swift */; };
-		EDB7C400298FC9C100D60A9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB7C3FE298FC9C100D60A9E /* Main.storyboard */; };
 		EDB7C402298FC9C200D60A9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB7C401298FC9C200D60A9E /* Assets.xcassets */; };
 		EDB7C405298FC9C200D60A9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB7C403298FC9C200D60A9E /* LaunchScreen.storyboard */; };
 		EDB7C410298FC9C200D60A9E /* FANNI_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C40F298FC9C200D60A9E /* FANNI_iOSTests.swift */; };
@@ -40,7 +39,6 @@
 		EDB7C3F8298FC9C100D60A9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDB7C3FA298FC9C100D60A9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EDB7C3FC298FC9C100D60A9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EDB7C3FF298FC9C100D60A9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EDB7C401298FC9C200D60A9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDB7C404298FC9C200D60A9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDB7C406298FC9C200D60A9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,13 +97,13 @@
 		EDB7C3F7298FC9C100D60A9E /* FANNI-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				EDB7C3F8298FC9C100D60A9E /* AppDelegate.swift */,
-				EDB7C3FA298FC9C100D60A9E /* SceneDelegate.swift */,
-				EDB7C3FC298FC9C100D60A9E /* ViewController.swift */,
-				EDB7C3FE298FC9C100D60A9E /* Main.storyboard */,
-				EDB7C401298FC9C200D60A9E /* Assets.xcassets */,
-				EDB7C403298FC9C200D60A9E /* LaunchScreen.storyboard */,
-				EDB7C406298FC9C200D60A9E /* Info.plist */,
+				EDB7C428298FCB0D00D60A9E /* Application */,
+				EDB7C429298FCB2300D60A9E /* Presentation */,
+				EDB7C42A298FCB3400D60A9E /* Domain */,
+				EDB7C42C298FCB3C00D60A9E /* Data */,
+				EDB7C42B298FCB3B00D60A9E /* Infrastructure */,
+				EDB7C42D298FCB7300D60A9E /* Common */,
+				EDB7C42E298FCB8000D60A9E /* Resources */,
 			);
 			path = "FANNI-iOS";
 			sourceTree = "<group>";
@@ -125,6 +123,61 @@
 				EDB7C41B298FC9C200D60A9E /* FANNI_iOSUITestsLaunchTests.swift */,
 			);
 			path = "FANNI-iOSUITests";
+			sourceTree = "<group>";
+		};
+		EDB7C428298FCB0D00D60A9E /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				EDB7C3F8298FC9C100D60A9E /* AppDelegate.swift */,
+				EDB7C3FA298FC9C100D60A9E /* SceneDelegate.swift */,
+				EDB7C403298FC9C200D60A9E /* LaunchScreen.storyboard */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		EDB7C429298FCB2300D60A9E /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				EDB7C3FC298FC9C100D60A9E /* ViewController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		EDB7C42A298FCB3400D60A9E /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		EDB7C42B298FCB3B00D60A9E /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		EDB7C42C298FCB3C00D60A9E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		EDB7C42D298FCB7300D60A9E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		EDB7C42E298FCB8000D60A9E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EDB7C401298FC9C200D60A9E /* Assets.xcassets */,
+				EDB7C406298FC9C200D60A9E /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +286,6 @@
 			files = (
 				EDB7C405298FC9C200D60A9E /* LaunchScreen.storyboard in Resources */,
 				EDB7C402298FC9C200D60A9E /* Assets.xcassets in Resources */,
-				EDB7C400298FC9C100D60A9E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +349,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		EDB7C3FE298FC9C100D60A9E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EDB7C3FF298FC9C100D60A9E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EDB7C403298FC9C200D60A9E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -366,7 +410,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -420,7 +464,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -439,18 +483,17 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 82J7RU93V4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "FANNI-iOS/Info.plist";
+				INFOPLIST_FILE = "FANNI-iOS/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.JongHoon.FANNI-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = app.life.fanni;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -467,18 +510,17 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 82J7RU93V4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "FANNI-iOS/Info.plist";
+				INFOPLIST_FILE = "FANNI-iOS/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.JongHoon.FANNI-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = app.life.fanni;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -495,7 +537,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 82J7RU93V4;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JongHoon.FANNI-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -515,7 +557,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 82J7RU93V4;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JongHoon.FANNI-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
