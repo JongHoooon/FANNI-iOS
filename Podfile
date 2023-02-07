@@ -3,7 +3,6 @@
 platform :ios, '14.0'
 inhibit_all_warnings!
 
-
 target 'FANNI-iOS' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
@@ -17,7 +16,7 @@ target 'FANNI-iOS' do
 	
 	# Architecture
 	pod 'ReactorKit', '~> 3.2.0'
-	pod 'RxFlow', '~> 2.13.0'"
+	pod 'RxFlow', '~> 2.13.0'
 
 	
 	# Rx
@@ -33,14 +32,14 @@ target 'FANNI-iOS' do
 	pod 'SnapKit', '~> 5.6.0'
 
 
-  # Network
+  	# Network
 	pod 'Alamofire', '~> 5.6.2'
 	pod 'Kingfisher', '~> 7.0'
 
 	
-	# Misc
+  	# Misc
 	pod 'Then', '~> 3.0.0'
-  pod 'URLNavigator', '~> 2.4.1'
+ 	 pod 'URLNavigator', '~> 2.4.1'
 
 
   target 'FANNI-iOSTests' do
@@ -51,5 +50,5 @@ target 'FANNI-iOS' do
   target 'FANNI-iOSUITests' do
     # Pods for testing
   end
-
 end
+
