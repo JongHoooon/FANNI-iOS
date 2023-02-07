@@ -17,6 +17,7 @@ target 'FANNI-iOS' do
 	
 	# Architecture
 	pod 'ReactorKit', '~> 3.2.0'
+	pod 'RxFlow', '~> 2.13.0'
 
 	
 	# Rx
@@ -40,7 +41,6 @@ target 'FANNI-iOS' do
 	# Misc
 	pod 'Then', '~> 3.0.0'
   pod 'URLNavigator', '~> 2.4.1'
-
 
 
   target 'FANNI-iOSTests' do
