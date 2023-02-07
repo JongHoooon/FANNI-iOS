@@ -17,7 +17,7 @@ target 'FANNI-iOS' do
 	
 	# Architecture
 	pod 'ReactorKit', '~> 3.2.0'
-	pod 'RxFlow', '~> 2.13.0'
+	pod 'RxFlow', '~> 2.13.0'"
 
 	
 	# Rx
