@@ -10,14 +10,6 @@ import SnapKit
 
 final class AuthViewController: UIViewController {
     
-    // MARK: - Constants
-    
-    private struct Metric {
-        static let loginButtonHeight: CGFloat = 44.0
-        static let loginButtonDefaultMargin: CGFloat = 20.0
-        static let loginButtonOffset: CGFloat = 16.0
-    }
-    
     // MARK: - UI
 
     private lazy var firstLabel: UILabel = {
@@ -81,10 +73,24 @@ final class AuthViewController: UIViewController {
         super.viewDidLoad()
         
         configLayout()
+        configNavigationBar()
     }
 }
 
 private extension AuthViewController {
+    
+    func configNavigationBar() {
+        let leftItemLabel: UILabel = {
+            let label = UILabel()
+            label.text = "FANNI"
+            label.font = .cafe24Ssurround(size: 18.0)
+            label.textColor = .tint2
+            
+            return label
+        }()
+        let leftItem = UIBarButtonItem(customView: leftItemLabel)
+        navigationItem.leftBarButtonItem = leftItem
+    }
     
     func configLayout() {
         
