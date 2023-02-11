@@ -16,7 +16,7 @@ final class AuthViewController: UIViewController {
         var label = UILabel()
         label.text = "무료 회원 가입"
         label.font = .pretendar(style: .medium, size: 16.0)
-        label.textColor = .systemGray
+        label.textColor = UIColor(rgb: 0x767676)
         
         return label
     }()
@@ -41,7 +41,7 @@ final class AuthViewController: UIViewController {
     
     private lazy var kakaoLoginButton: UIButton = {
         var button = UIButton()
-        button.setTitle(" 카카오톡으로 시작하기", for: .normal)
+        button.setTitle("  카카오톡으로 시작하기", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = .pretendar(style: .medium, size: 16.0)
         button.setImage(UIImage(named: "kakaoIcon"), for: .normal)
@@ -54,7 +54,7 @@ final class AuthViewController: UIViewController {
     
     private lazy var appleLoginButton: UIButton = {
         var button = UIButton()
-        button.setTitle(" Apple로 시작하기", for: .normal)
+        button.setTitle("  Apple로 시작하기", for: .normal)
         button.setTitleColor(.systemBackground, for: .normal)
         button.titleLabel?.font = .pretendar(style: .medium, size: 16.0)
         
@@ -67,39 +67,41 @@ final class AuthViewController: UIViewController {
         
         return button
     }()
+    
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "FANNI"
+        label.font = .cafe24Ssurround(size: 18.0)
+        label.textColor = .tint2
+        
+        return label
+    }()
         
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configLayout()
-        configNavigationBar()
     }
 }
 
 private extension AuthViewController {
     
-    func configNavigationBar() {
-        let leftItemLabel: UILabel = {
-            let label = UILabel()
-            label.text = "FANNI"
-            label.font = .cafe24Ssurround(size: 18.0)
-            label.textColor = .tint2
-            
-            return label
-        }()
-        let leftItem = UIBarButtonItem(customView: leftItemLabel)
-        navigationItem.leftBarButtonItem = leftItem
-    }
-    
     func configLayout() {
         
         [
+            titleLabel,
             firstLabel,
             secondLabel,
             kakaoLoginButton,
             appleLoginButton
         ].forEach { view.addSubview($0) }
+        
+        titleLabel.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(10.0)
+//            $0.top.equalToSuperview().inset(10.0)
+            $0.leading.equalToSuperview().inset(20.0)
+        }
         
         firstLabel.snp.makeConstraints {
             $0.top.equalToSuperview().inset(136.0)
