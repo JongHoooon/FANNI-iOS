@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2509A57729921504004953BA /* TempDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2509A57629921504004953BA /* TempDomain.swift */; };
-		2509A57F2992158C004953BA /* TempInfrastructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2509A57E2992158C004953BA /* TempInfrastructure.swift */; };
 		2509A58129921596004953BA /* TempCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2509A58029921596004953BA /* TempCommon.swift */; };
 		2509A58329921F9C004953BA /* TempData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2509A58229921F9C004953BA /* TempData.swift */; };
 		5201E01346E13802D46963FA /* Pods_FANNI_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AED4DE771E31000676F197E /* Pods_FANNI_iOSTests.framework */; };
 		7FAF329169E341BDB541F61A /* Pods_FANNI_iOS_FANNI_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5C6D2236BB239EA86431BAA /* Pods_FANNI_iOS_FANNI_iOSUITests.framework */; };
 		AC31C3EB8B867AA450BCB6B8 /* Pods_FANNI_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D9235962052B2694D7EAE4 /* Pods_FANNI_iOS.framework */; };
+		ED3E3D312997F31E00AEBFE5 /* tempInfrastructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3D302997F31E00AEBFE5 /* tempInfrastructure.swift */; };
 		EDB7C3F9298FC9C100D60A9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3F8298FC9C100D60A9E /* AppDelegate.swift */; };
 		EDB7C3FB298FC9C100D60A9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3FA298FC9C100D60A9E /* SceneDelegate.swift */; };
 		EDB7C3FD298FC9C100D60A9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3FC298FC9C100D60A9E /* ViewController.swift */; };
@@ -47,7 +47,6 @@
 		16F6B2F4F9557851417FA24D /* Pods-FANNI-iOS-FANNI-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FANNI-iOS-FANNI-iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-FANNI-iOS-FANNI-iOSUITests/Pods-FANNI-iOS-FANNI-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1AED4DE771E31000676F197E /* Pods_FANNI_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FANNI_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2509A57629921504004953BA /* TempDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TempDomain.swift; path = "FANNI-iOS/Domain/TempDomain.swift"; sourceTree = SOURCE_ROOT; };
-		2509A57E2992158C004953BA /* TempInfrastructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TempInfrastructure.swift; path = "FANNI-iOS/Data/TempInfrastructure.swift"; sourceTree = SOURCE_ROOT; };
 		2509A58029921596004953BA /* TempCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempCommon.swift; sourceTree = "<group>"; };
 		2509A58229921F9C004953BA /* TempData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempData.swift; sourceTree = "<group>"; };
 		30F5EAFECD49C961B31E43CA /* Pods-FANNI-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FANNI-iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-FANNI-iOSTests/Pods-FANNI-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -56,6 +55,7 @@
 		C82B1C940FE4960C36FA7CBB /* Pods-FANNI-iOS-FANNI-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FANNI-iOS-FANNI-iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-FANNI-iOS-FANNI-iOSUITests/Pods-FANNI-iOS-FANNI-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DACD483FBA15B2469A5E958F /* Pods-FANNI-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FANNI-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-FANNI-iOSTests/Pods-FANNI-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		E5C6D2236BB239EA86431BAA /* Pods_FANNI_iOS_FANNI_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FANNI_iOS_FANNI_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED3E3D302997F31E00AEBFE5 /* tempInfrastructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempInfrastructure.swift; sourceTree = "<group>"; };
 		EDB7C3F5298FC9C100D60A9E /* FANNI-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FANNI-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB7C3F8298FC9C100D60A9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDB7C3FA298FC9C100D60A9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,14 +115,6 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		2509A57D2992154C004953BA /* Infrastructure */ = {
-			isa = PBXGroup;
-			children = (
-				2509A57E2992158C004953BA /* TempInfrastructure.swift */,
-			);
-			path = Infrastructure;
-			sourceTree = "<group>";
-		};
 		462A28DC88E00DA264879790 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +136,14 @@
 				DACD483FBA15B2469A5E958F /* Pods-FANNI-iOSTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		ED3E3D2F2997F30900AEBFE5 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				ED3E3D302997F31E00AEBFE5 /* tempInfrastructure.swift */,
+			);
+			path = Infrastructure;
 			sourceTree = "<group>";
 		};
 		EDB7C3EC298FC9C100D60A9E = {
@@ -177,7 +177,7 @@
 				2509A57929921510004953BA /* Domain */,
 				EDB7C42D298FCB7300D60A9E /* Common */,
 				2509A57A2992151A004953BA /* Data */,
-				2509A57D2992154C004953BA /* Infrastructure */,
+				ED3E3D2F2997F30900AEBFE5 /* Infrastructure */,
 				EDB7C42E298FCB8000D60A9E /* Resources */,
 			);
 			path = "FANNI-iOS";
@@ -205,7 +205,6 @@
 			children = (
 				EDB7C3F8298FC9C100D60A9E /* AppDelegate.swift */,
 				EDB7C3FA298FC9C100D60A9E /* SceneDelegate.swift */,
-				EDB7C403298FC9C200D60A9E /* LaunchScreen.storyboard */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -229,6 +228,7 @@
 		EDB7C42E298FCB8000D60A9E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EDB7C403298FC9C200D60A9E /* LaunchScreen.storyboard */,
 				EDB7C401298FC9C200D60A9E /* Assets.xcassets */,
 				EDB7C406298FC9C200D60A9E /* Info.plist */,
 			);
@@ -499,7 +499,7 @@
 				EDB7C3FB298FC9C100D60A9E /* SceneDelegate.swift in Sources */,
 				2509A57729921504004953BA /* TempDomain.swift in Sources */,
 				2509A58329921F9C004953BA /* TempData.swift in Sources */,
-				2509A57F2992158C004953BA /* TempInfrastructure.swift in Sources */,
+				ED3E3D312997F31E00AEBFE5 /* tempInfrastructure.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
