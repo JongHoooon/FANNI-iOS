@@ -14,9 +14,13 @@
 		7FAF329169E341BDB541F61A /* Pods_FANNI_iOS_FANNI_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5C6D2236BB239EA86431BAA /* Pods_FANNI_iOS_FANNI_iOSUITests.framework */; };
 		AC31C3EB8B867AA450BCB6B8 /* Pods_FANNI_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D9235962052B2694D7EAE4 /* Pods_FANNI_iOS.framework */; };
 		ED3E3D312997F31E00AEBFE5 /* tempInfrastructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3D302997F31E00AEBFE5 /* tempInfrastructure.swift */; };
+		ED3E3D39299803BD00AEBFE5 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3D38299803BD00AEBFE5 /* UIColor+Extension.swift */; };
+		ED3E3D3C299808C400AEBFE5 /* PretendardVariable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED3E3D3B299808C400AEBFE5 /* PretendardVariable.ttf */; };
+		ED3E3D3E29980B6300AEBFE5 /* Cafe24Ssurround.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED3E3D3D29980B6300AEBFE5 /* Cafe24Ssurround.ttf */; };
+		ED3E3D44299818AE00AEBFE5 /* UIFont+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3D43299818AE00AEBFE5 /* UIFont+Extenstion.swift */; };
 		EDB7C3F9298FC9C100D60A9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3F8298FC9C100D60A9E /* AppDelegate.swift */; };
 		EDB7C3FB298FC9C100D60A9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3FA298FC9C100D60A9E /* SceneDelegate.swift */; };
-		EDB7C3FD298FC9C100D60A9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3FC298FC9C100D60A9E /* ViewController.swift */; };
+		EDB7C3FD298FC9C100D60A9E /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3FC298FC9C100D60A9E /* AuthViewController.swift */; };
 		EDB7C402298FC9C200D60A9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB7C401298FC9C200D60A9E /* Assets.xcassets */; };
 		EDB7C405298FC9C200D60A9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB7C403298FC9C200D60A9E /* LaunchScreen.storyboard */; };
 		EDB7C410298FC9C200D60A9E /* FANNI_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C40F298FC9C200D60A9E /* FANNI_iOSTests.swift */; };
@@ -56,10 +60,14 @@
 		DACD483FBA15B2469A5E958F /* Pods-FANNI-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FANNI-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-FANNI-iOSTests/Pods-FANNI-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		E5C6D2236BB239EA86431BAA /* Pods_FANNI_iOS_FANNI_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FANNI_iOS_FANNI_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3E3D302997F31E00AEBFE5 /* tempInfrastructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempInfrastructure.swift; sourceTree = "<group>"; };
+		ED3E3D38299803BD00AEBFE5 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		ED3E3D3B299808C400AEBFE5 /* PretendardVariable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardVariable.ttf; sourceTree = "<group>"; };
+		ED3E3D3D29980B6300AEBFE5 /* Cafe24Ssurround.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cafe24Ssurround.ttf; sourceTree = "<group>"; };
+		ED3E3D43299818AE00AEBFE5 /* UIFont+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extenstion.swift"; sourceTree = "<group>"; };
 		EDB7C3F5298FC9C100D60A9E /* FANNI-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FANNI-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB7C3F8298FC9C100D60A9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDB7C3FA298FC9C100D60A9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EDB7C3FC298FC9C100D60A9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EDB7C3FC298FC9C100D60A9E /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		EDB7C401298FC9C200D60A9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDB7C404298FC9C200D60A9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDB7C406298FC9C200D60A9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -146,6 +154,65 @@
 			path = Infrastructure;
 			sourceTree = "<group>";
 		};
+		ED3E3D322997F85800AEBFE5 /* Reactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Reactor;
+			sourceTree = "<group>";
+		};
+		ED3E3D332997F85B00AEBFE5 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				ED3E3D352997F86F00AEBFE5 /* View */,
+				ED3E3D322997F85800AEBFE5 /* Reactor */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		ED3E3D342997F85E00AEBFE5 /* AuthScene */ = {
+			isa = PBXGroup;
+			children = (
+				ED3E3D332997F85B00AEBFE5 /* Auth */,
+			);
+			path = AuthScene;
+			sourceTree = "<group>";
+		};
+		ED3E3D352997F86F00AEBFE5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EDB7C3FC298FC9C100D60A9E /* AuthViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ED3E3D362998037B00AEBFE5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				ED3E3D3A2998089900AEBFE5 /* Fonts */,
+				ED3E3D372998039C00AEBFE5 /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		ED3E3D372998039C00AEBFE5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ED3E3D38299803BD00AEBFE5 /* UIColor+Extension.swift */,
+				ED3E3D43299818AE00AEBFE5 /* UIFont+Extenstion.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ED3E3D3A2998089900AEBFE5 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				ED3E3D3B299808C400AEBFE5 /* PretendardVariable.ttf */,
+				ED3E3D3D29980B6300AEBFE5 /* Cafe24Ssurround.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		EDB7C3EC298FC9C100D60A9E = {
 			isa = PBXGroup;
 			children = (
@@ -212,7 +279,8 @@
 		EDB7C429298FCB2300D60A9E /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				EDB7C3FC298FC9C100D60A9E /* ViewController.swift */,
+				ED3E3D342997F85E00AEBFE5 /* AuthScene */,
+				ED3E3D362998037B00AEBFE5 /* Utils */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -346,7 +414,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDB7C431298FDA0F00D60A9E /* .swiftlint.yml in Resources */,
+				ED3E3D3C299808C400AEBFE5 /* PretendardVariable.ttf in Resources */,
 				EDB7C405298FC9C200D60A9E /* LaunchScreen.storyboard in Resources */,
+				ED3E3D3E29980B6300AEBFE5 /* Cafe24Ssurround.ttf in Resources */,
 				EDB7C402298FC9C200D60A9E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,12 +564,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2509A58129921596004953BA /* TempCommon.swift in Sources */,
-				EDB7C3FD298FC9C100D60A9E /* ViewController.swift in Sources */,
+				EDB7C3FD298FC9C100D60A9E /* AuthViewController.swift in Sources */,
 				EDB7C3F9298FC9C100D60A9E /* AppDelegate.swift in Sources */,
 				EDB7C3FB298FC9C100D60A9E /* SceneDelegate.swift in Sources */,
 				2509A57729921504004953BA /* TempDomain.swift in Sources */,
 				2509A58329921F9C004953BA /* TempData.swift in Sources */,
 				ED3E3D312997F31E00AEBFE5 /* tempInfrastructure.swift in Sources */,
+				ED3E3D44299818AE00AEBFE5 /* UIFont+Extenstion.swift in Sources */,
+				ED3E3D39299803BD00AEBFE5 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
