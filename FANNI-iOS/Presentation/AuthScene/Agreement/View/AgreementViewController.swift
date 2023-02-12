@@ -165,24 +165,18 @@ extension AgreementViewController {
         
         // MARK: State
 
-        let allCheckButtonState = reactor.state.asObservable()
-            .map { $0.allCheckButton }
+        reactor.state.asObservable().map { $0.allCheckButton }
+            .distinctUntilChanged()
+            .bind(to: allCheckButton.rx.isCheck)
+            .disposed(by: disposeBag)
+                
+        let utilizationCheckButtonState = reactor.state.asObservable()
+            .map { $0.utilizationCheckButton }
             .distinctUntilChanged()
         
         let personalInfoCheckButtonState = reactor.state.asObservable()
             .map { $0.personalInfoCheckButton }
             .distinctUntilChanged()
-        let utilizationCheckButtonState = reactor.state.asObservable()
-            .map { $0.utilizationCheckButton }
-            .distinctUntilChanged()
-        
-        let marketingCheckButtonState = reactor.state.asObservable()
-            .map { $0.marketingCheckButton }
-            .distinctUntilChanged()
-        
-        allCheckButtonState
-            .bind(to: allCheckButton.rx.isCheck)
-            .disposed(by: disposeBag)
 
         utilizationCheckButtonState
             .bind(to: utilizationCheckButton.rx.isCheck)
@@ -192,30 +186,16 @@ extension AgreementViewController {
             .bind(to: personalInfoCheckButton.rx.isCheck)
             .disposed(by: disposeBag)
 
-        marketingCheckButtonState
+        reactor.state.asObservable().map { $0.marketingCheckButton }
+            .distinctUntilChanged()
             .bind(to: marketingCheckButton.rx.isCheck)
             .disposed(by: disposeBag)
         
         Observable.combineLatest(
-            allCheckButtonState,
-            personalInfoCheckButtonState,
             utilizationCheckButtonState,
-            marketingCheckButtonState
+            personalInfoCheckButtonState
         )
-        .subscribe { [unowned self] all, personal, utilization, marketing in
-            if all && !(personal && utilization && marketing) {
-                
-                self.makeAllButtonFalseRelay.accept(Void())
-            }
-    
-        }
-        .disposed(by: disposeBag)
-        
-        Observable.combineLatest(
-            personalInfoCheckButtonState,
-            utilizationCheckButtonState
-        )
-        .map { (personal, utilization) -> Bool in
+        .map { (utilization, personal) -> Bool in
             return personal && utilization ? true : false
         }
         .bind(to: signinButton.rx.isEnable)
