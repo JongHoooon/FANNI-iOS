@@ -19,8 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window?.backgroundColor = .systemBackground
         
-        let viewController = AuthViewController()
-        window?.rootViewController = viewController
+        let viewController = AuthViewController(reactor: AuthReactor())
+        window?.rootViewController = UINavigationController(rootViewController: viewController)
         window?.makeKeyAndVisible()
     }
 

@@ -7,15 +7,17 @@
 
 import UIKit
 import SnapKit
+import ReactorKit
+import RxSwift
 
-final class AuthViewController: UIViewController {
+final class AuthViewController: BaseViewController, View {
     
     // MARK: - UI
 
     private lazy var firstLabel: UILabel = {
         var label = UILabel()
         label.text = "무료 회원 가입"
-        label.font = .pretendar(style: .medium, size: 16.0)
+        label.font = .pretendar(weight: ._700, size: 16.0)
         label.textColor = UIColor(rgb: 0x767676)
         
         return label
@@ -26,7 +28,7 @@ final class AuthViewController: UIViewController {
         
         let text = "FANNI를\n이용해보시겠어요?"
         label.text = text
-        label.font = .pretendar(style: .light, size: 32.0)
+        label.font = .pretendar(weight: ._400, size: 32.0)
         
         let font = UIFont.cafe24Ssurround(size: 32.0)
         let attributedString = NSMutableAttributedString(string: label.text ?? "")
@@ -43,12 +45,13 @@ final class AuthViewController: UIViewController {
         var button = UIButton()
         button.setTitle("  카카오톡으로 시작하기", for: .normal)
         button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = .pretendar(style: .medium, size: 16.0)
+        button.titleLabel?.font = .pretendar(weight: ._400, size: 16.0)
         button.setImage(UIImage(named: "kakaoIcon"), for: .normal)
         button.semanticContentAttribute = .forceLeftToRight
         button.backgroundColor = .kakaoYellow
         button.layer.cornerRadius = 12.0
                 
+        button.addTarget(self, action: #selector(tapKakaoLoginButton), for: .touchUpInside)
         return button
     }()
     
@@ -56,7 +59,7 @@ final class AuthViewController: UIViewController {
         var button = UIButton()
         button.setTitle("  Apple로 시작하기", for: .normal)
         button.setTitleColor(.systemBackground, for: .normal)
-        button.titleLabel?.font = .pretendar(style: .medium, size: 16.0)
+        button.titleLabel?.font = .pretendar(weight: ._400, size: 16.0)
         
         let appleIcon = UIImage(named: "appleIcon")?
             .withTintColor(.systemBackground, renderingMode: .alwaysOriginal)
@@ -67,44 +70,68 @@ final class AuthViewController: UIViewController {
         
         return button
     }()
-    
-    private lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "FANNI"
-        label.font = .cafe24Ssurround(size: 18.0)
-        label.textColor = .tint2
-        
-        return label
-    }()
         
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configLayout()
+        configNavigationBar()
+    }
+    
+    // MARK: - Init
+    init(reactor: AuthReactor) {
+        super.init()
+        
+        self.reactor = reactor
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
+// MARK: - Bind
+
+extension AuthViewController {
+    
+    func bind(reactor: AuthReactor) {
+        
+    }
+    
+}
+
+// MARK: - Private Method
+
 private extension AuthViewController {
+    
+    func configNavigationBar() {
+         let titleLabel: UILabel = {
+            let label = UILabel()
+            label.text = "FANNI"
+            label.font = .cafe24Ssurround(size: 18.0)
+            label.textColor = .tint2
+            
+            return label
+        }()
+        
+        let leftBarItem = UIBarButtonItem(customView: titleLabel)
+        navigationItem.leftBarButtonItem = leftBarItem
+    }
     
     func configLayout() {
         
+        view.backgroundColor = .systemBackground
+        
         [
-            titleLabel,
             firstLabel,
             secondLabel,
             kakaoLoginButton,
             appleLoginButton
         ].forEach { view.addSubview($0) }
-        
-        titleLabel.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).offset(10.0)
-//            $0.top.equalToSuperview().inset(10.0)
-            $0.leading.equalToSuperview().inset(20.0)
-        }
-        
+                
         firstLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(136.0)
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(80.0)
             $0.centerX.equalToSuperview()
         }
         
@@ -124,5 +151,10 @@ private extension AuthViewController {
             $0.leading.trailing.equalToSuperview().inset(20.0)
             $0.height.equalTo(44.0)
         }
+    }
+    
+    @objc func tapKakaoLoginButton() {
+        let agreementViewController = AgreementViewController(reactor: AgreementReactor())
+        navigationController?.pushViewController(agreementViewController, animated: true)
     }
 }

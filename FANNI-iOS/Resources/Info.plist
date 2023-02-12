@@ -4,6 +4,7 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Inter.ttf</string>
 		<string>PretendardVariable.ttf</string>
 		<string>Cafe24Ssurround.ttf</string>
 	</array>

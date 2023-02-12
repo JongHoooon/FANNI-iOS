@@ -18,6 +18,11 @@
 		ED3E3D3C299808C400AEBFE5 /* PretendardVariable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED3E3D3B299808C400AEBFE5 /* PretendardVariable.ttf */; };
 		ED3E3D3E29980B6300AEBFE5 /* Cafe24Ssurround.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED3E3D3D29980B6300AEBFE5 /* Cafe24Ssurround.ttf */; };
 		ED3E3D44299818AE00AEBFE5 /* UIFont+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3D43299818AE00AEBFE5 /* UIFont+Extenstion.swift */; };
+		ED3E3D462998969400AEBFE5 /* AuthViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3D452998969400AEBFE5 /* AuthViewReactor.swift */; };
+		ED3E3D4B2998973A00AEBFE5 /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3D4A2998973A00AEBFE5 /* AgreementViewController.swift */; };
+		ED3E3D8B2998AF5C00AEBFE5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3D8A2998AF5C00AEBFE5 /* BaseViewController.swift */; };
+		ED3E3D8D2998C11B00AEBFE5 /* AgreementReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3D8C2998C11B00AEBFE5 /* AgreementReactor.swift */; };
+		ED3E3D8F2998C61400AEBFE5 /* Inter.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED3E3D8E2998C61400AEBFE5 /* Inter.ttf */; };
 		EDB7C3F9298FC9C100D60A9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3F8298FC9C100D60A9E /* AppDelegate.swift */; };
 		EDB7C3FB298FC9C100D60A9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3FA298FC9C100D60A9E /* SceneDelegate.swift */; };
 		EDB7C3FD298FC9C100D60A9E /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3FC298FC9C100D60A9E /* AuthViewController.swift */; };
@@ -64,6 +69,11 @@
 		ED3E3D3B299808C400AEBFE5 /* PretendardVariable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardVariable.ttf; sourceTree = "<group>"; };
 		ED3E3D3D29980B6300AEBFE5 /* Cafe24Ssurround.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cafe24Ssurround.ttf; sourceTree = "<group>"; };
 		ED3E3D43299818AE00AEBFE5 /* UIFont+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extenstion.swift"; sourceTree = "<group>"; };
+		ED3E3D452998969400AEBFE5 /* AuthViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthViewReactor.swift; path = ../../../../../../../AuthViewReactor.swift; sourceTree = "<group>"; };
+		ED3E3D4A2998973A00AEBFE5 /* AgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
+		ED3E3D8A2998AF5C00AEBFE5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		ED3E3D8C2998C11B00AEBFE5 /* AgreementReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementReactor.swift; sourceTree = "<group>"; };
+		ED3E3D8E2998C61400AEBFE5 /* Inter.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Inter.ttf; sourceTree = "<group>"; };
 		EDB7C3F5298FC9C100D60A9E /* FANNI-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FANNI-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB7C3F8298FC9C100D60A9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDB7C3FA298FC9C100D60A9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +167,7 @@
 		ED3E3D322997F85800AEBFE5 /* Reactor */ = {
 			isa = PBXGroup;
 			children = (
+				ED3E3D452998969400AEBFE5 /* AuthViewReactor.swift */,
 			);
 			path = Reactor;
 			sourceTree = "<group>";
@@ -174,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				ED3E3D332997F85B00AEBFE5 /* Auth */,
+				ED3E3D47299896E200AEBFE5 /* Agreement */,
 			);
 			path = AuthScene;
 			sourceTree = "<group>";
@@ -207,10 +219,36 @@
 		ED3E3D3A2998089900AEBFE5 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				ED3E3D8E2998C61400AEBFE5 /* Inter.ttf */,
 				ED3E3D3B299808C400AEBFE5 /* PretendardVariable.ttf */,
 				ED3E3D3D29980B6300AEBFE5 /* Cafe24Ssurround.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		ED3E3D47299896E200AEBFE5 /* Agreement */ = {
+			isa = PBXGroup;
+			children = (
+				ED3E3D492998972600AEBFE5 /* View */,
+				ED3E3D482998972400AEBFE5 /* Reactor */,
+			);
+			path = Agreement;
+			sourceTree = "<group>";
+		};
+		ED3E3D482998972400AEBFE5 /* Reactor */ = {
+			isa = PBXGroup;
+			children = (
+				ED3E3D8C2998C11B00AEBFE5 /* AgreementReactor.swift */,
+			);
+			path = Reactor;
+			sourceTree = "<group>";
+		};
+		ED3E3D492998972600AEBFE5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ED3E3D4A2998973A00AEBFE5 /* AgreementViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		EDB7C3EC298FC9C100D60A9E = {
@@ -279,6 +317,7 @@
 		EDB7C429298FCB2300D60A9E /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				ED3E3D8A2998AF5C00AEBFE5 /* BaseViewController.swift */,
 				ED3E3D342997F85E00AEBFE5 /* AuthScene */,
 				ED3E3D362998037B00AEBFE5 /* Utils */,
 			);
@@ -416,6 +455,7 @@
 				EDB7C431298FDA0F00D60A9E /* .swiftlint.yml in Resources */,
 				ED3E3D3C299808C400AEBFE5 /* PretendardVariable.ttf in Resources */,
 				EDB7C405298FC9C200D60A9E /* LaunchScreen.storyboard in Resources */,
+				ED3E3D8F2998C61400AEBFE5 /* Inter.ttf in Resources */,
 				ED3E3D3E29980B6300AEBFE5 /* Cafe24Ssurround.ttf in Resources */,
 				EDB7C402298FC9C200D60A9E /* Assets.xcassets in Resources */,
 			);
@@ -564,14 +604,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				2509A58129921596004953BA /* TempCommon.swift in Sources */,
+				ED3E3D8D2998C11B00AEBFE5 /* AgreementReactor.swift in Sources */,
 				EDB7C3FD298FC9C100D60A9E /* AuthViewController.swift in Sources */,
 				EDB7C3F9298FC9C100D60A9E /* AppDelegate.swift in Sources */,
+				ED3E3D4B2998973A00AEBFE5 /* AgreementViewController.swift in Sources */,
 				EDB7C3FB298FC9C100D60A9E /* SceneDelegate.swift in Sources */,
+				ED3E3D8B2998AF5C00AEBFE5 /* BaseViewController.swift in Sources */,
 				2509A57729921504004953BA /* TempDomain.swift in Sources */,
 				2509A58329921F9C004953BA /* TempData.swift in Sources */,
 				ED3E3D312997F31E00AEBFE5 /* tempInfrastructure.swift in Sources */,
 				ED3E3D44299818AE00AEBFE5 /* UIFont+Extenstion.swift in Sources */,
 				ED3E3D39299803BD00AEBFE5 /* UIColor+Extension.swift in Sources */,
+				ED3E3D462998969400AEBFE5 /* AuthViewReactor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
