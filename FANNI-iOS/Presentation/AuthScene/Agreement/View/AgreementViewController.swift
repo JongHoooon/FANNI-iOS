@@ -116,6 +116,7 @@ final class AgreementViewController: BaseViewController, View {
         super.viewDidLoad()
         
         configLayout()
+        configNavigationBar()
     }
     
     // MARK: - Init
@@ -142,6 +143,35 @@ extension AgreementViewController {
 }
 
 private extension AgreementViewController {
+    
+    func configNavigationBar() {
+        let titleLabel: UILabel = {
+            let label = UILabel()
+            label.text = "FANNI"
+            label.font = .cafe24Ssurround(size: 18.0)
+            label.textColor = .tint2
+            
+            return label
+        }()
+        let leftBarItem = UIBarButtonItem(customView: titleLabel)
+        
+        let popViewButton: UIButton = {
+            let button = UIButton()
+            button.setTitle("로그인", for: .normal)
+            button.setTitleColor(.label, for: .normal)
+            button.addTarget(self,
+                             action: #selector(tapRightBarButton),
+                             for: .touchUpInside)
+            button.titleLabel?.font = .pretendar(weight: ._400, size: 14.0)
+            
+            return button
+        }()
+        
+        let rightBarItem = UIBarButtonItem(customView: popViewButton)
+        
+        navigationItem.leftBarButtonItem = leftBarItem
+        navigationItem.rightBarButtonItem = rightBarItem
+    }
     
     func configLayout() {
         let utilizationStackView: UIStackView = {
@@ -254,5 +284,9 @@ private extension AgreementViewController {
             $0.height.equalTo(44.0)
         }
         
+    }
+    
+    @objc func tapRightBarButton() {
+        navigationController?.popViewController(animated: true)
     }
 }
