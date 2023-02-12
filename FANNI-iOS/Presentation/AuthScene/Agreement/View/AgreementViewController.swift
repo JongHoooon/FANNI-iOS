@@ -8,8 +8,14 @@
 import UIKit
 import SnapKit
 import ReactorKit
+import RxSwift
+import RxCocoa
 
 final class AgreementViewController: BaseViewController, View {
+    
+    // MARK: - Proprties
+    
+    let makeAllButtonFalseRelay = PublishRelay<Void>()
     
     // MARK: - UI
     
@@ -29,8 +35,8 @@ final class AgreementViewController: BaseViewController, View {
         button.titleLabel?.font = .intert(weight: ._700, size: 16.0)
         button.titleLabel?.textColor = .systemBackground
         button.backgroundColor = .tint1
-        
         button.layer.cornerRadius = 12.0
+        button.addTarget(self, action: #selector(tap), for: .touchUpInside)
         return button
     }()
     
@@ -95,7 +101,7 @@ final class AgreementViewController: BaseViewController, View {
     
     private lazy var allCheckButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "checkBox0"), for: .normal)
+//        button.setImage(UIImage(named: "checkBox0"), for: .normal)
         
         return button
     }()
@@ -109,7 +115,6 @@ final class AgreementViewController: BaseViewController, View {
         
         return button
     }()
-    
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -138,8 +143,84 @@ extension AgreementViewController {
     
     func bind(reactor: AgreementReactor) {
         
-    }
+        allCheckButton.rx.tap
+            .map { Reactor.Action.tapAllCheckButton }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        utilizationCheckButton.rx.tap
+            .map { Reactor.Action.tapUtilizationCheckButton }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        personalInfoCheckButton.rx.tap
+            .map { Reactor.Action.tapPersonalInfoCheckButton }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        marketingCheckButton.rx.tap
+            .map { Reactor.Action.tapMarketingCheckButton }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        // MARK: State
+
+        let allCheckButtonState = reactor.state.asObservable()
+            .map { $0.allCheckButton }
+            .distinctUntilChanged()
+        
+        let personalInfoCheckButtonState = reactor.state.asObservable()
+            .map { $0.personalInfoCheckButton }
+            .distinctUntilChanged()
+        let utilizationCheckButtonState = reactor.state.asObservable()
+            .map { $0.utilizationCheckButton }
+            .distinctUntilChanged()
+        
+        let marketingCheckButtonState = reactor.state.asObservable()
+            .map { $0.marketingCheckButton }
+            .distinctUntilChanged()
+        
+        allCheckButtonState
+            .bind(to: allCheckButton.rx.isCheck)
+            .disposed(by: disposeBag)
+
+        utilizationCheckButtonState
+            .bind(to: utilizationCheckButton.rx.isCheck)
+            .disposed(by: disposeBag)
+        
+        personalInfoCheckButtonState
+            .bind(to: personalInfoCheckButton.rx.isCheck)
+            .disposed(by: disposeBag)
+
+        marketingCheckButtonState
+            .bind(to: marketingCheckButton.rx.isCheck)
+            .disposed(by: disposeBag)
+        
+        Observable.combineLatest(
+            allCheckButtonState,
+            personalInfoCheckButtonState,
+            utilizationCheckButtonState,
+            marketingCheckButtonState
+        )
+        .subscribe { [unowned self] all, personal, utilization, marketing in
+            if all && !(personal && utilization && marketing) {
+                
+                self.makeAllButtonFalseRelay.accept(Void())
+            }
     
+        }
+        .disposed(by: disposeBag)
+        
+        Observable.combineLatest(
+            personalInfoCheckButtonState,
+            utilizationCheckButtonState
+        )
+        .map { (personal, utilization) -> Bool in
+            return personal && utilization ? true : false
+        }
+        .bind(to: signinButton.rx.isEnable)
+        .disposed(by: disposeBag)
+    }
 }
 
 private extension AgreementViewController {
@@ -283,10 +364,39 @@ private extension AgreementViewController {
             $0.leading.trailing.equalToSuperview().inset(20.0)
             $0.height.equalTo(44.0)
         }
-        
     }
     
     @objc func tapRightBarButton() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func tap() {
+        print("tapPPPPPPP")
+    }
+}
+
+extension Reactive where Base: UIButton {
+    var isCheck: Binder<Bool> {
+        return Binder(self.base) { button, bool in
+            switch bool {
+            case true: button.setImage(UIImage(named: "checkBox1"), for: .normal)
+            case false: button.setImage(UIImage(named: "checkBox0"), for: .normal)
+            }
+        }
+    }
+}
+
+extension Reactive where Base: UIButton {
+    var isEnable: Binder<Bool> {
+        return Binder(self.base) { button, bool in
+            switch bool {
+            case true:
+                button.isEnabled = true
+                button.backgroundColor = .tint1
+            case false:
+                button.backgroundColor = .systemGray2
+                button.isEnabled = false
+            }
+        }
     }
 }
