@@ -1,6 +1,17 @@
 PODS:
   - Alamofire (5.6.2)
   - Differentiator (5.0.0)
+  - KakaoSDKAuth (2.13.1):
+    - KakaoSDKCommon (= 2.13.1)
+  - KakaoSDKCommon (2.13.1):
+    - KakaoSDKCommon/Common (= 2.13.1)
+    - KakaoSDKCommon/Network (= 2.13.1)
+  - KakaoSDKCommon/Common (2.13.1)
+  - KakaoSDKCommon/Network (2.13.1):
+    - Alamofire (~> 5.1)
+    - KakaoSDKCommon/Common (= 2.13.1)
+  - KakaoSDKUser (2.13.1):
+    - KakaoSDKAuth (= 2.13.1)
   - Kingfisher (7.4.1)
   - ReactorKit (3.2.0):
     - RxSwift (~> 6.0)
@@ -23,6 +34,23 @@ PODS:
   - RxGesture (4.0.4):
     - RxCocoa (~> 6.0)
     - RxSwift (~> 6.0)
+  - RxKakaoSDKAuth (2.13.1):
+    - KakaoSDKAuth (= 2.13.1)
+    - RxKakaoSDKCommon (= 2.13.1)
+  - RxKakaoSDKCommon (2.13.1):
+    - RxKakaoSDKCommon/Common (= 2.13.1)
+    - RxKakaoSDKCommon/Network (= 2.13.1)
+  - RxKakaoSDKCommon/Common (2.13.1):
+    - KakaoSDKCommon/Common (= 2.13.1)
+    - RxCocoa
+    - RxSwift (~> 6.0)
+  - RxKakaoSDKCommon/Network (2.13.1):
+    - KakaoSDKCommon/Network (= 2.13.1)
+    - RxAlamofire (~> 6.0)
+    - RxKakaoSDKCommon/Common (= 2.13.1)
+  - RxKakaoSDKUser (2.13.1):
+    - KakaoSDKUser (= 2.13.1)
+    - RxKakaoSDKAuth (= 2.13.1)
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
@@ -31,12 +59,14 @@ PODS:
     - RxSwift (~> 6.0)
   - SnapKit (5.6.0)
   - SwiftLint (0.49.1)
-  - Then (3.0.0)
   - URLNavigator (2.4.1)
   - WeakMapTable (1.2.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.6.2)
+  - KakaoSDKAuth
+  - KakaoSDKCommon
+  - KakaoSDKUser
   - Kingfisher (~> 7.0)
   - ReactorKit (~> 3.2.0)
   - RxAlamofire (~> 6.1.1)
@@ -44,17 +74,22 @@ DEPENDENCIES:
   - RxDataSources (~> 5.0.0)
   - RxFlow (~> 2.13.0)
   - RxGesture (~> 4.0.4)
+  - RxKakaoSDKAuth
+  - RxKakaoSDKCommon
+  - RxKakaoSDKUser
   - RxSwift (~> 6.5.0)
   - RxViewController (~> 2.0.0)
   - SnapKit (~> 5.6.0)
   - SwiftLint (~> 0.49.1)
-  - Then (~> 3.0.0)
   - URLNavigator (~> 2.4.1)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Differentiator
+    - KakaoSDKAuth
+    - KakaoSDKCommon
+    - KakaoSDKUser
     - Kingfisher
     - ReactorKit
     - RxAlamofire
@@ -62,18 +97,23 @@ SPEC REPOS:
     - RxDataSources
     - RxFlow
     - RxGesture
+    - RxKakaoSDKAuth
+    - RxKakaoSDKCommon
+    - RxKakaoSDKUser
     - RxRelay
     - RxSwift
     - RxViewController
     - SnapKit
     - SwiftLint
-    - Then
     - URLNavigator
     - WeakMapTable
 
 SPEC CHECKSUMS:
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
   Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
+  KakaoSDKAuth: d9de0cb0c723441ced3616d481952bde34438dcb
+  KakaoSDKCommon: a16807e19984a0a208c3117c7ef117f101a9a128
+  KakaoSDKUser: 92d34cf6af7b123c22a7ee44424332123e356901
   Kingfisher: cd762a593a61b2fbecf7645c00f9a801a3ebfc9c
   ReactorKit: e8b11d6b9c415405f381669b095c154a05b59eca
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
@@ -81,15 +121,17 @@ SPEC CHECKSUMS:
   RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
   RxFlow: 52f6f6379918392c1ea8cb62d8dcf2df9a5463dd
   RxGesture: f3efb47ed2d26a8082f7b660d4a59970e275a7f8
+  RxKakaoSDKAuth: a9fc4cbc2bc2ea1e1e46d75558ef06022b7bb3b3
+  RxKakaoSDKCommon: 3b317abb6b2cef1a18ba6626ea8233c117d5930c
+  RxKakaoSDKUser: fbeac97d5a0ab0581b28672ee43562df3e50e968
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   RxViewController: 56486fa0afd629a1d6b5ba077f3b8cd9dc31b5d2
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftLint: 32ee33ded0636d0905ef6911b2b67bbaeeedafa5
-  Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
   URLNavigator: 9e277a422a5c131a3e37970c2558e0e866cc22bd
   WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: 04871ddf9342946059f052c828199d253f2f0257
+PODFILE CHECKSUM: 240b5928848487c301ef7383338d29722fad714c
 
 COCOAPODS: 1.11.3
