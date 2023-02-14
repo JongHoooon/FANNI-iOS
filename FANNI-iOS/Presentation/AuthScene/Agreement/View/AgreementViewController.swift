@@ -143,6 +143,8 @@ extension AgreementViewController {
     
     func bind(reactor: AgreementReactor) {
         
+        // MARK: Action
+        
         allCheckButton.rx.tap
             .map { Reactor.Action.tapAllCheckButton }
             .bind(to: reactor.action)
@@ -166,39 +168,44 @@ extension AgreementViewController {
         // MARK: State
 
         reactor.state.asObservable().map { $0.allCheckButton }
+            .asDriver(onErrorJustReturn: false)
             .distinctUntilChanged()
-            .bind(to: allCheckButton.rx.isCheck)
+            .drive(allCheckButton.rx.isCheck)
             .disposed(by: disposeBag)
                 
         let utilizationCheckButtonState = reactor.state.asObservable()
             .map { $0.utilizationCheckButton }
+            .asDriver(onErrorJustReturn: false)
             .distinctUntilChanged()
         
         let personalInfoCheckButtonState = reactor.state.asObservable()
             .map { $0.personalInfoCheckButton }
+            .asDriver(onErrorJustReturn: false)
             .distinctUntilChanged()
 
         utilizationCheckButtonState
-            .bind(to: utilizationCheckButton.rx.isCheck)
+            .drive(utilizationCheckButton.rx.isCheck)
             .disposed(by: disposeBag)
         
         personalInfoCheckButtonState
-            .bind(to: personalInfoCheckButton.rx.isCheck)
+            .drive(personalInfoCheckButton.rx.isCheck)
             .disposed(by: disposeBag)
 
         reactor.state.asObservable().map { $0.marketingCheckButton }
+            .asDriver(onErrorJustReturn: false)
             .distinctUntilChanged()
-            .bind(to: marketingCheckButton.rx.isCheck)
+            .drive(marketingCheckButton.rx.isCheck)
             .disposed(by: disposeBag)
         
         Observable.combineLatest(
-            utilizationCheckButtonState,
-            personalInfoCheckButtonState
+            utilizationCheckButtonState.asObservable(),
+            personalInfoCheckButtonState.asObservable()
         )
         .map { (utilization, personal) -> Bool in
             return personal && utilization ? true : false
         }
-        .bind(to: signinButton.rx.isEnable)
+        .asDriver(onErrorJustReturn: false)
+        .drive(signinButton.rx.isEnable)
         .disposed(by: disposeBag)
     }
 }
