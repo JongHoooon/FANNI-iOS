@@ -358,6 +358,6 @@ private extension AgreementViewController {
     }
     
     @objc func tap() {
-        print("tapPPPPPPP")
+        navigationController?.pushViewController(TestViewController(), animated: true)
     }
 }

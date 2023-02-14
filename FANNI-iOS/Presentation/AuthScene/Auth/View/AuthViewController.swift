@@ -51,7 +51,6 @@ final class AuthViewController: BaseViewController, View {
         button.backgroundColor = .kakaoYellow
         button.layer.cornerRadius = 12.0
                 
-        button.addTarget(self, action: #selector(tapKakaoLoginButton), for: .touchUpInside)
         return button
     }()
     
@@ -97,8 +96,23 @@ extension AuthViewController {
     
     func bind(reactor: AuthReactor) {
         
+        // MARK: Action
+        
+        kakaoLoginButton.rx.tap
+            .map { Reactor.Action.tapKakaoLogin }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        // MARK: - State
+
+        NotificationCenter.default.rx.notification(.loginSuccess)
+            .asObservable()
+            .subscribe(onNext: { [weak self] _ in
+                let vc = AgreementViewController(reactor: AgreementReactor())
+                self?.navigationController?.pushViewController(vc, animated: true)
+            })
+            .disposed(by: disposeBag)
     }
-    
 }
 
 // MARK: - Private Method
