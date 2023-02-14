@@ -22,7 +22,7 @@
 		ED3E3D8B2998AF5C00AEBFE5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3D8A2998AF5C00AEBFE5 /* BaseViewController.swift */; };
 		ED3E3D8D2998C11B00AEBFE5 /* AgreementReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3D8C2998C11B00AEBFE5 /* AgreementReactor.swift */; };
 		ED3E3D8F2998C61400AEBFE5 /* Inter.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED3E3D8E2998C61400AEBFE5 /* Inter.ttf */; };
-		ED451F41299BE9CB000AA855 /* NSNotification_Name+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED451F40299BE9CB000AA855 /* NSNotification_Name+Extension.swift */; };
+		ED451F41299BE9CB000AA855 /* NSNotification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED451F40299BE9CB000AA855 /* NSNotification+Extension.swift */; };
 		ED451F43299BEC72000AA855 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED451F42299BEC72000AA855 /* UserManager.swift */; };
 		ED451F45299BEF5F000AA855 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED451F44299BEF5F000AA855 /* TestViewController.swift */; };
 		ED4842F3299BB4890055E5AC /* Reactive+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4842F2299BB4890055E5AC /* Reactive+Extension.swift */; };
@@ -77,7 +77,7 @@
 		ED3E3D8A2998AF5C00AEBFE5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		ED3E3D8C2998C11B00AEBFE5 /* AgreementReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementReactor.swift; sourceTree = "<group>"; };
 		ED3E3D8E2998C61400AEBFE5 /* Inter.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Inter.ttf; sourceTree = "<group>"; };
-		ED451F40299BE9CB000AA855 /* NSNotification_Name+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification_Name+Extension.swift"; sourceTree = "<group>"; };
+		ED451F40299BE9CB000AA855 /* NSNotification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+Extension.swift"; sourceTree = "<group>"; };
 		ED451F42299BEC72000AA855 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		ED451F44299BEF5F000AA855 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		ED4842F2299BB4890055E5AC /* Reactive+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extension.swift"; sourceTree = "<group>"; };
@@ -222,7 +222,7 @@
 				ED3E3D38299803BD00AEBFE5 /* UIColor+Extension.swift */,
 				ED3E3D43299818AE00AEBFE5 /* UIFont+Extenstion.swift */,
 				ED4842F2299BB4890055E5AC /* Reactive+Extension.swift */,
-				ED451F40299BE9CB000AA855 /* NSNotification_Name+Extension.swift */,
+				ED451F40299BE9CB000AA855 /* NSNotification+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -631,7 +631,7 @@
 				ED3E3D44299818AE00AEBFE5 /* UIFont+Extenstion.swift in Sources */,
 				ED3E3D39299803BD00AEBFE5 /* UIColor+Extension.swift in Sources */,
 				ED3E3D462998969400AEBFE5 /* AuthViewReactor.swift in Sources */,
-				ED451F41299BE9CB000AA855 /* NSNotification_Name+Extension.swift in Sources */,
+				ED451F41299BE9CB000AA855 /* NSNotification+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

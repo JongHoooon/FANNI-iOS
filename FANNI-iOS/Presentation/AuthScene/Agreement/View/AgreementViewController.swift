@@ -25,7 +25,6 @@ final class AgreementViewController: BaseViewController, View {
         label.font = .pretendar(weight: ._700, size: 24.0)
         label.textColor = .label
         label.numberOfLines = 2
-        
         return label
     }()
     
@@ -43,7 +42,6 @@ final class AgreementViewController: BaseViewController, View {
     private lazy var utilizationCheckButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "checkBox0"), for: .normal)
-        
         return button
     }()
     
@@ -53,14 +51,12 @@ final class AgreementViewController: BaseViewController, View {
         button.titleLabel?.font = .pretendar(weight: ._400, size: 14.0)
         button.setTitleColor(.label, for: .normal)
         button.contentHorizontalAlignment = .leading
-        
         return button
     }()
     
     private lazy var personalInfoCheckButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "checkBox0"), for: .normal)
-        
         return button
     }()
     
@@ -70,14 +66,12 @@ final class AgreementViewController: BaseViewController, View {
         button.titleLabel?.font = .pretendar(weight: ._400, size: 14.0)
         button.setTitleColor(.label, for: .normal)
         button.contentHorizontalAlignment = .leading
-        
         return button
     }()
     
     private lazy var marketingCheckButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "checkBox0"), for: .normal)
-        
         return button
     }()
     
@@ -87,7 +81,6 @@ final class AgreementViewController: BaseViewController, View {
         button.titleLabel?.font = .pretendar(weight: ._400, size: 14.0)
         button.setTitleColor(.label, for: .normal)
         button.contentHorizontalAlignment = .leading
-        
         return button
     }()
     
@@ -95,14 +88,11 @@ final class AgreementViewController: BaseViewController, View {
         let view = UIView()
         view.backgroundColor = UIColor(rgb: 0xFBF7F7)
         view.layer.cornerRadius = 10.0
-            
         return view
     }()
     
     private lazy var allCheckButton: UIButton = {
         let button = UIButton()
-//        button.setImage(UIImage(named: "checkBox0"), for: .normal)
-        
         return button
     }()
     
@@ -112,14 +102,13 @@ final class AgreementViewController: BaseViewController, View {
         button.titleLabel?.font = .pretendar(weight: ._400, size: 14.0)
         button.setTitleColor(.label, for: .normal)
         button.contentHorizontalAlignment = .leading
-        
         return button
     }()
     
     // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configLayout()
         configNavigationBar()
     }
@@ -128,7 +117,6 @@ final class AgreementViewController: BaseViewController, View {
     
     init(reactor: AgreementReactor) {
         super.init()
-        
         self.reactor = reactor
     }
     
@@ -218,10 +206,8 @@ private extension AgreementViewController {
             label.text = "FANNI"
             label.font = .cafe24Ssurround(size: 18.0)
             label.textColor = .main2
-            
             return label
         }()
-        let leftBarItem = UIBarButtonItem(customView: titleLabel)
         
         let popViewButton: UIButton = {
             let button = UIButton()
@@ -231,12 +217,11 @@ private extension AgreementViewController {
                              action: #selector(tapRightBarButton),
                              for: .touchUpInside)
             button.titleLabel?.font = .pretendar(weight: ._400, size: 14.0)
-            
             return button
         }()
         
+        let leftBarItem = UIBarButtonItem(customView: titleLabel)
         let rightBarItem = UIBarButtonItem(customView: popViewButton)
-        
         navigationItem.leftBarButtonItem = leftBarItem
         navigationItem.rightBarButtonItem = rightBarItem
     }
@@ -358,6 +343,8 @@ private extension AgreementViewController {
     }
     
     @objc func tap() {
-        navigationController?.pushViewController(TestViewController(), animated: true)
+        let vc = TestViewController()
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
     }
 }
