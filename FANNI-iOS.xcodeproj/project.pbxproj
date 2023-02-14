@@ -23,6 +23,7 @@
 		ED3E3D8B2998AF5C00AEBFE5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3D8A2998AF5C00AEBFE5 /* BaseViewController.swift */; };
 		ED3E3D8D2998C11B00AEBFE5 /* AgreementReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3D8C2998C11B00AEBFE5 /* AgreementReactor.swift */; };
 		ED3E3D8F2998C61400AEBFE5 /* Inter.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED3E3D8E2998C61400AEBFE5 /* Inter.ttf */; };
+		ED4842F3299BB4890055E5AC /* Reactive+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4842F2299BB4890055E5AC /* Reactive+Extension.swift */; };
 		EDB7C3F9298FC9C100D60A9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3F8298FC9C100D60A9E /* AppDelegate.swift */; };
 		EDB7C3FB298FC9C100D60A9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3FA298FC9C100D60A9E /* SceneDelegate.swift */; };
 		EDB7C3FD298FC9C100D60A9E /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3FC298FC9C100D60A9E /* AuthViewController.swift */; };
@@ -74,6 +75,7 @@
 		ED3E3D8A2998AF5C00AEBFE5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		ED3E3D8C2998C11B00AEBFE5 /* AgreementReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementReactor.swift; sourceTree = "<group>"; };
 		ED3E3D8E2998C61400AEBFE5 /* Inter.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Inter.ttf; sourceTree = "<group>"; };
+		ED4842F2299BB4890055E5AC /* Reactive+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extension.swift"; sourceTree = "<group>"; };
 		EDB7C3F5298FC9C100D60A9E /* FANNI-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FANNI-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB7C3F8298FC9C100D60A9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDB7C3FA298FC9C100D60A9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			children = (
 				ED3E3D38299803BD00AEBFE5 /* UIColor+Extension.swift */,
 				ED3E3D43299818AE00AEBFE5 /* UIFont+Extenstion.swift */,
+				ED4842F2299BB4890055E5AC /* Reactive+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -611,6 +614,7 @@
 				EDB7C3FB298FC9C100D60A9E /* SceneDelegate.swift in Sources */,
 				ED3E3D8B2998AF5C00AEBFE5 /* BaseViewController.swift in Sources */,
 				2509A57729921504004953BA /* TempDomain.swift in Sources */,
+				ED4842F3299BB4890055E5AC /* Reactive+Extension.swift in Sources */,
 				2509A58329921F9C004953BA /* TempData.swift in Sources */,
 				ED3E3D312997F31E00AEBFE5 /* tempInfrastructure.swift in Sources */,
 				ED3E3D44299818AE00AEBFE5 /* UIFont+Extenstion.swift in Sources */,
