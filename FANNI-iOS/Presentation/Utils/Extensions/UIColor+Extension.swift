@@ -9,8 +9,11 @@ import UIKit
 
 extension UIColor {
     
-    static let tint1 = UIColor(rgb: 0xFBA37D)
-    static let tint2 = UIColor(rgb: 0xF47155)
+    static let main1 = UIColor(rgb: 0xFBA37D)
+    static let main2 = UIColor(rgb: 0xF47155)
+    static let sub1 = UIColor(rgb: 0xDE4E45)
+    static let sub2 = UIColor(rgb: 0xE8CDB8)
+    
     static let kakaoYellow = UIColor(rgb: 0xFEE500)
     
     convenience init(red: Int, green: Int, blue: Int, a: Int = 0xFF) {

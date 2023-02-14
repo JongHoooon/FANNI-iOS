@@ -110,7 +110,7 @@ private extension AuthViewController {
             let label = UILabel()
             label.text = "FANNI"
             label.font = .cafe24Ssurround(size: 18.0)
-            label.textColor = .tint2
+            label.textColor = .main2
             
             return label
         }()

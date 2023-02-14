@@ -34,7 +34,7 @@ final class AgreementViewController: BaseViewController, View {
         button.setTitle("회원가입하기", for: .normal)
         button.titleLabel?.font = .intert(weight: ._700, size: 16.0)
         button.titleLabel?.textColor = .systemBackground
-        button.backgroundColor = .tint1
+        button.backgroundColor = .main1
         button.layer.cornerRadius = 12.0
         button.addTarget(self, action: #selector(tap), for: .touchUpInside)
         return button
@@ -217,7 +217,7 @@ private extension AgreementViewController {
             let label = UILabel()
             label.text = "FANNI"
             label.font = .cafe24Ssurround(size: 18.0)
-            label.textColor = .tint2
+            label.textColor = .main2
             
             return label
         }()
@@ -379,7 +379,7 @@ extension Reactive where Base: UIButton {
             switch bool {
             case true:
                 button.isEnabled = true
-                button.backgroundColor = .tint1
+                button.backgroundColor = .main1
             case false:
                 button.backgroundColor = .systemGray2
                 button.isEnabled = false
