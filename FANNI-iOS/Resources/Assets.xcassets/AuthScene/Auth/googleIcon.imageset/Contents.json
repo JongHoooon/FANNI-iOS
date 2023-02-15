@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "checkBox11x.png",
+      "filename" : "googleIcon1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "checkBox12x.png",
+      "filename" : "googleIcon2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "checkBox13x.png",
+      "filename" : "googleIcon3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
