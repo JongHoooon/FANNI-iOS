@@ -64,9 +64,9 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.6.2)
-  - KakaoSDKAuth
-  - KakaoSDKCommon
-  - KakaoSDKUser
+  - KakaoSDKAuth (~> 2.13.1)
+  - KakaoSDKCommon (~> 2.13.1)
+  - KakaoSDKUser (~> 2.13.1)
   - Kingfisher (~> 7.0)
   - ReactorKit (~> 3.2.0)
   - RxAlamofire (~> 6.1.1)
@@ -74,9 +74,9 @@ DEPENDENCIES:
   - RxDataSources (~> 5.0.0)
   - RxFlow (~> 2.13.0)
   - RxGesture (~> 4.0.4)
-  - RxKakaoSDKAuth
-  - RxKakaoSDKCommon
-  - RxKakaoSDKUser
+  - RxKakaoSDKAuth (~> 2.13.1)
+  - RxKakaoSDKCommon (~> 2.13.1)
+  - RxKakaoSDKUser (~> 2.13.1)
   - RxSwift (~> 6.5.0)
   - RxViewController (~> 2.0.0)
   - SnapKit (~> 5.6.0)
@@ -132,6 +132,6 @@ SPEC CHECKSUMS:
   URLNavigator: 9e277a422a5c131a3e37970c2558e0e866cc22bd
   WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: bccf92a951b2e2b7904e5ba14be3a32ae1b553d8
+PODFILE CHECKSUM: 42ea9b510e6f7db3d59a08bef94a80572deb4177
 
 COCOAPODS: 1.11.3

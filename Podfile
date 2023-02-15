@@ -38,12 +38,12 @@ target 'FANNI-iOS' do
 
 	
 	#Auth
-	pod 'KakaoSDKCommon'
-	pod 'RxKakaoSDKCommon'
-	pod 'KakaoSDKAuth'
-	pod 'RxKakaoSDKAuth'
-	pod 'KakaoSDKUser'
-	pod 'RxKakaoSDKUser'
+	pod 'KakaoSDKCommon', '~> 2.13.1'
+	pod 'RxKakaoSDKCommon', '~> 2.13.1'
+	pod 'KakaoSDKAuth', '~> 2.13.1'
+	pod 'RxKakaoSDKAuth', '~> 2.13.1'
+	pod 'KakaoSDKUser', '~> 2.13.1'
+	pod 'RxKakaoSDKUser', '~> 2.13.1'
 
 	
   # Misc
