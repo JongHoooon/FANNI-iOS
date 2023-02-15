@@ -32,14 +32,22 @@ target 'FANNI-iOS' do
 	pod 'SnapKit', '~> 5.6.0'
 
 
-  	# Network
+  # Network
 	pod 'Alamofire', '~> 5.6.2'
 	pod 'Kingfisher', '~> 7.0'
 
 	
-  	# Misc
-	pod 'Then', '~> 3.0.0'
- 	 pod 'URLNavigator', '~> 2.4.1'
+	#Auth
+	pod 'KakaoSDKCommon'
+	pod 'RxKakaoSDKCommon'
+	pod 'KakaoSDKAuth'
+	pod 'RxKakaoSDKAuth'
+	pod 'KakaoSDKUser'
+	pod 'RxKakaoSDKUser'
+
+	
+  # Misc
+ 	pod 'URLNavigator', '~> 2.4.1'
 
 
   target 'FANNI-iOSTests' do
@@ -49,6 +57,14 @@ target 'FANNI-iOS' do
 
   target 'FANNI-iOSUITests' do
     # Pods for testing
+  end
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+        config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+      end
   end
 end
 

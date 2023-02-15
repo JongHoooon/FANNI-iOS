@@ -9,14 +9,27 @@
 /* Begin PBXBuildFile section */
 		2509A57729921504004953BA /* TempDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2509A57629921504004953BA /* TempDomain.swift */; };
 		2509A58129921596004953BA /* TempCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2509A58029921596004953BA /* TempCommon.swift */; };
-		2509A58329921F9C004953BA /* TempData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2509A58229921F9C004953BA /* TempData.swift */; };
 		5201E01346E13802D46963FA /* Pods_FANNI_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AED4DE771E31000676F197E /* Pods_FANNI_iOSTests.framework */; };
 		7FAF329169E341BDB541F61A /* Pods_FANNI_iOS_FANNI_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5C6D2236BB239EA86431BAA /* Pods_FANNI_iOS_FANNI_iOSUITests.framework */; };
 		AC31C3EB8B867AA450BCB6B8 /* Pods_FANNI_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D9235962052B2694D7EAE4 /* Pods_FANNI_iOS.framework */; };
 		ED3E3D312997F31E00AEBFE5 /* tempInfrastructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3D302997F31E00AEBFE5 /* tempInfrastructure.swift */; };
+		ED3E3D39299803BD00AEBFE5 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3D38299803BD00AEBFE5 /* UIColor+Extension.swift */; };
+		ED3E3D3C299808C400AEBFE5 /* PretendardVariable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED3E3D3B299808C400AEBFE5 /* PretendardVariable.ttf */; };
+		ED3E3D3E29980B6300AEBFE5 /* Cafe24Ssurround.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED3E3D3D29980B6300AEBFE5 /* Cafe24Ssurround.ttf */; };
+		ED3E3D44299818AE00AEBFE5 /* UIFont+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3D43299818AE00AEBFE5 /* UIFont+Extenstion.swift */; };
+		ED3E3D462998969400AEBFE5 /* AuthViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3D452998969400AEBFE5 /* AuthViewReactor.swift */; };
+		ED3E3D4B2998973A00AEBFE5 /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3D4A2998973A00AEBFE5 /* AgreementViewController.swift */; };
+		ED3E3D8B2998AF5C00AEBFE5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3D8A2998AF5C00AEBFE5 /* BaseViewController.swift */; };
+		ED3E3D8D2998C11B00AEBFE5 /* AgreementReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3D8C2998C11B00AEBFE5 /* AgreementReactor.swift */; };
+		ED3E3D8F2998C61400AEBFE5 /* Inter.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED3E3D8E2998C61400AEBFE5 /* Inter.ttf */; };
+		ED451F41299BE9CB000AA855 /* NSNotification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED451F40299BE9CB000AA855 /* NSNotification+Extension.swift */; };
+		ED451F43299BEC72000AA855 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED451F42299BEC72000AA855 /* UserManager.swift */; };
+		ED451F45299BEF5F000AA855 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED451F44299BEF5F000AA855 /* TestViewController.swift */; };
+		ED4842F3299BB4890055E5AC /* Reactive+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4842F2299BB4890055E5AC /* Reactive+Extension.swift */; };
+		ED4842F5299BC88B0055E5AC /* KakaoAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4842F4299BC88B0055E5AC /* KakaoAuthService.swift */; };
 		EDB7C3F9298FC9C100D60A9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3F8298FC9C100D60A9E /* AppDelegate.swift */; };
 		EDB7C3FB298FC9C100D60A9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3FA298FC9C100D60A9E /* SceneDelegate.swift */; };
-		EDB7C3FD298FC9C100D60A9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3FC298FC9C100D60A9E /* ViewController.swift */; };
+		EDB7C3FD298FC9C100D60A9E /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3FC298FC9C100D60A9E /* AuthViewController.swift */; };
 		EDB7C402298FC9C200D60A9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB7C401298FC9C200D60A9E /* Assets.xcassets */; };
 		EDB7C405298FC9C200D60A9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB7C403298FC9C200D60A9E /* LaunchScreen.storyboard */; };
 		EDB7C410298FC9C200D60A9E /* FANNI_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C40F298FC9C200D60A9E /* FANNI_iOSTests.swift */; };
@@ -48,7 +61,6 @@
 		1AED4DE771E31000676F197E /* Pods_FANNI_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FANNI_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2509A57629921504004953BA /* TempDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TempDomain.swift; path = "FANNI-iOS/Domain/TempDomain.swift"; sourceTree = SOURCE_ROOT; };
 		2509A58029921596004953BA /* TempCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempCommon.swift; sourceTree = "<group>"; };
-		2509A58229921F9C004953BA /* TempData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempData.swift; sourceTree = "<group>"; };
 		30F5EAFECD49C961B31E43CA /* Pods-FANNI-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FANNI-iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-FANNI-iOSTests/Pods-FANNI-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B9D9235962052B2694D7EAE4 /* Pods_FANNI_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FANNI_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C01F0E1E90526330A260CB27 /* Pods-FANNI-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FANNI-iOS.release.xcconfig"; path = "Target Support Files/Pods-FANNI-iOS/Pods-FANNI-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -56,10 +68,24 @@
 		DACD483FBA15B2469A5E958F /* Pods-FANNI-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FANNI-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-FANNI-iOSTests/Pods-FANNI-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		E5C6D2236BB239EA86431BAA /* Pods_FANNI_iOS_FANNI_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FANNI_iOS_FANNI_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3E3D302997F31E00AEBFE5 /* tempInfrastructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempInfrastructure.swift; sourceTree = "<group>"; };
+		ED3E3D38299803BD00AEBFE5 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		ED3E3D3B299808C400AEBFE5 /* PretendardVariable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardVariable.ttf; sourceTree = "<group>"; };
+		ED3E3D3D29980B6300AEBFE5 /* Cafe24Ssurround.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cafe24Ssurround.ttf; sourceTree = "<group>"; };
+		ED3E3D43299818AE00AEBFE5 /* UIFont+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extenstion.swift"; sourceTree = "<group>"; };
+		ED3E3D452998969400AEBFE5 /* AuthViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthViewReactor.swift; path = ../../../../../../../AuthViewReactor.swift; sourceTree = "<group>"; };
+		ED3E3D4A2998973A00AEBFE5 /* AgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
+		ED3E3D8A2998AF5C00AEBFE5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		ED3E3D8C2998C11B00AEBFE5 /* AgreementReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementReactor.swift; sourceTree = "<group>"; };
+		ED3E3D8E2998C61400AEBFE5 /* Inter.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Inter.ttf; sourceTree = "<group>"; };
+		ED451F40299BE9CB000AA855 /* NSNotification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+Extension.swift"; sourceTree = "<group>"; };
+		ED451F42299BEC72000AA855 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		ED451F44299BEF5F000AA855 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		ED4842F2299BB4890055E5AC /* Reactive+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extension.swift"; sourceTree = "<group>"; };
+		ED4842F4299BC88B0055E5AC /* KakaoAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuthService.swift; sourceTree = "<group>"; };
 		EDB7C3F5298FC9C100D60A9E /* FANNI-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FANNI-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB7C3F8298FC9C100D60A9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDB7C3FA298FC9C100D60A9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EDB7C3FC298FC9C100D60A9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EDB7C3FC298FC9C100D60A9E /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		EDB7C401298FC9C200D60A9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDB7C404298FC9C200D60A9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDB7C406298FC9C200D60A9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,7 +136,8 @@
 		2509A57A2992151A004953BA /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				2509A58229921F9C004953BA /* TempData.swift */,
+				ED4842F4299BC88B0055E5AC /* KakaoAuthService.swift */,
+				ED451F42299BEC72000AA855 /* UserManager.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -144,6 +171,95 @@
 				ED3E3D302997F31E00AEBFE5 /* tempInfrastructure.swift */,
 			);
 			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		ED3E3D322997F85800AEBFE5 /* Reactor */ = {
+			isa = PBXGroup;
+			children = (
+				ED3E3D452998969400AEBFE5 /* AuthViewReactor.swift */,
+			);
+			path = Reactor;
+			sourceTree = "<group>";
+		};
+		ED3E3D332997F85B00AEBFE5 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				ED3E3D352997F86F00AEBFE5 /* View */,
+				ED3E3D322997F85800AEBFE5 /* Reactor */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		ED3E3D342997F85E00AEBFE5 /* AuthScene */ = {
+			isa = PBXGroup;
+			children = (
+				ED3E3D332997F85B00AEBFE5 /* Auth */,
+				ED3E3D47299896E200AEBFE5 /* Agreement */,
+			);
+			path = AuthScene;
+			sourceTree = "<group>";
+		};
+		ED3E3D352997F86F00AEBFE5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EDB7C3FC298FC9C100D60A9E /* AuthViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ED3E3D362998037B00AEBFE5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				ED3E3D3A2998089900AEBFE5 /* Fonts */,
+				ED3E3D372998039C00AEBFE5 /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		ED3E3D372998039C00AEBFE5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ED3E3D38299803BD00AEBFE5 /* UIColor+Extension.swift */,
+				ED3E3D43299818AE00AEBFE5 /* UIFont+Extenstion.swift */,
+				ED4842F2299BB4890055E5AC /* Reactive+Extension.swift */,
+				ED451F40299BE9CB000AA855 /* NSNotification+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ED3E3D3A2998089900AEBFE5 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				ED3E3D8E2998C61400AEBFE5 /* Inter.ttf */,
+				ED3E3D3B299808C400AEBFE5 /* PretendardVariable.ttf */,
+				ED3E3D3D29980B6300AEBFE5 /* Cafe24Ssurround.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		ED3E3D47299896E200AEBFE5 /* Agreement */ = {
+			isa = PBXGroup;
+			children = (
+				ED3E3D492998972600AEBFE5 /* View */,
+				ED3E3D482998972400AEBFE5 /* Reactor */,
+			);
+			path = Agreement;
+			sourceTree = "<group>";
+		};
+		ED3E3D482998972400AEBFE5 /* Reactor */ = {
+			isa = PBXGroup;
+			children = (
+				ED3E3D8C2998C11B00AEBFE5 /* AgreementReactor.swift */,
+			);
+			path = Reactor;
+			sourceTree = "<group>";
+		};
+		ED3E3D492998972600AEBFE5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ED3E3D4A2998973A00AEBFE5 /* AgreementViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		EDB7C3EC298FC9C100D60A9E = {
@@ -212,7 +328,10 @@
 		EDB7C429298FCB2300D60A9E /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				EDB7C3FC298FC9C100D60A9E /* ViewController.swift */,
+				ED3E3D8A2998AF5C00AEBFE5 /* BaseViewController.swift */,
+				ED451F44299BEF5F000AA855 /* TestViewController.swift */,
+				ED3E3D342997F85E00AEBFE5 /* AuthScene */,
+				ED3E3D362998037B00AEBFE5 /* Utils */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -346,7 +465,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDB7C431298FDA0F00D60A9E /* .swiftlint.yml in Resources */,
+				ED3E3D3C299808C400AEBFE5 /* PretendardVariable.ttf in Resources */,
 				EDB7C405298FC9C200D60A9E /* LaunchScreen.storyboard in Resources */,
+				ED3E3D8F2998C61400AEBFE5 /* Inter.ttf in Resources */,
+				ED3E3D3E29980B6300AEBFE5 /* Cafe24Ssurround.ttf in Resources */,
 				EDB7C402298FC9C200D60A9E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,12 +616,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				2509A58129921596004953BA /* TempCommon.swift in Sources */,
-				EDB7C3FD298FC9C100D60A9E /* ViewController.swift in Sources */,
+				ED3E3D8D2998C11B00AEBFE5 /* AgreementReactor.swift in Sources */,
+				ED451F45299BEF5F000AA855 /* TestViewController.swift in Sources */,
+				EDB7C3FD298FC9C100D60A9E /* AuthViewController.swift in Sources */,
 				EDB7C3F9298FC9C100D60A9E /* AppDelegate.swift in Sources */,
+				ED3E3D4B2998973A00AEBFE5 /* AgreementViewController.swift in Sources */,
+				ED4842F5299BC88B0055E5AC /* KakaoAuthService.swift in Sources */,
+				ED451F43299BEC72000AA855 /* UserManager.swift in Sources */,
 				EDB7C3FB298FC9C100D60A9E /* SceneDelegate.swift in Sources */,
+				ED3E3D8B2998AF5C00AEBFE5 /* BaseViewController.swift in Sources */,
 				2509A57729921504004953BA /* TempDomain.swift in Sources */,
-				2509A58329921F9C004953BA /* TempData.swift in Sources */,
+				ED4842F3299BB4890055E5AC /* Reactive+Extension.swift in Sources */,
 				ED3E3D312997F31E00AEBFE5 /* tempInfrastructure.swift in Sources */,
+				ED3E3D44299818AE00AEBFE5 /* UIFont+Extenstion.swift in Sources */,
+				ED3E3D39299803BD00AEBFE5 /* UIColor+Extension.swift in Sources */,
+				ED3E3D462998969400AEBFE5 /* AuthViewReactor.swift in Sources */,
+				ED451F41299BE9CB000AA855 /* NSNotification+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
