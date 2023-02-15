@@ -12,12 +12,12 @@
 		5201E01346E13802D46963FA /* Pods_FANNI_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AED4DE771E31000676F197E /* Pods_FANNI_iOSTests.framework */; };
 		7FAF329169E341BDB541F61A /* Pods_FANNI_iOS_FANNI_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5C6D2236BB239EA86431BAA /* Pods_FANNI_iOS_FANNI_iOSUITests.framework */; };
 		AC31C3EB8B867AA450BCB6B8 /* Pods_FANNI_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D9235962052B2694D7EAE4 /* Pods_FANNI_iOS.framework */; };
+		ED280BCF299D17120089570C /* AuthViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED280BCE299D17120089570C /* AuthViewReactor.swift */; };
 		ED3E3D312997F31E00AEBFE5 /* tempInfrastructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3D302997F31E00AEBFE5 /* tempInfrastructure.swift */; };
 		ED3E3D39299803BD00AEBFE5 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3D38299803BD00AEBFE5 /* UIColor+Extension.swift */; };
 		ED3E3D3C299808C400AEBFE5 /* PretendardVariable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED3E3D3B299808C400AEBFE5 /* PretendardVariable.ttf */; };
 		ED3E3D3E29980B6300AEBFE5 /* Cafe24Ssurround.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED3E3D3D29980B6300AEBFE5 /* Cafe24Ssurround.ttf */; };
 		ED3E3D44299818AE00AEBFE5 /* UIFont+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3D43299818AE00AEBFE5 /* UIFont+Extenstion.swift */; };
-		ED3E3D462998969400AEBFE5 /* AuthViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3D452998969400AEBFE5 /* AuthViewReactor.swift */; };
 		ED3E3D4B2998973A00AEBFE5 /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3D4A2998973A00AEBFE5 /* AgreementViewController.swift */; };
 		ED3E3D8B2998AF5C00AEBFE5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3D8A2998AF5C00AEBFE5 /* BaseViewController.swift */; };
 		ED3E3D8D2998C11B00AEBFE5 /* AgreementReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3D8C2998C11B00AEBFE5 /* AgreementReactor.swift */; };
@@ -67,12 +67,12 @@
 		C82B1C940FE4960C36FA7CBB /* Pods-FANNI-iOS-FANNI-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FANNI-iOS-FANNI-iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-FANNI-iOS-FANNI-iOSUITests/Pods-FANNI-iOS-FANNI-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DACD483FBA15B2469A5E958F /* Pods-FANNI-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FANNI-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-FANNI-iOSTests/Pods-FANNI-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		E5C6D2236BB239EA86431BAA /* Pods_FANNI_iOS_FANNI_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FANNI_iOS_FANNI_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED280BCE299D17120089570C /* AuthViewReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewReactor.swift; sourceTree = "<group>"; };
 		ED3E3D302997F31E00AEBFE5 /* tempInfrastructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempInfrastructure.swift; sourceTree = "<group>"; };
 		ED3E3D38299803BD00AEBFE5 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		ED3E3D3B299808C400AEBFE5 /* PretendardVariable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardVariable.ttf; sourceTree = "<group>"; };
 		ED3E3D3D29980B6300AEBFE5 /* Cafe24Ssurround.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cafe24Ssurround.ttf; sourceTree = "<group>"; };
 		ED3E3D43299818AE00AEBFE5 /* UIFont+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extenstion.swift"; sourceTree = "<group>"; };
-		ED3E3D452998969400AEBFE5 /* AuthViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthViewReactor.swift; path = ../../../../../../../AuthViewReactor.swift; sourceTree = "<group>"; };
 		ED3E3D4A2998973A00AEBFE5 /* AgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
 		ED3E3D8A2998AF5C00AEBFE5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		ED3E3D8C2998C11B00AEBFE5 /* AgreementReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementReactor.swift; sourceTree = "<group>"; };
@@ -176,7 +176,7 @@
 		ED3E3D322997F85800AEBFE5 /* Reactor */ = {
 			isa = PBXGroup;
 			children = (
-				ED3E3D452998969400AEBFE5 /* AuthViewReactor.swift */,
+				ED280BCE299D17120089570C /* AuthViewReactor.swift */,
 			);
 			path = Reactor;
 			sourceTree = "<group>";
@@ -630,7 +630,7 @@
 				ED3E3D312997F31E00AEBFE5 /* tempInfrastructure.swift in Sources */,
 				ED3E3D44299818AE00AEBFE5 /* UIFont+Extenstion.swift in Sources */,
 				ED3E3D39299803BD00AEBFE5 /* UIColor+Extension.swift in Sources */,
-				ED3E3D462998969400AEBFE5 /* AuthViewReactor.swift in Sources */,
+				ED280BCF299D17120089570C /* AuthViewReactor.swift in Sources */,
 				ED451F41299BE9CB000AA855 /* NSNotification+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
