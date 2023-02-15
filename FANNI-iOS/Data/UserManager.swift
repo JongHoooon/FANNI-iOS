@@ -25,4 +25,10 @@ final class UserManager {
     
     @UserDefault(key: "kakaoNickname", defaultValue: "")
     static var kakaoNickname: String
+    
+    @UserDefault(key: "email", defaultValue: "")
+    static var kakaoEmail: String
+    
+    @UserDefault(key: "birthday", defaultValue: "")
+    static var birthday: String
 }

@@ -12,12 +12,14 @@ final class TestViewController: BaseViewController {
     
     let nickName: String = UserManager.kakaoNickname
     let id: Int = UserManager.kakaoID
+    let email: String = UserManager.kakaoEmail
+    let birthday: String = UserManager.birthday
     
     // MARK: - UI
     private lazy var label: UILabel = {
         let label = UILabel()
         
-        label.text = "환영합니다🎉\n\nID: \(id)\n\nnickName: \(nickName)"
+        label.text = "환영합니다🎉\n\nID: \(id)\n\nnickName: \(nickName)\n\n\(email)\n\nbirthday: \(birthday)"
         label.textColor = .label
         label.font = .pretendar(weight: ._700, size: 32.0)
         label.numberOfLines = 0
