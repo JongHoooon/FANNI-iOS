@@ -32,7 +32,7 @@ final class AgreementViewController: BaseViewController, View {
         let button = UIButton()
         button.setTitle("회원가입하기", for: .normal)
         button.titleLabel?.font = .intert(weight: ._700, size: 16.0)
-        button.titleLabel?.textColor = .Background.background1
+        button.titleLabel?.textColor = .white
         button.backgroundColor = .main1
         button.layer.cornerRadius = 12.0
         button.addTarget(self, action: #selector(tap), for: .touchUpInside)
@@ -348,9 +348,9 @@ private extension AgreementViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    // TODO: coordinator로 수정
     @objc func tap() {
-        let vc = TestViewController()
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true)
+        let vc = OnboardingFirstViewController(reactor: OnboardingReactor())
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

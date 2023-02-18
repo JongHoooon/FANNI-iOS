@@ -13,6 +13,7 @@
 		7FAF329169E341BDB541F61A /* Pods_FANNI_iOS_FANNI_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5C6D2236BB239EA86431BAA /* Pods_FANNI_iOS_FANNI_iOSUITests.framework */; };
 		AC31C3EB8B867AA450BCB6B8 /* Pods_FANNI_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D9235962052B2694D7EAE4 /* Pods_FANNI_iOS.framework */; };
 		ED050B0D29A0CFAE008E2961 /* OnboardingFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED050B0C29A0CFAE008E2961 /* OnboardingFirstViewController.swift */; };
+		ED050B0F29A0D186008E2961 /* OnboardingFirstReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED050B0E29A0D186008E2961 /* OnboardingFirstReactor.swift */; };
 		ED280BCF299D17120089570C /* AuthViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED280BCE299D17120089570C /* AuthViewReactor.swift */; };
 		ED3E3D312997F31E00AEBFE5 /* tempInfrastructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3D302997F31E00AEBFE5 /* tempInfrastructure.swift */; };
 		ED3E3D39299803BD00AEBFE5 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3D38299803BD00AEBFE5 /* UIColor+Extension.swift */; };
@@ -25,7 +26,6 @@
 		ED3E3D8F2998C61400AEBFE5 /* Inter.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED3E3D8E2998C61400AEBFE5 /* Inter.ttf */; };
 		ED451F41299BE9CB000AA855 /* NSNotification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED451F40299BE9CB000AA855 /* NSNotification+Extension.swift */; };
 		ED451F43299BEC72000AA855 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED451F42299BEC72000AA855 /* UserManager.swift */; };
-		ED451F45299BEF5F000AA855 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED451F44299BEF5F000AA855 /* TestViewController.swift */; };
 		ED4842F3299BB4890055E5AC /* Reactive+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4842F2299BB4890055E5AC /* Reactive+Extension.swift */; };
 		ED4842F5299BC88B0055E5AC /* KakaoAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4842F4299BC88B0055E5AC /* KakaoAuthService.swift */; };
 		ED5F49C429A06F5400693FBA /* OSLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED5F49C329A06F5400693FBA /* OSLog.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -71,6 +71,7 @@
 		DACD483FBA15B2469A5E958F /* Pods-FANNI-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FANNI-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-FANNI-iOSTests/Pods-FANNI-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		E5C6D2236BB239EA86431BAA /* Pods_FANNI_iOS_FANNI_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FANNI_iOS_FANNI_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED050B0C29A0CFAE008E2961 /* OnboardingFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFirstViewController.swift; sourceTree = "<group>"; };
+		ED050B0E29A0D186008E2961 /* OnboardingFirstReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFirstReactor.swift; sourceTree = "<group>"; };
 		ED280BCE299D17120089570C /* AuthViewReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewReactor.swift; sourceTree = "<group>"; };
 		ED3E3D302997F31E00AEBFE5 /* tempInfrastructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempInfrastructure.swift; sourceTree = "<group>"; };
 		ED3E3D38299803BD00AEBFE5 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -83,7 +84,6 @@
 		ED3E3D8E2998C61400AEBFE5 /* Inter.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Inter.ttf; sourceTree = "<group>"; };
 		ED451F40299BE9CB000AA855 /* NSNotification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+Extension.swift"; sourceTree = "<group>"; };
 		ED451F42299BEC72000AA855 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
-		ED451F44299BEF5F000AA855 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		ED4842F2299BB4890055E5AC /* Reactive+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extension.swift"; sourceTree = "<group>"; };
 		ED4842F4299BC88B0055E5AC /* KakaoAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuthService.swift; sourceTree = "<group>"; };
 		ED5F49C329A06F5400693FBA /* OSLog.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OSLog.framework; path = System/Library/Frameworks/OSLog.framework; sourceTree = SDKROOT; };
@@ -193,6 +193,7 @@
 		ED050B0B29A0CF60008E2961 /* Reactor */ = {
 			isa = PBXGroup;
 			children = (
+				ED050B0E29A0D186008E2961 /* OnboardingFirstReactor.swift */,
 			);
 			path = Reactor;
 			sourceTree = "<group>";
@@ -363,7 +364,6 @@
 			isa = PBXGroup;
 			children = (
 				ED3E3D8A2998AF5C00AEBFE5 /* BaseViewController.swift */,
-				ED451F44299BEF5F000AA855 /* TestViewController.swift */,
 				ED3E3D342997F85E00AEBFE5 /* AuthScene */,
 				ED3E3D362998037B00AEBFE5 /* Utils */,
 			);
@@ -652,10 +652,10 @@
 			files = (
 				2509A58129921596004953BA /* TempCommon.swift in Sources */,
 				ED3E3D8D2998C11B00AEBFE5 /* AgreementReactor.swift in Sources */,
-				ED451F45299BEF5F000AA855 /* TestViewController.swift in Sources */,
 				ED050B0D29A0CFAE008E2961 /* OnboardingFirstViewController.swift in Sources */,
 				EDB7C3FD298FC9C100D60A9E /* AuthViewController.swift in Sources */,
 				EDB7C3F9298FC9C100D60A9E /* AppDelegate.swift in Sources */,
+				ED050B0F29A0D186008E2961 /* OnboardingFirstReactor.swift in Sources */,
 				ED3E3D4B2998973A00AEBFE5 /* AgreementViewController.swift in Sources */,
 				ED5F49C629A06F8500693FBA /* Log.swift in Sources */,
 				ED4842F5299BC88B0055E5AC /* KakaoAuthService.swift in Sources */,

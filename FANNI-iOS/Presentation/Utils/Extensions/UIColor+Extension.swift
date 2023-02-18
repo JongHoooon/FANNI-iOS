@@ -24,6 +24,9 @@ extension UIColor {
     /// deactive button color: #F7D4C5
     static let deactiveButton = UIColor(rgb: 0xF7D4C5)
     
+    /// deactive textField color: #E5E5EC
+    static let deactiveTextField = UIColor(rgb: 0xE5E5EC)
+    
     /// Branding Font Color
     struct Font {
         
