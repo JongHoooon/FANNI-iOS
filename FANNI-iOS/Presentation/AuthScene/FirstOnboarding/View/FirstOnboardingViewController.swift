@@ -1,5 +1,5 @@
 //
-//  OnboardingFirstViewController.swift
+//  FirstOnboardingViewController.swift
 //  FANNI-iOS
 //
 //  Created by JongHoon on 2023/02/18.
@@ -11,7 +11,7 @@ import ReactorKit
 import RxSwift
 import RxCocoa
 
-final class OnboardingFirstViewController: BaseViewController, View {
+final class FirstOnboardingViewController: BaseViewController, View {
     
     // MARK: - Proprties
     
@@ -116,7 +116,7 @@ final class OnboardingFirstViewController: BaseViewController, View {
     
     // MARK: - Init
     
-    init(reactor: OnboardingReactor) {
+    init(reactor: FirstOnboardingReactor) {
         super.init()
         self.reactor = reactor
     }
@@ -128,9 +128,9 @@ final class OnboardingFirstViewController: BaseViewController, View {
 
 // MARK: - Bind
 
-extension OnboardingFirstViewController {
+extension FirstOnboardingViewController {
     
-    func bind(reactor: OnboardingReactor) {
+    func bind(reactor: FirstOnboardingReactor) {
         
         // MARK: Action
         
@@ -235,7 +235,7 @@ extension OnboardingFirstViewController {
     }
 }
 
-private extension OnboardingFirstViewController {
+private extension FirstOnboardingViewController {
     
     func configNavigationBar() {
         let titleLabel: UILabel = {

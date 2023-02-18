@@ -1,5 +1,5 @@
 //
-//  OnboardingFirstReactor.swift
+//  FirstOnboardingReactor.swift
 //  FANNI-iOS
 //
 //  Created by JongHoon on 2023/02/18.
@@ -9,7 +9,7 @@ import ReactorKit
 import RxCocoa
 import RxSwift
 
-final class OnboardingReactor: Reactor {
+final class FirstOnboardingReactor: Reactor {
     
     enum Action {
         case tapUsedNicknameButton

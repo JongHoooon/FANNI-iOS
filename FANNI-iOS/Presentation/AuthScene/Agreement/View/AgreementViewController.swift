@@ -350,7 +350,7 @@ private extension AgreementViewController {
     
     // TODO: coordinator로 수정
     @objc func tap() {
-        let vc = OnboardingFirstViewController(reactor: OnboardingReactor())
+        let vc = FirstOnboardingViewController(reactor: FirstOnboardingReactor())
         navigationController?.pushViewController(vc, animated: true)
     }
 }
