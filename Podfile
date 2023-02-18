@@ -44,6 +44,7 @@ target 'FANNI-iOS' do
 	pod 'RxKakaoSDKAuth', '~> 2.13.1'
 	pod 'KakaoSDKUser', '~> 2.13.1'
 	pod 'RxKakaoSDKUser', '~> 2.13.1'
+	pod 'GoogleSignIn', '~> 7.0.0'
 
 	
   # Misc
