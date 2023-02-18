@@ -95,6 +95,9 @@ final class OnboardingFirstViewController: BaseViewController, View {
         textField.tintColor = .main1
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16.0, height: 56.0))
         textField.leftViewMode = .always
+        textField.keyboardType = .namePhonePad
+        
+        textField.isHidden = true
         
         return textField
     }()
@@ -105,6 +108,10 @@ final class OnboardingFirstViewController: BaseViewController, View {
         super.viewDidLoad()
         configLayout()
         configNavigationBar()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        newNicknameTextField.endEditing(true)
     }
     
     // MARK: - Init
@@ -127,45 +134,99 @@ extension OnboardingFirstViewController {
         
         // MARK: Action
         
-//        utilizationCheckButton.rx.tap
-//            .map { Reactor.Action.tapUtilizationCheckButton }
-//            .bind(to: reactor.action)
-//            .disposed(by: disposeBag)
-//
-//        personalInfoCheckButton.rx.tap
-//            .map { Reactor.Action.tapPersonalInfoCheckButton }
-//            .bind(to: reactor.action)
-//            .disposed(by: disposeBag)
-//        // MARK: State
-//
-//        let utilizationCheckButtonState = reactor.state.asObservable()
-//            .map { $0.utilizationCheckButton }
-//            .asDriver(onErrorJustReturn: false)
-//            .distinctUntilChanged()
-//
-//        let personalInfoCheckButtonState = reactor.state.asObservable()
-//            .map { $0.personalInfoCheckButton }
-//            .asDriver(onErrorJustReturn: false)
-//            .distinctUntilChanged()
-//
-//        utilizationCheckButtonState
-//            .drive(utilizationCheckButton.rx.isCheck)
-//            .disposed(by: disposeBag)
-//
-//        personalInfoCheckButtonState
-//            .drive(personalInfoCheckButton.rx.isCheck)
-//            .disposed(by: disposeBag)
-//
-//        Observable.combineLatest(
-//            utilizationCheckButtonState.asObservable(),
-//            personalInfoCheckButtonState.asObservable()
-//        )
-//        .map { (utilization, personal) -> Bool in
-//            return personal && utilization ? true : false
-//        }
-//        .asDriver(onErrorJustReturn: false)
-//        .drive(signinButton.rx.isEnable)
-//        .disposed(by: disposeBag)
+        let editingDidEnd = newNicknameTextField.rx.controlEvent(.editingDidEnd)
+            .observe(on: MainScheduler.asyncInstance)
+            .share()
+        
+        let editingDidBegin = newNicknameTextField.rx.controlEvent(.editingDidBegin)
+            .observe(on: MainScheduler.asyncInstance)
+            .share()
+        
+        editingDidBegin
+            .map { Reactor.Action.editingDidBegin }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        editingDidEnd
+            .map { Reactor.Action.editingDidEnd }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        usedNicknameCheckButton.rx.tap
+            .observe(on: MainScheduler.asyncInstance)
+            .map { Reactor.Action.tapUsedNicknameButton }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        newNicknameCheckButton.rx.tap
+            .observe(on: MainScheduler.asyncInstance)
+            .map { Reactor.Action.tapNewNicknameButton }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        newNicknameTextField.rx.text
+            .orEmpty
+            .observe(on: MainScheduler.asyncInstance)
+            .map { Reactor.Action.inputNewNickname($0) }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+
+        // MARK: State
+
+        let usedNicknameButonState = reactor.state.asObservable()
+            .map { $0.usedNicknameButton }
+            .asDriver(onErrorJustReturn: false)
+            
+        let newNicknameButonState = reactor.state.asObservable()
+            .observe(on: MainScheduler.asyncInstance)
+            .map { $0.newNicknameButton }
+            .asDriver(onErrorJustReturn: false)
+        
+        let newNickname = reactor.state.asObservable()
+            .observe(on: MainScheduler.asyncInstance)
+            .map { $0.newNickname }
+            
+        usedNicknameButonState
+            .distinctUntilChanged()
+            .drive(usedNicknameCheckButton.rx.isCheck)
+            .disposed(by: disposeBag)
+        
+        newNicknameButonState
+            .distinctUntilChanged()
+            .drive(newNicknameCheckButton.rx.isCheck)
+            .disposed(by: disposeBag)
+        
+        newNicknameButonState
+            .map { !$0 }
+            .drive(newNicknameTextField.rx.isHiddenAnimatioin)
+            .disposed(by: disposeBag)
+            
+        Observable.combineLatest(usedNicknameButonState.asObservable(), newNicknameButonState.asObservable(), newNickname)
+            .map { (usedButton, newButton, newName) -> Bool in
+                return usedButton || (newButton && !newName.isEmpty) ? true : false
+            }
+            .asDriver(onErrorJustReturn: false)
+            .drive(nextButton.rx.isEnable)
+            .disposed(by: disposeBag)
+        
+        reactor.state.asObservable().map { $0.isReponder }
+            .asDriver(onErrorJustReturn: false)
+            .drive(newNicknameTextField.rx.becomeResponder)
+            .disposed(by: disposeBag)
+            
+        // MARK: Control Event
+        
+        editingDidBegin
+            .map { return UIColor.main2 }
+            .asDriver(onErrorJustReturn: .deactiveTextField)
+            .drive(newNicknameTextField.rx.borderColor)
+            .disposed(by: disposeBag)
+        
+        editingDidEnd
+            .map { return UIColor.deactiveTextField }
+            .asDriver(onErrorJustReturn: .main2)
+            .drive(newNicknameTextField.rx.borderColor)
+            .disposed(by: disposeBag)
     }
 }
 

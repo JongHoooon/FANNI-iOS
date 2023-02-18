@@ -24,6 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.backgroundColor = .systemBackground
         
         let viewController = AuthViewController(reactor: AuthReactor())
+//        let viewController = OnboardingFirstViewController(reactor: OnboardingReactor())
         window?.rootViewController = UINavigationController(rootViewController: viewController)
         window?.makeKeyAndVisible()
     }

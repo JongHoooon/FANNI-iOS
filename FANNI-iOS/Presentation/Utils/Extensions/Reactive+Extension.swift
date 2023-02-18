@@ -5,7 +5,7 @@
 //  Created by JongHoon on 2023/02/14.
 //
 
-import Foundation
+import UIKit
 import RxSwift
 
 // MARK: - Agreement View
@@ -31,6 +31,50 @@ extension Reactive where Base: UIButton {
             case false:
                 button.backgroundColor = .deactiveButton
                 button.isEnabled = false
+            }
+        }
+    }
+}
+
+// MARK: - OnboardingFirst View
+
+extension Reactive where Base: UITextField {
+    var borderColor: Binder<UIColor?> {
+        return Binder(self.base) { textField, color in
+            textField.layer.borderColor = color?.cgColor
+        }
+    }
+}
+
+extension Reactive where Base: UITextField {
+    var isHiddenAnimatioin: Binder<Bool> {
+        return Binder(self.base) { textField, bool in
+            switch bool {
+            case true:
+                UIView.animate(withDuration: 0.3) {
+                    // textField.isHidden = bool
+                    textField.alpha = 0
+                }
+                textField.endEditing(true)
+                textField.text = ""
+            case false:
+                textField.isHidden = bool
+                UIView.animate(withDuration: 0.3) {
+                    textField.alpha = 1
+                }
+            }
+        }
+    }
+}
+
+extension Reactive where Base: UITextField {
+    var becomeResponder: Binder<Bool> {
+        return Binder(self.base) { textField, bool in
+            switch bool {
+            case true:
+                textField.becomeFirstResponder()
+            case false:
+                textField.resignFirstResponder()
             }
         }
     }
