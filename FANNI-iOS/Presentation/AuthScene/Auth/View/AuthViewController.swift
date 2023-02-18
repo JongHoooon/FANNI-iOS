@@ -61,6 +61,20 @@ final class AuthViewController: BaseViewController, View {
         button.layer.cornerRadius = 12.0
         return button
     }()
+    
+    private lazy var googleLoginButton: UIButton = {
+        var button = UIButton()
+        button.setTitle("  Google로 시작하기", for: .normal)
+        button.setTitleColor(.label, for: .normal)
+        button.layer.borderWidth = 1.0
+        button.layer.borderColor = UIColor(rgb: 0x999999).cgColor
+        button.titleLabel?.font = .pretendar(weight: ._400, size: 16.0)
+        button.setImage(UIImage(named: "googleIcon"), for: .normal)
+        button.semanticContentAttribute = .forceLeftToRight
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 12.0
+        return button
+    }()
         
     // MARK: - Life Cycle
     
@@ -126,12 +140,32 @@ private extension AuthViewController {
     func configLayout() {
         
         view.backgroundColor = .systemBackground
+        let loginStackView: UIStackView  = {
+            let stackView = UIStackView(arrangedSubviews: [
+                kakaoLoginButton,
+                appleLoginButton,
+                googleLoginButton
+            ])
+            stackView.axis = .vertical
+            stackView.distribution = .equalSpacing
+            stackView.spacing = 16.0
+            [
+                kakaoLoginButton,
+                appleLoginButton,
+                googleLoginButton
+            ].forEach {
+                $0.snp.makeConstraints {
+                    $0.height.equalTo(44.0)
+                }
+            }
+            
+            return stackView
+        }()
         
         [
             firstLabel,
             secondLabel,
-            kakaoLoginButton,
-            appleLoginButton
+            loginStackView
         ].forEach { view.addSubview($0) }
                 
         firstLabel.snp.makeConstraints {
@@ -144,16 +178,9 @@ private extension AuthViewController {
             $0.centerX.equalToSuperview()
         }
         
-        kakaoLoginButton.snp.makeConstraints {
+        loginStackView.snp.makeConstraints {
             $0.top.equalTo(secondLabel.snp.bottom).offset(100.0)
             $0.leading.trailing.equalToSuperview().inset(20.0)
-            $0.height.equalTo(44.0)
-        }
-        
-        appleLoginButton.snp.makeConstraints {
-            $0.top.equalTo(kakaoLoginButton.snp.bottom).offset(16.0)
-            $0.leading.trailing.equalToSuperview().inset(20.0)
-            $0.height.equalTo(44.0)
         }
     }
     
