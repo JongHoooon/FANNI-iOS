@@ -30,6 +30,8 @@
 		ED4842F5299BC88B0055E5AC /* KakaoAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4842F4299BC88B0055E5AC /* KakaoAuthService.swift */; };
 		ED5F49C429A06F5400693FBA /* OSLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED5F49C329A06F5400693FBA /* OSLog.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		ED5F49C629A06F8500693FBA /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5F49C529A06F8500693FBA /* Log.swift */; };
+		ED792F5D29A139C400A14792 /* SecondOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED792F5C29A139C400A14792 /* SecondOnboardingViewController.swift */; };
+		ED792F5F29A139D400A14792 /* SecondOnboardingReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED792F5E29A139D400A14792 /* SecondOnboardingReactor.swift */; };
 		EDB7C3F9298FC9C100D60A9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3F8298FC9C100D60A9E /* AppDelegate.swift */; };
 		EDB7C3FB298FC9C100D60A9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3FA298FC9C100D60A9E /* SceneDelegate.swift */; };
 		EDB7C3FD298FC9C100D60A9E /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3FC298FC9C100D60A9E /* AuthViewController.swift */; };
@@ -88,6 +90,8 @@
 		ED4842F4299BC88B0055E5AC /* KakaoAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuthService.swift; sourceTree = "<group>"; };
 		ED5F49C329A06F5400693FBA /* OSLog.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OSLog.framework; path = System/Library/Frameworks/OSLog.framework; sourceTree = SDKROOT; };
 		ED5F49C529A06F8500693FBA /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		ED792F5C29A139C400A14792 /* SecondOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardingViewController.swift; sourceTree = "<group>"; };
+		ED792F5E29A139D400A14792 /* SecondOnboardingReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardingReactor.swift; sourceTree = "<group>"; };
 		EDB7C3F5298FC9C100D60A9E /* FANNI-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FANNI-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB7C3F8298FC9C100D60A9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDB7C3FA298FC9C100D60A9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -229,6 +233,7 @@
 				ED3E3D332997F85B00AEBFE5 /* Auth */,
 				ED3E3D47299896E200AEBFE5 /* Agreement */,
 				ED050B0929A0CF2F008E2961 /* FirstOnboarding */,
+				ED792F5929A1399600A14792 /* SecondOnboarding */,
 			);
 			path = AuthScene;
 			sourceTree = "<group>";
@@ -295,6 +300,31 @@
 				ED3E3D4A2998973A00AEBFE5 /* AgreementViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		ED792F5929A1399600A14792 /* SecondOnboarding */ = {
+			isa = PBXGroup;
+			children = (
+				ED792F5A29A139AA00A14792 /* View */,
+				ED792F5B29A139AF00A14792 /* Reactor */,
+			);
+			path = SecondOnboarding;
+			sourceTree = "<group>";
+		};
+		ED792F5A29A139AA00A14792 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ED792F5C29A139C400A14792 /* SecondOnboardingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ED792F5B29A139AF00A14792 /* Reactor */ = {
+			isa = PBXGroup;
+			children = (
+				ED792F5E29A139D400A14792 /* SecondOnboardingReactor.swift */,
+			);
+			path = Reactor;
 			sourceTree = "<group>";
 		};
 		EDB7C3EC298FC9C100D60A9E = {
@@ -663,10 +693,12 @@
 				EDB7C3FB298FC9C100D60A9E /* SceneDelegate.swift in Sources */,
 				ED3E3D8B2998AF5C00AEBFE5 /* BaseViewController.swift in Sources */,
 				2509A57729921504004953BA /* TempDomain.swift in Sources */,
+				ED792F5D29A139C400A14792 /* SecondOnboardingViewController.swift in Sources */,
 				ED4842F3299BB4890055E5AC /* Reactive+Extension.swift in Sources */,
 				ED3E3D312997F31E00AEBFE5 /* tempInfrastructure.swift in Sources */,
 				ED3E3D44299818AE00AEBFE5 /* UIFont+Extenstion.swift in Sources */,
 				ED3E3D39299803BD00AEBFE5 /* UIColor+Extension.swift in Sources */,
+				ED792F5F29A139D400A14792 /* SecondOnboardingReactor.swift in Sources */,
 				ED280BCF299D17120089570C /* AuthViewReactor.swift in Sources */,
 				ED451F41299BE9CB000AA855 /* NSNotification+Extension.swift in Sources */,
 			);

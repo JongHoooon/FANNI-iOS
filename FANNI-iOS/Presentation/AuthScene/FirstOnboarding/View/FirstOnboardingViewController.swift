@@ -81,6 +81,7 @@ final class FirstOnboardingViewController: BaseViewController, View {
         button.titleLabel?.textColor = .white
         button.backgroundColor = .main1
         button.layer.cornerRadius = 12.0
+        button.addTarget(self, action: #selector(tapNextButton), for: .touchUpInside)
         return button
     }()
     
@@ -336,8 +337,12 @@ private extension FirstOnboardingViewController {
         }
     }
     
-    @objc func tapRightBarButton() {
-        navigationController?.popViewController(animated: true)
+    // TODO: 화면이동 수정!
+    @objc func tapNextButton() {
+        UserManager.nickName = newNicknameTextField.text ?? ""
+        let vc = SecondOnboardingViewController(reactor: SecondOnboardingReactor())
+        navigationController?.pushViewController(vc, animated: true)
+        Log.debug("nickname: \(UserManager.nickName)")
     }
 }
 
