@@ -38,7 +38,7 @@ final class AuthViewController: BaseViewController, View {
     
     private lazy var kakaoLoginButton: UIButton = {
         var button = UIButton()
-        button.setTitle("  카카오톡으로 시작하기", for: .normal)
+        button.setTitle("  KakaoTalk으로 시작하기", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = .pretendar(weight: ._400, size: 16.0)
         button.setImage(UIImage(named: "kakaoIcon"), for: .normal)

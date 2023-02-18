@@ -53,23 +53,23 @@ private extension AuthReactor {
         if UserApi.isKakaoTalkLoginAvailable() {
             UserApi.shared.rx.loginWithKakaoTalk()
                 .subscribe(onNext: { [weak self] _ in
-                    print("\(Date().toString()) [✨][\(#fileID), \(#line), \(#function)] - Login With KakaoTalk success.")
+                    Log.debug("Login With KakaoTalk success.")
                     
                     self?.getInfoWithKakao()
                     NotificationCenter.default.post(name: .loginSuccess, object: nil)
                 }, onError: { error in
-                    print("\(Date().toString()) [🚨][\(#fileID), \(#line), \(#function)] - login With KakaoTalk error: \(error)")
+                    Log.error("login With KakaoTalk error: \(error)")
                 })
                 .disposed(by: disposeBag)
         } else {
             UserApi.shared.rx.loginWithKakaoAccount()
                 .subscribe(onNext: { [weak self] _ in
-                    print("\(Date().toString()) [✨][\(#fileID), \(#line), \(#function)] - Login With KakaoAccount sucess.")
+                    Log.debug("Login With KakaoAccount sucess.")
                     
                     self?.getInfoWithKakao()
                     NotificationCenter.default.post(name: .loginSuccess, object: nil)
                 }, onError: { error in
-                    print("\(Date().toString()) [🚨][\(#fileID), \(#line), \(#function)] - login With KakaoAccount error: \(error)")
+                    Log.error("login With KakaoAccount error: \(error)")
                 })
                 .disposed(by: disposeBag)
         }
@@ -89,10 +89,10 @@ private extension AuthReactor {
                 UserManager.kakaoEmail = email
                 UserManager.birthday = birthDay
                 
-                print("\(Date().toString()) [✨][\(#fileID), \(#line), \(#function)] - Kakao ID: \(id), Kakao Nickname: \(nickName), email: \(email), birthday: \(birthDay)")
+                Log.debug("Kakao ID: \(id), Kakao Nickname: \(nickName), email: \(email), birthday: \(birthDay)")
                 
             }, onFailure: { error in
-                print("\(Date().toString()) [🚨][\(#fileID), \(#line), \(#function)] - Get info with kakao error: \(error)")
+                Log.error("Get info with kakao error: \(error)")
             })
             .disposed(by: disposeBag)
     }

@@ -22,7 +22,6 @@ struct KakaoAuthService {
     
     /// Kakao 로그인
     
-    
     /// Kakao 로그아웃
     func logoutWithKakao() {
         UserApi.shared.rx.logout()
