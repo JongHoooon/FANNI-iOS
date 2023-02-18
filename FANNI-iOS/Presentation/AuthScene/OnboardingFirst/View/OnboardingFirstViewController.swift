@@ -134,6 +134,11 @@ extension OnboardingFirstViewController {
         
         // MARK: Action
         
+        newNicknameTextField.rx.controlEvent(.editingDidEndOnExit)
+            .map { Reactor.Action.editingDidEnd }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
         let editingDidEnd = newNicknameTextField.rx.controlEvent(.editingDidEnd)
             .observe(on: MainScheduler.asyncInstance)
             .share()
