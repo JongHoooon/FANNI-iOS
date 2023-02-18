@@ -23,7 +23,7 @@ final class AgreementViewController: BaseViewController, View {
         let label = UILabel()
         label.text = "약관에 동의하시면\n회원가입이 완료됩니다."
         label.font = .pretendar(weight: ._700, size: 24.0)
-        label.textColor = .label
+        label.textColor = .Font.font1
         label.numberOfLines = 2
         return label
     }()
@@ -32,7 +32,7 @@ final class AgreementViewController: BaseViewController, View {
         let button = UIButton()
         button.setTitle("회원가입하기", for: .normal)
         button.titleLabel?.font = .intert(weight: ._700, size: 16.0)
-        button.titleLabel?.textColor = .systemBackground
+        button.titleLabel?.textColor = .Background.background1
         button.backgroundColor = .main1
         button.layer.cornerRadius = 12.0
         button.addTarget(self, action: #selector(tap), for: .touchUpInside)
@@ -86,7 +86,13 @@ final class AgreementViewController: BaseViewController, View {
     
     private lazy var allView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(rgb: 0xFBF7F7)
+        view.backgroundColor = UIColor(dynamicProvider: { collection in
+            if collection.userInterfaceStyle == .light {
+                return UIColor(rgb: 0xFBF7F7)
+            } else {
+                return .systemGray5
+            }
+        })
         view.layer.cornerRadius = 10.0
         return view
     }()
@@ -212,7 +218,7 @@ private extension AgreementViewController {
         let popViewButton: UIButton = {
             let button = UIButton()
             button.setTitle("로그인", for: .normal)
-            button.setTitleColor(.label, for: .normal)
+            button.setTitleColor(.Font.font2, for: .normal)
             button.addTarget(self,
                              action: #selector(tapRightBarButton),
                              for: .touchUpInside)
@@ -279,7 +285,7 @@ private extension AgreementViewController {
             stackView.axis = .vertical
             stackView.distribution = .equalSpacing
             stackView.alignment = .leading
-            stackView.spacing = 20.0
+            stackView.spacing = 24.0
             return stackView
         }()
         

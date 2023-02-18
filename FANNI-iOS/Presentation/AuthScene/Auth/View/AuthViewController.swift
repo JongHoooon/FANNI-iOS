@@ -18,7 +18,7 @@ final class AuthViewController: BaseViewController, View {
         var label = UILabel()
         label.text = "무료 회원 가입"
         label.font = .pretendar(weight: ._700, size: 16.0)
-        label.textColor = UIColor(rgb: 0x767676)
+        label.textColor = .Font.font1
         return label
     }()
     
@@ -65,7 +65,7 @@ final class AuthViewController: BaseViewController, View {
     private lazy var googleLoginButton: UIButton = {
         var button = UIButton()
         button.setTitle("  Google로 시작하기", for: .normal)
-        button.setTitleColor(.label, for: .normal)
+        button.setTitleColor(.black, for: .normal)
         button.layer.borderWidth = 1.0
         button.layer.borderColor = UIColor(rgb: 0x999999).cgColor
         button.titleLabel?.font = .pretendar(weight: ._400, size: 16.0)
@@ -75,7 +75,7 @@ final class AuthViewController: BaseViewController, View {
         button.layer.cornerRadius = 12.0
         return button
     }()
-        
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -131,7 +131,7 @@ extension AuthViewController {
 private extension AuthViewController {
     
     func configNavigationBar() {
-         let titleLabel: UILabel = {
+        let titleLabel: UILabel = {
             let label = UILabel()
             label.text = "FANNI"
             label.font = .cafe24Ssurround(size: 18.0)
@@ -145,7 +145,7 @@ private extension AuthViewController {
     
     func configLayout() {
         
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .Background.background1
         let loginStackView: UIStackView  = {
             let stackView = UIStackView(arrangedSubviews: [
                 kakaoLoginButton,
@@ -173,7 +173,7 @@ private extension AuthViewController {
             secondLabel,
             loginStackView
         ].forEach { view.addSubview($0) }
-                
+        
         firstLabel.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(80.0)
             $0.centerX.equalToSuperview()

@@ -9,10 +9,88 @@ import UIKit
 
 extension UIColor {
     
+    /// main1: #FBA37D (연한색)
     static let main1 = UIColor(rgb: 0xFBA37D)
+    
+    /// main1: #F47155 (진한색)
     static let main2 = UIColor(rgb: 0xF47155)
+    
+    /// sub1: #DE4E45
     static let sub1 = UIColor(rgb: 0xDE4E45)
+    
+    /// sub2: #E8CDB8
     static let sub2 = UIColor(rgb: 0xE8CDB8)
+    
+    /// deactive button color: #F7D4C5
+    static let deactiveButton = UIColor(rgb: 0xF7D4C5)
+    
+    /// Branding Font Color
+    struct Font {
+        
+        /// background: #111111 (.label)
+        static let font1: UIColor = .label
+        
+        /// background: #505050
+        static let font2: UIColor = UIColor(dynamicProvider: { traitCollection in
+            if traitCollection.userInterfaceStyle == .light {
+                return UIColor(rgb: 0x505050)
+            } else {
+                return .secondaryLabel
+            }
+        })
+        
+        /// background: #767676
+        static let font3: UIColor = UIColor(dynamicProvider: { traitCollection in
+            if traitCollection.userInterfaceStyle == .light {
+                return UIColor(rgb: 0x767676)
+            } else {
+                return .tertiaryLabel
+            }
+        })
+        
+        /// background: #999999
+        static let font4: UIColor = UIColor(dynamicProvider: { traitCollection in
+            if traitCollection.userInterfaceStyle == .light {
+                return UIColor(rgb: 0x999999)
+            } else {
+                return .quaternaryLabel
+            }
+        })
+    }
+    
+    /// Branding Backgroun Color
+    struct Background {
+        
+        /// systemBackground
+        static let background1: UIColor = .systemBackground
+        
+        /// background: #FBF7F7
+        static let background2: UIColor = UIColor(dynamicProvider: { traitCollection in
+            if traitCollection.userInterfaceStyle == .light {
+                return UIColor(rgb: 0xFBF7F7)
+            } else {
+                return .systemGray6
+            }
+        })
+        
+        /// background: #F5F1F1
+        static let background3: UIColor = UIColor(dynamicProvider: { traitCollection in
+            if traitCollection.userInterfaceStyle == .light {
+                return UIColor(rgb: 0xF5F1F1)
+            } else {
+                return .systemGray5
+            }
+        })
+        
+        /// background: #E9E4E4
+        static let background4: UIColor = UIColor(dynamicProvider: { traitCollection in
+            if traitCollection.userInterfaceStyle == .light {
+                return UIColor(rgb: 0xE9E4E4)
+            } else {
+                return .systemGray4
+            }
+        })
+    }
     
     static let kakaoYellow = UIColor(rgb: 0xFEE500)
     

@@ -29,7 +29,7 @@ extension Reactive where Base: UIButton {
                 button.isEnabled = true
                 button.backgroundColor = .main1
             case false:
-                button.backgroundColor = .systemGray2
+                button.backgroundColor = .deactiveButton
                 button.isEnabled = false
             }
         }
