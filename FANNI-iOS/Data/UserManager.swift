@@ -20,14 +20,17 @@ struct UserDefault<T> {
 
 final class UserManager {
     
-    @UserDefault(key: "kakaoID", defaultValue: 0)
-    static var kakaoID: Int
+    @UserDefault(key: "snsID", defaultValue: "")
+    static var snsID: String
     
-    @UserDefault(key: "kakaoNickname", defaultValue: "")
-    static var kakaoNickname: String
+    @UserDefault(key: "snsType", defaultValue: "")
+    static var snsType: String
+    
+    @UserDefault(key: "nickName", defaultValue: "")
+    static var nickName: String
     
     @UserDefault(key: "email", defaultValue: "")
-    static var kakaoEmail: String
+    static var email: String
     
     @UserDefault(key: "birthday", defaultValue: "")
     static var birthday: String

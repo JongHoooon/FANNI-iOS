@@ -10,9 +10,9 @@ import SnapKit
 
 final class TestViewController: BaseViewController {
     
-    let nickName: String = UserManager.kakaoNickname
-    let id: Int = UserManager.kakaoID
-    let email: String = UserManager.kakaoEmail
+    let nickName: String = UserManager.nickName
+    let id: String = UserManager.snsID
+    let email: String = UserManager.email
     let birthday: String = UserManager.birthday
     
     // MARK: - UI

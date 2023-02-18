@@ -103,8 +103,14 @@ extension AuthViewController {
     func bind(reactor: AuthReactor) {
         
         // MARK: Action
+        
         kakaoLoginButton.rx.tap
             .map { Reactor.Action.tapKakaoLogin }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        googleLoginButton.rx.tap
+            .map { Reactor.Action.tapGoogleLogin(view: self) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         

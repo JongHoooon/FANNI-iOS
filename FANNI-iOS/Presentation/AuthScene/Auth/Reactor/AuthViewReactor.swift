@@ -12,6 +12,7 @@ import KakaoSDKAuth
 import RxKakaoSDKAuth
 import KakaoSDKUser
 import RxKakaoSDKUser
+import GoogleSignIn
 
 final class AuthReactor: Reactor {
     
@@ -19,6 +20,7 @@ final class AuthReactor: Reactor {
     
     enum Action {
         case tapKakaoLogin
+        case tapGoogleLogin(view: AuthViewController)
     }
     
     enum Mutation {
@@ -37,6 +39,9 @@ final class AuthReactor: Reactor {
         switch action {
         case .tapKakaoLogin:
             loginWithKakao()
+            return .empty()
+        case .tapGoogleLogin(let view):
+            handleSignInButton(view: view)
             return .empty()
         }
     }
@@ -79,21 +84,43 @@ private extension AuthReactor {
         UserApi.shared.rx.me()
             .subscribe(onSuccess: { user in
                 
-                let id: Int = Int(user.id ?? 0)
+                let id: String = String(user.id ?? 0)
                 let nickName: String = user.kakaoAccount?.profile?.nickname ?? ""
                 let email: String = user.kakaoAccount?.email ?? ""
-                let birthDay: String = user.kakaoAccount?.birthday ?? ""
                 
-                UserManager.kakaoID = id
-                UserManager.kakaoNickname = nickName
-                UserManager.kakaoEmail = email
-                UserManager.birthday = birthDay
+                UserManager.snsType = "kakao"
+                UserManager.snsID = id
+                UserManager.nickName = nickName
+                UserManager.email = email
                 
-                Log.debug("Kakao ID: \(id), Kakao Nickname: \(nickName), email: \(email), birthday: \(birthDay)")
+                Log.debug("Kakao ID: \(id), Kakao Nickname: \(nickName), email: \(email)")
                 
             }, onFailure: { error in
                 Log.error("Get info with kakao error: \(error)")
             })
             .disposed(by: disposeBag)
+    }
+    
+    func handleSignInButton(view: AuthViewController) {
+        GIDSignIn.sharedInstance.signIn(
+            withPresenting: view) { signInResult, error in
+                guard let result = signInResult else {
+                    guard let error = error else { return }
+                    Log.error(error)
+                    return
+                }
+                
+                let id: String = result.user.userID ?? ""
+                let nickName: String = result.user.profile?.name ?? ""
+                let email: String = result.user.profile?.email ?? ""
+                
+                UserManager.snsType = "google"
+                UserManager.snsID = id
+                UserManager.nickName = nickName
+                UserManager.email = email
+                
+                Log.debug("Google login success - id: \(id), name: \(nickName), email: \(email)")
+                NotificationCenter.default.post(name: .loginSuccess, object: nil)
+            }
     }
 }
