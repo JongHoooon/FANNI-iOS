@@ -8,6 +8,7 @@
 import UIKit
 import RxKakaoSDKAuth
 import KakaoSDKAuth
+import GoogleSignIn
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 

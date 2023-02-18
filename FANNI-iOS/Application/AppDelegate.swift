@@ -7,6 +7,8 @@
 
 import UIKit
 import RxKakaoSDKCommon
+import RxKakaoSDKAuth
+import KakaoSDKAuth
 import GoogleSignIn
 
 @main
@@ -16,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        
         RxKakaoSDK.initSDK(appKey: "af5e82d66e4c388f79c7678269403dd0")
         
         return true
@@ -26,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       open url: URL,
       options: [UIApplication.OpenURLOptionsKey: Any] = [:]
     ) -> Bool {
+       
       var handled: Bool
 
       handled = GIDSignIn.sharedInstance.handle(url)

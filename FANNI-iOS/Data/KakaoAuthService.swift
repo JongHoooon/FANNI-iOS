@@ -32,5 +32,4 @@ struct KakaoAuthService {
             })
             .disposed(by: disposeBag)
     }
-    
 }
