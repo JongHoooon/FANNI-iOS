@@ -116,6 +116,7 @@ final class SecondOnboardingViewController: BaseViewController, View {
         button.layer.cornerRadius = 12.0
         return button
     }()
+
     
     // MARK: - Life Cycle
     
