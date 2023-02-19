@@ -31,7 +31,7 @@ final class AgreementViewController: BaseViewController, View {
     private lazy var signinButton: UIButton = {
         let button = UIButton()
         button.setTitle("회원가입하기", for: .normal)
-        button.titleLabel?.font = .intert(weight: ._700, size: 16.0)
+        button.titleLabel?.font = .pretendar(weight: ._700, size: 16.0)
         button.titleLabel?.textColor = .white
         button.backgroundColor = .main1
         button.layer.cornerRadius = 12.0

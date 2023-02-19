@@ -77,7 +77,7 @@ final class FirstOnboardingViewController: BaseViewController, View {
     private lazy var nextButton: UIButton = {
         let button = UIButton()
         button.setTitle("다음", for: .normal)
-        button.titleLabel?.font = .intert(weight: ._700, size: 16.0)
+        button.titleLabel?.font = .pretendar(weight: ._700, size: 16.0)
         button.titleLabel?.textColor = .white
         button.backgroundColor = .main1
         button.layer.cornerRadius = 12.0
@@ -96,7 +96,7 @@ final class FirstOnboardingViewController: BaseViewController, View {
         textField.tintColor = .main1
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16.0, height: 56.0))
         textField.leftViewMode = .always
-        textField.keyboardType = .namePhonePad
+
         textField.clearButtonMode = .whileEditing
         
         textField.isHidden = true
@@ -145,12 +145,12 @@ extension FirstOnboardingViewController {
             .disposed(by: disposeBag)
         
         let editingDidEnd = newNicknameTextField.rx.controlEvent(.editingDidEnd)
-            .debug("끝")
+//            .debug("끝")
             .observe(on: MainScheduler.asyncInstance)
             .share()
         
         let editingDidBegin = newNicknameTextField.rx.controlEvent(.editingDidBegin)
-            .debug("시작")
+//            .debug("시작")
             .observe(on: MainScheduler.asyncInstance)
             .share()
         
@@ -186,10 +186,12 @@ extension FirstOnboardingViewController {
         // MARK: State
 
         let usedNicknameButonState = reactor.state.asObservable()
+            .subscribe(on: MainScheduler.asyncInstance)
             .map { $0.usedNicknameButton }
             .asDriver(onErrorJustReturn: false)
             
         let newNicknameButonState = reactor.state.asObservable()
+            .subscribe(on: MainScheduler.asyncInstance)
             .map { $0.newNicknameButton }
             .asDriver(onErrorJustReturn: false)
         

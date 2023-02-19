@@ -97,10 +97,20 @@ final class SecondOnboardingViewController: BaseViewController, View {
         return datePicker
     }()
     
+    private lazy var previousButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("이전", for: .normal)
+        button.titleLabel?.font = .pretendar(weight: ._700, size: 16.0)
+        button.titleLabel?.textColor = .white
+        button.backgroundColor = .main1
+        button.layer.cornerRadius = 12.0
+        return button
+    }()
+    
     private lazy var nextButton: UIButton = {
         let button = UIButton()
         button.setTitle("다음", for: .normal)
-        button.titleLabel?.font = .intert(weight: ._700, size: 16.0)
+        button.titleLabel?.font = .pretendar(weight: ._700, size: 16.0)
         button.titleLabel?.textColor = .white
         button.backgroundColor = .main1
         button.layer.cornerRadius = 12.0
