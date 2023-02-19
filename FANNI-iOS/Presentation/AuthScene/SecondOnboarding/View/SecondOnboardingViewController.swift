@@ -72,7 +72,7 @@ final class SecondOnboardingViewController: BaseViewController, View {
         textField.textColor = .Font.font1
         textField.layer.borderWidth = 1.0
         textField.layer.cornerRadius = 12.0
-        textField.layer.borderColor = UIColor.deactiveTextField.cgColor
+        textField.layer.borderColor = UIColor.main2.cgColor
         textField.tintColor = .main1
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16.0, height: 56.0))
         textField.leftViewMode = .always

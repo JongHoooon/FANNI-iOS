@@ -85,8 +85,8 @@ final class FirstOnboardingViewController: BaseViewController, View {
         return button
     }()
     
-    private lazy var newNicknameTextField: UITextField = {
-        let textField = UITextField()
+    private lazy var newNicknameTextField: CustomTextField = {
+        let textField = CustomTextField()
         textField.placeholder = "사용하실 이름을 입력해주세요."
         textField.font = .pretendar(weight: ._400, size: 16.0)
         textField.textColor = .Font.font1
@@ -97,6 +97,7 @@ final class FirstOnboardingViewController: BaseViewController, View {
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16.0, height: 56.0))
         textField.leftViewMode = .always
         textField.keyboardType = .namePhonePad
+        textField.clearButtonMode = .whileEditing
         
         textField.isHidden = true
         
@@ -112,7 +113,9 @@ final class FirstOnboardingViewController: BaseViewController, View {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        newNicknameTextField.endEditing(true)
+        if reactor?.currentState.isReponder ?? false {
+            newNicknameTextField.endEditing(true)
+        }
     }
     
     // MARK: - Init
@@ -136,15 +139,18 @@ extension FirstOnboardingViewController {
         // MARK: Action
         
         newNicknameTextField.rx.controlEvent(.editingDidEndOnExit)
+            .observe(on: MainScheduler.asyncInstance)
             .map { Reactor.Action.editingDidEnd }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
         let editingDidEnd = newNicknameTextField.rx.controlEvent(.editingDidEnd)
+            .debug("끝")
             .observe(on: MainScheduler.asyncInstance)
             .share()
         
         let editingDidBegin = newNicknameTextField.rx.controlEvent(.editingDidBegin)
+            .debug("시작")
             .observe(on: MainScheduler.asyncInstance)
             .share()
         
@@ -184,12 +190,10 @@ extension FirstOnboardingViewController {
             .asDriver(onErrorJustReturn: false)
             
         let newNicknameButonState = reactor.state.asObservable()
-            .observe(on: MainScheduler.asyncInstance)
             .map { $0.newNicknameButton }
             .asDriver(onErrorJustReturn: false)
         
         let newNickname = reactor.state.asObservable()
-            .observe(on: MainScheduler.asyncInstance)
             .map { $0.newNickname }
             
         usedNicknameButonState

@@ -51,7 +51,7 @@ extension Reactive where Base: UITextField {
         return Binder(self.base) { textField, bool in
             switch bool {
             case true:
-                UIView.animate(withDuration: 0.3) {
+                UIView.animate(withDuration: 0.5) {
                     // textField.isHidden = bool
                     textField.alpha = 0
                 }
@@ -59,7 +59,7 @@ extension Reactive where Base: UITextField {
                 textField.text = ""
             case false:
                 textField.isHidden = bool
-                UIView.animate(withDuration: 0.3) {
+                UIView.animate(withDuration: 0.5) {
                     textField.alpha = 1
                 }
             }

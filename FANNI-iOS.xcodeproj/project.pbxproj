@@ -32,6 +32,7 @@
 		ED5F49C629A06F8500693FBA /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5F49C529A06F8500693FBA /* Log.swift */; };
 		ED792F5D29A139C400A14792 /* SecondOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED792F5C29A139C400A14792 /* SecondOnboardingViewController.swift */; };
 		ED792F5F29A139D400A14792 /* SecondOnboardingReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED792F5E29A139D400A14792 /* SecondOnboardingReactor.swift */; };
+		ED792F6129A1E2DC00A14792 /* UITextFiled+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED792F6029A1E2DC00A14792 /* UITextFiled+.swift */; };
 		EDB7C3F9298FC9C100D60A9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3F8298FC9C100D60A9E /* AppDelegate.swift */; };
 		EDB7C3FB298FC9C100D60A9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3FA298FC9C100D60A9E /* SceneDelegate.swift */; };
 		EDB7C3FD298FC9C100D60A9E /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C3FC298FC9C100D60A9E /* AuthViewController.swift */; };
@@ -92,6 +93,7 @@
 		ED5F49C529A06F8500693FBA /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		ED792F5C29A139C400A14792 /* SecondOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardingViewController.swift; sourceTree = "<group>"; };
 		ED792F5E29A139D400A14792 /* SecondOnboardingReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardingReactor.swift; sourceTree = "<group>"; };
+		ED792F6029A1E2DC00A14792 /* UITextFiled+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextFiled+.swift"; sourceTree = "<group>"; };
 		EDB7C3F5298FC9C100D60A9E /* FANNI-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FANNI-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB7C3F8298FC9C100D60A9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDB7C3FA298FC9C100D60A9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				ED3E3D43299818AE00AEBFE5 /* UIFont+Extenstion.swift */,
 				ED4842F2299BB4890055E5AC /* Reactive+Extension.swift */,
 				ED451F40299BE9CB000AA855 /* NSNotification+Extension.swift */,
+				ED792F6029A1E2DC00A14792 /* UITextFiled+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -687,6 +690,7 @@
 				EDB7C3F9298FC9C100D60A9E /* AppDelegate.swift in Sources */,
 				ED050B0F29A0D186008E2961 /* OnboardingFirstReactor.swift in Sources */,
 				ED3E3D4B2998973A00AEBFE5 /* AgreementViewController.swift in Sources */,
+				ED792F6129A1E2DC00A14792 /* UITextFiled+.swift in Sources */,
 				ED5F49C629A06F8500693FBA /* Log.swift in Sources */,
 				ED4842F5299BC88B0055E5AC /* KakaoAuthService.swift in Sources */,
 				ED451F43299BEC72000AA855 /* UserManager.swift in Sources */,
