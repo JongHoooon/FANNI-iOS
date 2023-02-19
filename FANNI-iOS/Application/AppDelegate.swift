@@ -19,8 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         
-        RxKakaoSDK.initSDK(appKey: "af5e82d66e4c388f79c7678269403dd0")
-        
+        if let kakaoAppKey = Bundle.main.infoDictionary?["KAKAO_NATIVE_APP_KEY"] as? String {
+            RxKakaoSDK.initSDK(appKey: kakaoAppKey)
+        }
+
         return true
     }
     

@@ -1,0 +1,15 @@
+//
+//  Config.xcconfig
+//  FANNI-iOS
+//
+//  Created by JongHoon on 2023/02/19.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+KAKAO_NATIVE_APP_KEY = af5e82d66e4c388f79c7678269403dd0
+
+GOOGLE_CLIENT_ID = 1012069791232-thgronrpof4hk290qsggb0qo262g1f44.apps.googleusercontent.com
+
+GOOGLE_REVERSED_CLIENT_ID = com.googleusercontent.apps.1012069791232-thgronrpof4hk290qsggb0qo262g1f44

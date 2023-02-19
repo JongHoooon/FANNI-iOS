@@ -94,6 +94,7 @@
 		ED792F5C29A139C400A14792 /* SecondOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardingViewController.swift; sourceTree = "<group>"; };
 		ED792F5E29A139D400A14792 /* SecondOnboardingReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardingReactor.swift; sourceTree = "<group>"; };
 		ED792F6029A1E2DC00A14792 /* UITextFiled+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextFiled+.swift"; sourceTree = "<group>"; };
+		ED792F6329A20C6900A14792 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		EDB7C3F5298FC9C100D60A9E /* FANNI-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FANNI-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB7C3F8298FC9C100D60A9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDB7C3FA298FC9C100D60A9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -417,6 +418,7 @@
 				EDB7C403298FC9C200D60A9E /* LaunchScreen.storyboard */,
 				EDB7C401298FC9C200D60A9E /* Assets.xcassets */,
 				EDB7C406298FC9C200D60A9E /* Info.plist */,
+				ED792F6329A20C6900A14792 /* Config.xcconfig */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -754,6 +756,7 @@
 /* Begin XCBuildConfiguration section */
 		EDB7C41D298FC9C200D60A9E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED792F6329A20C6900A14792 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -814,6 +817,7 @@
 		};
 		EDB7C41E298FC9C200D60A9E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED792F6329A20C6900A14792 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
