@@ -49,6 +49,8 @@ target 'FANNI-iOS' do
 	
   # Misc
  	pod 'URLNavigator', '~> 2.4.1'
+	 pod 'DropDown', :git => 'https://github.com/snappymob/DropDown.git', :commit => 
+   '57027168178b77a9463814fbeb6cda173f301854'
 
 
   target 'FANNI-iOSTests' do
