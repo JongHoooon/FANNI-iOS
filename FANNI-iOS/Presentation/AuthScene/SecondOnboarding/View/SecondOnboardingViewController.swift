@@ -58,9 +58,7 @@ final class SecondOnboardingViewController: BaseViewController, View {
 
         button.titleLabel?.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(16.0)
-           $0.trailing.equalTo(button.imageView!.snp.leading).offset(-4.0)
             $0.centerY.equalToSuperview()
-            $0.width.equalTo(112)
         }
         
         button.addTarget(self, action: #selector(tap), for: .touchUpInside)
@@ -78,16 +76,16 @@ final class SecondOnboardingViewController: BaseViewController, View {
     
     private lazy var dropDown: DropDown = {
         let dropDown = DropDown()
-//        dropDown.layer.borderWidth = 1.0
-//        dropDown.layer.borderColor = UIColor.main1.cgColor
-        dropDown.borderColor = UIColor.main1.cgColor
+
+        dropDown.borderColor = UIColor.main2.cgColor
         dropDown.borderWidth = 1.0
         dropDown.cornerRadius = 12.0
         let itemList = ["생일", "결혼기념일", "작고일", "입양일", "직접 입력"]
         dropDown.dataSource = itemList
         dropDown.anchorView = hiddenMenuButton
-        dropDown.bottomOffset = CGPoint(x: 0, y: hiddenMenuButton.bounds.height + 1)
-        dropDown.shadowRadius = 0
+        dropDown.bottomOffset = CGPoint(x: 0, y: hiddenMenuButton.bounds.height - 4)
+        dropDown.shadowRadius = 12
+        dropDown.shadowColor = .systemGray
         dropDown.backgroundColor = .systemBackground
         dropDown.textFont = .pretendar(weight: ._400, size: 16.0)!
         dropDown.textColor = .Font.font2
@@ -95,14 +93,14 @@ final class SecondOnboardingViewController: BaseViewController, View {
         dropDown.cellHeight = 56.0
         dropDown.width = 160.0
         dropDown.animationduration = 0.15
-        
+
         dropDown.selectionAction = { [weak self] (index, item) in
             guard let self = self else { return }
             self.hiddenMenuButton.setTitle(item, for: .normal)
             self.hiddenMenuButton.animateBorderColor(toColor: .deactiveTextField, duration: 0.15)
+            self.hiddenMenuButton.setTitleColor(.Font.font1, for: .normal)
             self.vectorReset()
             UIView.animate(withDuration: 0.5) {
-                
             }
         }
         
@@ -175,9 +173,7 @@ final class SecondOnboardingViewController: BaseViewController, View {
         let toolBar = UIToolbar(frame: CGRect(x: 0.0, y: 0.0, width: self.view.frame.width, height: 44.0))
         toolBar.setItems([flexible, barButton], animated: true)
         textField.inputAccessoryView = toolBar
-        
-        textField.isHidden = true
-                
+                        
         return textField
     }()
     
