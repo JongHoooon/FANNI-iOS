@@ -10,6 +10,7 @@ import SnapKit
 import ReactorKit
 import RxSwift
 import RxCocoa
+import DropDown
 
 final class SecondOnboardingViewController: BaseViewController, View {
     
@@ -55,18 +56,62 @@ final class SecondOnboardingViewController: BaseViewController, View {
         button.layer.borderColor = UIColor.deactiveTextField.cgColor
         button.layer.cornerRadius = 12.0
 
-        
         button.titleLabel?.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(16.0)
-           $0.trailing.equalTo(button.imageView!.snp.leading).offset(-4.0)
             $0.centerY.equalToSuperview()
-            $0.width.equalTo(112)
         }
         
+        button.addTarget(self, action: #selector(tap), for: .touchUpInside)
         button.isHidden = true
         button.alpha = 0
         
         return button
+    }()
+    
+    private lazy var vectorImageView: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "downVector"))
+        
+        return imageView
+    }()
+    
+    private lazy var dropDown: DropDown = {
+        let dropDown = DropDown()
+
+        dropDown.borderColor = UIColor.main2.cgColor
+        dropDown.borderWidth = 1.0
+        dropDown.cornerRadius = 12.0
+        let itemList = ["생일", "결혼기념일", "작고일", "입양일", "직접 입력"]
+        dropDown.dataSource = itemList
+        dropDown.anchorView = hiddenMenuButton
+        dropDown.bottomOffset = CGPoint(x: 0, y: hiddenMenuButton.bounds.height - 4)
+        dropDown.shadowRadius = 12
+        dropDown.shadowColor = .systemGray
+        dropDown.backgroundColor = .systemBackground
+        dropDown.textFont = .pretendar(weight: ._400, size: 16.0)!
+        dropDown.textColor = .Font.font2
+        dropDown.selectionBackgroundColor = .deactiveButton
+        dropDown.cellHeight = 56.0
+        dropDown.width = 160.0
+        dropDown.animationduration = 0.15
+
+        dropDown.selectionAction = { [weak self] (index, item) in
+            guard let self = self else { return }
+            self.hiddenMenuButton.setTitle(item, for: .normal)
+            self.hiddenMenuButton.animateBorderColor(toColor: .deactiveTextField, duration: 0.15)
+            self.hiddenMenuButton.setTitleColor(.Font.font1, for: .normal)
+            self.vectorReset()
+            UIView.animate(withDuration: 0.5) {
+            }
+        }
+        
+        dropDown.cancelAction = { [weak self] in
+            guard let self = self else { return }
+            // 애니메이션 추가
+            self.hiddenMenuButton.animateBorderColor(toColor: .deactiveTextField, duration: 0.15)
+            self.vectorReset()
+        }
+        
+        return dropDown
     }()
     
     private lazy var hiddendInfoLabel2: UILabel = {
@@ -128,7 +173,7 @@ final class SecondOnboardingViewController: BaseViewController, View {
         let toolBar = UIToolbar(frame: CGRect(x: 0.0, y: 0.0, width: self.view.frame.width, height: 44.0))
         toolBar.setItems([flexible, barButton], animated: true)
         textField.inputAccessoryView = toolBar
-                
+                        
         return textField
     }()
     
@@ -300,6 +345,7 @@ private extension SecondOnboardingViewController {
             infoLabel,
             hiddendInfoLabel1,
             hiddenMenuButton,
+            vectorImageView,
             anniversaryTextField,
             buttonStackView,
             previousButton,
@@ -329,6 +375,11 @@ private extension SecondOnboardingViewController {
             $0.height.equalTo(56.0)
         }
         
+        vectorImageView.snp.makeConstraints {
+            $0.trailing.equalTo(hiddenMenuButton.snp.trailing).offset(-16.0)
+            $0.centerY.equalTo(hiddenMenuButton)
+        }
+        
         anniversaryTextField.snp.makeConstraints {
             $0.top.equalTo(infoLabel.snp.bottom).offset(40.0)
             $0.leading.trailing.equalToSuperview().inset(20.0)
@@ -356,7 +407,27 @@ private extension SecondOnboardingViewController {
         }
     }
     
+    func vectorRotate() {
+        UIView.animate(withDuration: 0.15) {
+            let rotate = CGAffineTransform(rotationAngle: .pi)
+            self.vectorImageView.transform = rotate
+        }
+    }
+    
+    func vectorReset() {
+        UIView.animate(withDuration: 0.15) {
+            let rotate = CGAffineTransform(rotationAngle: .zero)
+            self.vectorImageView.transform = rotate
+        }
+    }
+    
     @objc func tapRightBarButton() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func tap() {
+        dropDown.show()
+        hiddenMenuButton.animateBorderColor(toColor: .main2, duration: 0.15)
+        vectorRotate()
     }
 }
