@@ -16,10 +16,10 @@ final class SecondOnboardingViewController: BaseViewController, View {
     
     // MARK: - Proprties
     
-    let makeAllButtonFalseRelay = PublishRelay<Void>()
+    let inputModeRelay = PublishRelay<InputMode>()
     
     // MARK: - UI
-        
+    
     private lazy var progressImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "progress2")
@@ -55,13 +55,12 @@ final class SecondOnboardingViewController: BaseViewController, View {
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor.deactiveTextField.cgColor
         button.layer.cornerRadius = 12.0
-
         button.titleLabel?.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(16.0)
             $0.centerY.equalToSuperview()
         }
+        button.addTarget(self, action: #selector(tapMenuButton), for: .touchUpInside)
         
-        button.addTarget(self, action: #selector(tap), for: .touchUpInside)
         button.isHidden = true
         button.alpha = 0
         
@@ -70,13 +69,15 @@ final class SecondOnboardingViewController: BaseViewController, View {
     
     private lazy var vectorImageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "downVector"))
+        imageView.isHidden = true
+        imageView.alpha = 0
         
         return imageView
     }()
     
     private lazy var dropDown: DropDown = {
         let dropDown = DropDown()
-
+        
         dropDown.borderColor = UIColor.main2.cgColor
         dropDown.borderWidth = 1.0
         dropDown.cornerRadius = 12.0
@@ -92,14 +93,21 @@ final class SecondOnboardingViewController: BaseViewController, View {
         dropDown.selectionBackgroundColor = .deactiveButton
         dropDown.cellHeight = 56.0
         dropDown.width = 160.0
-        dropDown.animationduration = 0.15
-
+        dropDown.animationduration = 0.2
+        
         dropDown.selectionAction = { [weak self] (index, item) in
             guard let self = self else { return }
             self.hiddenMenuButton.setTitle(item, for: .normal)
-            self.hiddenMenuButton.animateBorderColor(toColor: .deactiveTextField, duration: 0.15)
+            self.hiddenMenuButton.animateBorderColor(toColor: .deactiveTextField, duration: 0.2)
             self.hiddenMenuButton.setTitleColor(.Font.font1, for: .normal)
-            self.vectorReset()
+            self.vectorRoateReset()
+            
+            if index == 4 {
+                self.inputModeRelay.accept(.custom)
+            } else {
+                self.inputModeRelay.accept(.other)
+            }
+            
             UIView.animate(withDuration: 0.5) {
             }
         }
@@ -107,8 +115,8 @@ final class SecondOnboardingViewController: BaseViewController, View {
         dropDown.cancelAction = { [weak self] in
             guard let self = self else { return }
             // 애니메이션 추가
-            self.hiddenMenuButton.animateBorderColor(toColor: .deactiveTextField, duration: 0.15)
-            self.vectorReset()
+            self.hiddenMenuButton.animateBorderColor(toColor: .deactiveTextField, duration: 0.2)
+            self.vectorRoateReset()
         }
         
         return dropDown
@@ -123,6 +131,24 @@ final class SecondOnboardingViewController: BaseViewController, View {
         label.isHidden = true
         label.alpha = 0
         return label
+    }()
+    
+    private lazy var hiddenTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "텍스트를 입력해주세요."
+        textField.font = .pretendar(weight: ._400, size: 16.0)
+        textField.textColor = .Font.font1
+        textField.layer.borderWidth = 1.0
+        textField.layer.cornerRadius = 12.0
+        textField.layer.borderColor = UIColor.deactiveTextField.cgColor
+        textField.tintColor = .main1
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16.0, height: 56.0))
+        textField.leftViewMode = .always
+        textField.clearButtonMode = .whileEditing
+        textField.isHidden = true
+        textField.alpha = 0
+        
+        return textField
     }()
     
     private lazy var lunarCheckButton: UIButton = {
@@ -173,7 +199,9 @@ final class SecondOnboardingViewController: BaseViewController, View {
         let toolBar = UIToolbar(frame: CGRect(x: 0.0, y: 0.0, width: self.view.frame.width, height: 44.0))
         toolBar.setItems([flexible, barButton], animated: true)
         textField.inputAccessoryView = toolBar
-                        
+        textField.clearButtonMode = .whileEditing
+        textField.tintColor = .clear
+        
         return textField
     }()
     
@@ -196,6 +224,7 @@ final class SecondOnboardingViewController: BaseViewController, View {
         button.layer.borderColor = UIColor.main1.cgColor
         button.layer.borderWidth = 1.0
         button.layer.cornerRadius = 12.0
+        button.addTarget(self, action: #selector(tapPreviousButton), for: .touchUpInside)
         return button
     }()
     
@@ -255,24 +284,6 @@ final class SecondOnboardingViewController: BaseViewController, View {
         super.viewDidLoad()
         configLayout()
         configNavigationBar()
-        
-        UIView.animate(withDuration: 0.5) { [weak self] in
-            guard let self = self else { return }
-            
-            self.infoLabel.alpha = 0
-            self.hiddendInfoLabel1.alpha = 1
-            self.hiddendInfoLabel1.isHidden = false
-            
-            self.otherAnniversaryStackView.alpha = 0
-            
-            self.hiddendInfoLabel2.alpha = 1
-            self.hiddendInfoLabel2.isHidden = false
-//            self.otherAnniversaryStackView.isHidden = true
-            
-            self.hiddenMenuButton.alpha = 1
-            self.hiddenMenuButton.isHidden = false
-            
-        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -297,26 +308,74 @@ extension SecondOnboardingViewController {
     
     func bind(reactor: SecondOnboardingReactor) {
         
+        // MARK: Action
+        
         lunarCheckButton.rx.tap
             .map { Reactor.Action.tapLunarButton }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
-        otherAnniversaryCheckButton.rx.tap
+        let tapOtherAnniversaryCheckButton = otherAnniversaryCheckButton.rx.tap
+            .share()
+        
+        tapOtherAnniversaryCheckButton
             .map { Reactor.Action.tapOtherButton }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
-        // MARK: Action
+        tapOtherAnniversaryCheckButton
+            .map { Reactor.Action.changeInputMode(.other)}
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        inputModeRelay
+            .map { Reactor.Action.changeInputMode($0) }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        datePicker.rx.date
+            .skip(1)
+            .map { Reactor.Action.selectDate($0) }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        // MARK: State
         
         reactor.state.asObservable().map { $0.checkLunarButton }
+            .distinctUntilChanged()
             .asDriver(onErrorJustReturn: false)
             .drive(lunarCheckButton.rx.isCheck)
             .disposed(by: disposeBag)
         
         reactor.state.asObservable().map { $0.checkOtherButton }
+            .distinctUntilChanged()
             .asDriver(onErrorJustReturn: false)
             .drive(otherAnniversaryCheckButton.rx.isCheck)
+            .disposed(by: disposeBag)
+        
+        reactor.state.asObservable().map { $0.selectedDate }
+            .distinctUntilChanged()
+            .observe(on: MainScheduler.asyncInstance)
+            .subscribe(onNext: { [weak self] dateString in
+                guard let self = self else { return }
+                self.anniversaryTextField.text = dateString
+            })
+            .disposed(by: disposeBag)
+        
+        reactor.state.asObservable().map { $0.inputMode }
+            .distinctUntilChanged()
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] mode in
+                guard let self = self else { return }
+                switch mode {
+                case .deault:
+                    break
+                case .other:
+                    self.selectOther()
+                case .custom:
+                    self.selectCustom()
+                }
+            })
             .disposed(by: disposeBag)
     }
 }
@@ -331,7 +390,7 @@ private extension SecondOnboardingViewController {
             label.textColor = .main2
             return label
         }()
-
+        
         let leftBarItem = UIBarButtonItem(customView: titleLabel)
         navigationItem.leftBarButtonItem = leftBarItem
     }
@@ -345,24 +404,25 @@ private extension SecondOnboardingViewController {
             infoLabel,
             hiddendInfoLabel1,
             hiddenMenuButton,
+            hiddendInfoLabel2,
+            hiddenTextField,
             vectorImageView,
             anniversaryTextField,
             buttonStackView,
             previousButton,
             nextButton
-            
         ].forEach { view.addSubview($0) }
         
         progressImageView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(40.0)
             $0.centerX.equalToSuperview()
         }
-    
+        
         infoLabel.snp.makeConstraints {
             $0.top.equalTo(progressImageView.snp.bottom).offset(40.0)
             $0.leading.equalToSuperview().inset(20.0)
         }
-                
+        
         hiddendInfoLabel1.snp.makeConstraints {
             $0.top.equalTo(progressImageView.snp.bottom).offset(40.0)
             $0.leading.equalToSuperview().inset(20.0)
@@ -372,6 +432,17 @@ private extension SecondOnboardingViewController {
             $0.leading.equalToSuperview().inset(20.0)
             $0.top.equalTo(hiddendInfoLabel1.snp.bottom).offset(40.0)
             $0.width.equalTo(160.0)
+            $0.height.equalTo(56.0)
+        }
+        
+        hiddendInfoLabel2.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview().inset(20.0)
+            $0.top.equalTo(hiddenMenuButton.snp.bottom).offset(40.0)
+        }
+        
+        hiddenTextField.snp.makeConstraints {
+            $0.top.equalTo(hiddenMenuButton.snp.bottom).offset(20.0)
+            $0.leading.trailing.equalToSuperview().inset(20.0)
             $0.height.equalTo(56.0)
         }
         
@@ -387,8 +458,8 @@ private extension SecondOnboardingViewController {
         }
         
         buttonStackView.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(20.0)
             $0.top.equalTo(anniversaryTextField.snp.bottom).offset(24.0)
+            $0.leading.trailing.equalToSuperview().inset(20.0)
         }
         
         previousButton.snp.makeConstraints { [weak self] in
@@ -408,16 +479,66 @@ private extension SecondOnboardingViewController {
     }
     
     func vectorRotate() {
-        UIView.animate(withDuration: 0.15) {
+        UIView.animate(withDuration: 0.2) {
             let rotate = CGAffineTransform(rotationAngle: .pi)
             self.vectorImageView.transform = rotate
         }
     }
     
-    func vectorReset() {
-        UIView.animate(withDuration: 0.15) {
+    func vectorRoateReset() {
+        UIView.animate(withDuration: 0.2) {
             let rotate = CGAffineTransform(rotationAngle: .zero)
             self.vectorImageView.transform = rotate
+        }
+    }
+    
+    func selectCustom() {
+        UIView.animate(withDuration: 0.5, animations: { [weak self] in
+            guard let self = self else { return }
+            self.hiddenTextField.alpha = 1
+            self.hiddenTextField.isHidden = false
+            self.hiddendInfoLabel2.snp.remakeConstraints {
+                $0.top.equalTo(self.hiddenTextField.snp.bottom).offset(40.0)
+                $0.leading.trailing.equalToSuperview().inset(20.0)
+            }
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    func selectOther() {
+        UIView.animate(withDuration: 0.5) { [weak self] in
+            guard let self = self else { return }
+            
+            self.infoLabel.alpha = 0
+            self.hiddendInfoLabel1.alpha = 1
+            self.hiddendInfoLabel1.isHidden = false
+            
+            self.otherAnniversaryStackView.alpha = 0
+            // self.otherAnniversaryStackView.isHidden
+            
+            self.hiddendInfoLabel2.alpha = 1
+            self.hiddendInfoLabel2.isHidden = false
+            
+            self.hiddendInfoLabel2.snp.remakeConstraints {
+                $0.top.equalTo(self.hiddenMenuButton.snp.bottom).offset(40.0)
+                $0.leading.trailing.equalToSuperview().inset(20.0)
+            }
+            
+            self.anniversaryTextField.snp.remakeConstraints {
+                $0.top.equalTo(self.hiddendInfoLabel2.snp.bottom).offset(24.0)
+                $0.leading.trailing.equalToSuperview().inset(20.0)
+                $0.height.equalTo(56.0)
+            }
+            
+            self.view.layoutIfNeeded()
+            
+            self.hiddenMenuButton.alpha = 1
+            self.hiddenMenuButton.isHidden = false
+            
+            self.vectorImageView.alpha = 1
+            self.vectorImageView.isHidden = false
+            
+            self.hiddenTextField.alpha = 0
         }
     }
     
@@ -425,9 +546,13 @@ private extension SecondOnboardingViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    @objc func tap() {
+    @objc func tapMenuButton() {
         dropDown.show()
-        hiddenMenuButton.animateBorderColor(toColor: .main2, duration: 0.15)
+        hiddenMenuButton.animateBorderColor(toColor: .main2, duration: 0.5)
         vectorRotate()
+    }
+    
+    @objc func tapPreviousButton() {
+        navigationController?.popViewController(animated: true)
     }
 }

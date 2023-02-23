@@ -43,6 +43,7 @@
 		EDB7C41A298FC9C200D60A9E /* FANNI_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C419298FC9C200D60A9E /* FANNI_iOSUITests.swift */; };
 		EDB7C41C298FC9C200D60A9E /* FANNI_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C41B298FC9C200D60A9E /* FANNI_iOSUITestsLaunchTests.swift */; };
 		EDB7C431298FDA0F00D60A9E /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EDB7C430298FDA0F00D60A9E /* .swiftlint.yml */; };
+		EDF710CC29A79F6B00F0B745 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF710CB29A79F6B00F0B745 /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		EDB7C419298FC9C200D60A9E /* FANNI_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FANNI_iOSUITests.swift; sourceTree = "<group>"; };
 		EDB7C41B298FC9C200D60A9E /* FANNI_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FANNI_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EDB7C430298FDA0F00D60A9E /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		EDF710CB29A79F6B00F0B745 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				ED5F49C529A06F8500693FBA /* Log.swift */,
+				EDF710CB29A79F6B00F0B745 /* Helper.swift */,
 				ED3E3D3A2998089900AEBFE5 /* Fonts */,
 				ED3E3D372998039C00AEBFE5 /* Extensions */,
 			);
@@ -690,6 +693,7 @@
 			files = (
 				2509A58129921596004953BA /* TempCommon.swift in Sources */,
 				ED3E3D8D2998C11B00AEBFE5 /* AgreementReactor.swift in Sources */,
+				EDF710CC29A79F6B00F0B745 /* Helper.swift in Sources */,
 				ED050B0D29A0CFAE008E2961 /* FirstOnboardingViewController.swift in Sources */,
 				EDB7C3FD298FC9C100D60A9E /* AuthViewController.swift in Sources */,
 				EDB7C3F9298FC9C100D60A9E /* AppDelegate.swift in Sources */,
