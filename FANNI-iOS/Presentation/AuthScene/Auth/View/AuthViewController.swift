@@ -18,7 +18,7 @@ final class AuthViewController: BaseViewController, View {
         var label = UILabel()
         label.text = "무료 회원 가입"
         label.font = .pretendar(weight: ._700, size: 16.0)
-        label.textColor = .Font.font1
+        label.textColor = .Font.font2
         return label
     }()
     
@@ -146,6 +146,7 @@ private extension AuthViewController {
     func configLayout() {
         
         view.backgroundColor = .Background.background1
+        
         let loginStackView: UIStackView  = {
             let stackView = UIStackView(arrangedSubviews: [
                 kakaoLoginButton,
@@ -188,10 +189,5 @@ private extension AuthViewController {
             $0.top.equalTo(secondLabel.snp.bottom).offset(100.0)
             $0.leading.trailing.equalToSuperview().inset(20.0)
         }
-    }
-    
-    @objc func tapKakaoLoginButton() {
-        let agreementViewController = AgreementViewController(reactor: AgreementReactor())
-        navigationController?.pushViewController(agreementViewController, animated: true)
     }
 }

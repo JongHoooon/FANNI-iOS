@@ -23,7 +23,6 @@ final class SecondOnboardingViewController: BaseViewController, View {
     private lazy var progressImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "progress2")
-        
         return imageView
     }()
     
@@ -60,7 +59,6 @@ final class SecondOnboardingViewController: BaseViewController, View {
             $0.centerY.equalToSuperview()
         }
         button.addTarget(self, action: #selector(tapMenuButton), for: .touchUpInside)
-        
         button.isHidden = true
         button.alpha = 0
         
@@ -71,13 +69,11 @@ final class SecondOnboardingViewController: BaseViewController, View {
         let imageView = UIImageView(image: UIImage(named: "downVector"))
         imageView.isHidden = true
         imageView.alpha = 0
-        
         return imageView
     }()
     
     private lazy var dropDown: DropDown = {
         let dropDown = DropDown()
-        
         dropDown.borderColor = UIColor.main2.cgColor
         dropDown.borderWidth = 1.0
         dropDown.cornerRadius = 12.0
@@ -94,31 +90,23 @@ final class SecondOnboardingViewController: BaseViewController, View {
         dropDown.cellHeight = 56.0
         dropDown.width = 160.0
         dropDown.animationduration = 0.2
-        
         dropDown.selectionAction = { [weak self] (index, item) in
             guard let self = self else { return }
             self.hiddenMenuButton.setTitle(item, for: .normal)
             self.hiddenMenuButton.animateBorderColor(toColor: .deactiveTextField, duration: 0.2)
             self.hiddenMenuButton.setTitleColor(.Font.font1, for: .normal)
             self.vectorRoateReset()
-            
             if index == 4 {
                 self.inputModeRelay.accept(.custom)
             } else {
                 self.inputModeRelay.accept(.other)
             }
-            
-            UIView.animate(withDuration: 0.5) {
-            }
         }
-        
         dropDown.cancelAction = { [weak self] in
             guard let self = self else { return }
-            // 애니메이션 추가
             self.hiddenMenuButton.animateBorderColor(toColor: .deactiveTextField, duration: 0.2)
             self.vectorRoateReset()
         }
-        
         return dropDown
     }()
     
@@ -146,24 +134,14 @@ final class SecondOnboardingViewController: BaseViewController, View {
         textField.alpha = 0
         textField.addTarget(self, action: #selector(hiddenTextFieldDidBegin), for: .editingDidBegin)
         textField.addTarget(self, action: #selector(hiddenTextFieldDidEnd), for: .editingDidEnd)
-        
         return textField
     }()
-    
-    @objc func hiddenTextFieldDidBegin() {
-        hiddenTextFieldBottomView.backgroundColor = .main2
-    }
-    
-    @objc func hiddenTextFieldDidEnd() {
-        hiddenTextFieldBottomView.backgroundColor = .deactiveTextField
-    }
     
     private lazy var hiddenTextFieldBottomView: UIView = {
         let view = UIView()
         view.backgroundColor = .deactiveTextField
         view.isHidden = true
         view.alpha = 0
-        
         return view
     }()
     
@@ -209,7 +187,6 @@ final class SecondOnboardingViewController: BaseViewController, View {
         textField.leftViewMode = .always
         textField.inputView = datePicker
         let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-//        let barButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
         let barButton = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(done))
         barButton.tintColor = .main1
         let toolBar = UIToolbar(frame: CGRect(x: 0.0, y: 0.0, width: self.view.frame.width, height: 44.0))
@@ -219,21 +196,8 @@ final class SecondOnboardingViewController: BaseViewController, View {
         textField.tintColor = .clear
         textField.addTarget(self, action: #selector(editDidBegin), for: .editingDidBegin)
         textField.addTarget(self, action: #selector(editDidEnd), for: .editingDidEnd)
-        
         return textField
     }()
-    
-    @objc func done() {
-        view.endEditing(true)
-    }
-    
-    @objc func editDidBegin() {
-        anniversaryTextField.layer.borderColor = UIColor.main2.cgColor
-    }
-    
-    @objc func editDidEnd() {
-        anniversaryTextField.layer.borderColor = UIColor.deactiveTextField.cgColor
-    }
     
     private lazy var datePicker: UIDatePicker = { [weak self] in
         guard let self = self else { return UIDatePicker() }
@@ -241,7 +205,6 @@ final class SecondOnboardingViewController: BaseViewController, View {
         datePicker.datePickerMode = .date
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.locale = Locale(identifier: "ko-KR")
-        
         return datePicker
     }()
     
@@ -274,7 +237,6 @@ final class SecondOnboardingViewController: BaseViewController, View {
         stackView.distribution = .fill
         stackView.alignment = .fill
         stackView.spacing = 12.0
-        
         lunarCheckButton.snp.makeConstraints {
             $0.height.width.equalTo(22.0)
         }
@@ -289,7 +251,6 @@ final class SecondOnboardingViewController: BaseViewController, View {
         stackView.distribution = .fill
         stackView.alignment = .fill
         stackView.spacing = 12.0
-        
         otherAnniversaryCheckButton.snp.makeConstraints {
             $0.height.width.equalTo(22.0)
         }
@@ -420,7 +381,6 @@ private extension SecondOnboardingViewController {
             label.textColor = .main2
             return label
         }()
-        
         let leftBarItem = UIBarButtonItem(customView: titleLabel)
         navigationItem.leftBarButtonItem = leftBarItem
     }
@@ -553,7 +513,6 @@ private extension SecondOnboardingViewController {
             self.hiddendInfoLabel1.isHidden = false
             
             self.otherAnniversaryStackView.alpha = 0
-            // self.otherAnniversaryStackView.isHidden
             
             self.hiddendInfoLabel2.alpha = 1
             self.hiddendInfoLabel2.isHidden = false
@@ -580,6 +539,26 @@ private extension SecondOnboardingViewController {
             self.hiddenTextField.alpha = 0
             self.hiddenTextFieldBottomView.alpha = 0
         }
+    }
+    
+    @objc func hiddenTextFieldDidBegin() {
+        hiddenTextFieldBottomView.backgroundColor = .main2
+    }
+    
+    @objc func hiddenTextFieldDidEnd() {
+        hiddenTextFieldBottomView.backgroundColor = .deactiveTextField
+    }
+    
+    @objc func done() {
+        view.endEditing(true)
+    }
+    
+    @objc func editDidBegin() {
+        anniversaryTextField.layer.borderColor = UIColor.main2.cgColor
+    }
+    
+    @objc func editDidEnd() {
+        anniversaryTextField.layer.borderColor = UIColor.deactiveTextField.cgColor
     }
     
     @objc func tapRightBarButton() {

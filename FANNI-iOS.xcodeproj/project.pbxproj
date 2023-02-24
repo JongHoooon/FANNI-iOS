@@ -45,6 +45,7 @@
 		EDB7C431298FDA0F00D60A9E /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EDB7C430298FDA0F00D60A9E /* .swiftlint.yml */; };
 		EDF710CC29A79F6B00F0B745 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF710CB29A79F6B00F0B745 /* Helper.swift */; };
 		EDF710CE29A7D2C700F0B745 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF710CD29A7D2C700F0B745 /* CALayer+Extension.swift */; };
+		EDF710D229A83A0000F0B745 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF710D129A83A0000F0B745 /* UITextField+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		EDB7C430298FDA0F00D60A9E /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		EDF710CB29A79F6B00F0B745 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		EDF710CD29A7D2C700F0B745 /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
+		EDF710D129A83A0000F0B745 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +278,7 @@
 				ED792F6029A1E2DC00A14792 /* UITextFiled+.swift */,
 				ED76AB9829A3510A0016CE8C /* UIButton+Extension.swift */,
 				EDF710CD29A7D2C700F0B745 /* CALayer+Extension.swift */,
+				EDF710D129A83A0000F0B745 /* UITextField+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -717,6 +720,7 @@
 				ED3E3D39299803BD00AEBFE5 /* UIColor+Extension.swift in Sources */,
 				ED792F5F29A139D400A14792 /* SecondOnboardingReactor.swift in Sources */,
 				ED280BCF299D17120089570C /* AuthViewReactor.swift in Sources */,
+				EDF710D229A83A0000F0B745 /* UITextField+Extension.swift in Sources */,
 				ED76AB9929A3510A0016CE8C /* UIButton+Extension.swift in Sources */,
 				ED451F41299BE9CB000AA855 /* NSNotification+Extension.swift in Sources */,
 			);

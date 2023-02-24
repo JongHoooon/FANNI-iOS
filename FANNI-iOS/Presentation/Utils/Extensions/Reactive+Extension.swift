@@ -67,7 +67,6 @@ extension Reactive where Base: UITextField {
     }
 }
 
-
 extension Reactive where Base: UITextField {
     var becomeResponder: Binder<Bool> {
         return Binder(self.base) { textField, bool in

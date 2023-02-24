@@ -22,7 +22,6 @@ final class FirstOnboardingViewController: BaseViewController, View {
     private lazy var progressImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "progress1")
-        
         return imageView
     }()
     
@@ -96,11 +95,8 @@ final class FirstOnboardingViewController: BaseViewController, View {
         textField.tintColor = .main1
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16.0, height: 56.0))
         textField.leftViewMode = .always
-
         textField.clearButtonMode = .whileEditing
-        
         textField.isHidden = true
-        
         return textField
     }()
 
@@ -145,12 +141,10 @@ extension FirstOnboardingViewController {
             .disposed(by: disposeBag)
         
         let editingDidEnd = newNicknameTextField.rx.controlEvent(.editingDidEnd)
-//            .debug("끝")
             .observe(on: MainScheduler.asyncInstance)
             .share()
         
         let editingDidBegin = newNicknameTextField.rx.controlEvent(.editingDidBegin)
-//            .debug("시작")
             .observe(on: MainScheduler.asyncInstance)
             .share()
         
@@ -188,15 +182,18 @@ extension FirstOnboardingViewController {
         let usedNicknameButonState = reactor.state.asObservable()
             .subscribe(on: MainScheduler.asyncInstance)
             .map { $0.usedNicknameButton }
+            .distinctUntilChanged()
             .asDriver(onErrorJustReturn: false)
             
         let newNicknameButonState = reactor.state.asObservable()
             .subscribe(on: MainScheduler.asyncInstance)
             .map { $0.newNicknameButton }
+            .distinctUntilChanged()
             .asDriver(onErrorJustReturn: false)
         
         let newNickname = reactor.state.asObservable()
             .map { $0.newNickname }
+            .distinctUntilChanged()
             
         usedNicknameButonState
             .distinctUntilChanged()
@@ -222,6 +219,7 @@ extension FirstOnboardingViewController {
             .disposed(by: disposeBag)
         
         reactor.state.asObservable().map { $0.isReponder }
+            .distinctUntilChanged()
             .asDriver(onErrorJustReturn: false)
             .drive(newNicknameTextField.rx.becomeResponder)
             .disposed(by: disposeBag)
@@ -264,7 +262,6 @@ private extension FirstOnboardingViewController {
             stackView.distribution = .fill
             stackView.alignment = .fill
             stackView.spacing = 12.0
-            
             usedNicknameCheckButton.snp.makeConstraints {
                 $0.height.width.equalTo(22.0)
             }
@@ -279,7 +276,6 @@ private extension FirstOnboardingViewController {
             stackView.distribution = .fill
             stackView.alignment = .fill
             stackView.spacing = 12.0
-            
             newNicknameCheckButton.snp.makeConstraints {
                 $0.height.width.equalTo(22.0)
             }
@@ -337,9 +333,9 @@ private extension FirstOnboardingViewController {
         }
         
         nextButton.snp.makeConstraints {
-            $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-16.0)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-34.0)
             $0.leading.trailing.equalToSuperview().inset(20.0)
-            $0.height.equalTo(44.0)
+            $0.height.equalTo(56.0)
         }
     }
     

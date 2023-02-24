@@ -13,10 +13,6 @@ import RxCocoa
 
 final class AgreementViewController: BaseViewController, View {
     
-    // MARK: - Proprties
-    
-    let makeAllButtonFalseRelay = PublishRelay<Void>()
-    
     // MARK: - UI
     
     private lazy var infoLabel: UILabel = {
@@ -49,7 +45,7 @@ final class AgreementViewController: BaseViewController, View {
         let button = UIButton()
         button.setTitle("이용약관 (필수)", for: .normal)
         button.titleLabel?.font = .pretendar(weight: ._400, size: 14.0)
-        button.setTitleColor(.label, for: .normal)
+        button.setTitleColor(.Font.font2, for: .normal)
         button.contentHorizontalAlignment = .leading
         return button
     }()
@@ -64,7 +60,7 @@ final class AgreementViewController: BaseViewController, View {
         let button = UIButton()
         button.setTitle("개인정보 처리방침 (필수)", for: .normal)
         button.titleLabel?.font = .pretendar(weight: ._400, size: 14.0)
-        button.setTitleColor(.label, for: .normal)
+        button.setTitleColor(.Font.font2, for: .normal)
         button.contentHorizontalAlignment = .leading
         return button
     }()
@@ -79,7 +75,7 @@ final class AgreementViewController: BaseViewController, View {
         let button = UIButton()
         button.setTitle("마케팅 수신 동의 (선택)", for: .normal)
         button.titleLabel?.font = .pretendar(weight: ._400, size: 14.0)
-        button.setTitleColor(.label, for: .normal)
+        button.setTitleColor(.Font.font2, for: .normal)
         button.contentHorizontalAlignment = .leading
         return button
     }()
@@ -105,8 +101,8 @@ final class AgreementViewController: BaseViewController, View {
     private lazy var allButton: UIButton = {
         let button = UIButton()
         button.setTitle("약관 전체동의", for: .normal)
-        button.titleLabel?.font = .pretendar(weight: ._400, size: 14.0)
-        button.setTitleColor(.label, for: .normal)
+        button.titleLabel?.font = .pretendar(weight: ._500, size: 16.0)
+        button.setTitleColor(.Font.font2, for: .normal)
         button.contentHorizontalAlignment = .leading
         return button
     }()
@@ -162,6 +158,7 @@ extension AgreementViewController {
         // MARK: State
 
         reactor.state.asObservable().map { $0.allCheckButton }
+            .distinctUntilChanged()
             .asDriver(onErrorJustReturn: false)
             .distinctUntilChanged()
             .drive(allCheckButton.rx.isCheck)
@@ -186,6 +183,7 @@ extension AgreementViewController {
             .disposed(by: disposeBag)
 
         reactor.state.asObservable().map { $0.marketingCheckButton }
+            .distinctUntilChanged()
             .asDriver(onErrorJustReturn: false)
             .distinctUntilChanged()
             .drive(marketingCheckButton.rx.isCheck)
@@ -222,7 +220,7 @@ private extension AgreementViewController {
             button.addTarget(self,
                              action: #selector(tapRightBarButton),
                              for: .touchUpInside)
-            button.titleLabel?.font = .pretendar(weight: ._400, size: 14.0)
+            button.titleLabel?.font = .pretendar(weight: ._500, size: 14.0)
             return button
         }()
         
@@ -323,8 +321,8 @@ private extension AgreementViewController {
         
         allView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(20.0)
-            $0.bottom.equalTo(agreementVerticalStackView.snp.top).offset(-16.0)
-            $0.height.equalTo(48.0)
+            $0.bottom.equalTo(agreementVerticalStackView.snp.top).offset(-24.0)
+            $0.height.equalTo(56.0)
         }
         
         allStackView.snp.makeConstraints {
@@ -334,13 +332,13 @@ private extension AgreementViewController {
         
         agreementVerticalStackView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(36.0)
-            $0.bottom.equalTo(signinButton.snp.top).offset(-80.0)
+            $0.bottom.equalTo(signinButton.snp.top).offset(-48.0)
         }
         
         signinButton.snp.makeConstraints {
-            $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-16.0)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-34.0)
             $0.leading.trailing.equalToSuperview().inset(20.0)
-            $0.height.equalTo(44.0)
+            $0.height.equalTo(56.0)
         }
     }
     

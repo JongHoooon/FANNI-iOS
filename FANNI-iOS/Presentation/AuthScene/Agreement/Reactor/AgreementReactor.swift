@@ -18,7 +18,6 @@ final class AgreementReactor: Reactor {
         case tapUtilizationCheckButton
         case tapPersonalInfoCheckButton
         case tapMarketingCheckButton
-
     }
     
     enum Mutation {

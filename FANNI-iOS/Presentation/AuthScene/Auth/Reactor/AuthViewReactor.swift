@@ -54,12 +54,10 @@ final class AuthReactor: Reactor {
 // MARK: - Private Method
 private extension AuthReactor {
     func loginWithKakao() {
-        
         if UserApi.isKakaoTalkLoginAvailable() {
             UserApi.shared.rx.loginWithKakaoTalk()
                 .subscribe(onNext: { [weak self] _ in
                     Log.debug("Login With KakaoTalk success.")
-                    
                     self?.getInfoWithKakao()
                     NotificationCenter.default.post(name: .loginSuccess, object: nil)
                 }, onError: { error in
@@ -70,7 +68,6 @@ private extension AuthReactor {
             UserApi.shared.rx.loginWithKakaoAccount()
                 .subscribe(onNext: { [weak self] _ in
                     Log.debug("Login With KakaoAccount sucess.")
-                    
                     self?.getInfoWithKakao()
                     NotificationCenter.default.post(name: .loginSuccess, object: nil)
                 }, onError: { error in
@@ -83,18 +80,14 @@ private extension AuthReactor {
     func getInfoWithKakao() {
         UserApi.shared.rx.me()
             .subscribe(onSuccess: { user in
-                
                 let id: String = String(user.id ?? 0)
                 let nickName: String = user.kakaoAccount?.profile?.nickname ?? ""
                 let email: String = user.kakaoAccount?.email ?? ""
-                
                 UserManager.snsType = "kakao"
                 UserManager.snsID = id
                 UserManager.nickName = nickName
                 UserManager.email = email
-                
                 Log.debug("Kakao ID: \(id), Kakao Nickname: \(nickName), email: \(email)")
-                
             }, onFailure: { error in
                 Log.error("Get info with kakao error: \(error)")
             })
@@ -109,16 +102,13 @@ private extension AuthReactor {
                     Log.error(error)
                     return
                 }
-                
                 let id: String = result.user.userID ?? ""
                 let nickName: String = result.user.profile?.name ?? ""
                 let email: String = result.user.profile?.email ?? ""
-                
                 UserManager.snsType = "google"
                 UserManager.snsID = id
                 UserManager.nickName = nickName
                 UserManager.email = email
-                
                 Log.debug("Google login success - id: \(id), name: \(nickName), email: \(email)")
                 NotificationCenter.default.post(name: .loginSuccess, object: nil)
             }
