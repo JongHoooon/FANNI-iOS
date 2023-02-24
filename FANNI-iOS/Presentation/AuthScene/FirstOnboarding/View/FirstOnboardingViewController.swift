@@ -10,6 +10,7 @@ import SnapKit
 import ReactorKit
 import RxSwift
 import RxCocoa
+import RxKeyboard
 
 final class FirstOnboardingViewController: BaseViewController, View {
     
@@ -18,6 +19,19 @@ final class FirstOnboardingViewController: BaseViewController, View {
     let makeAllButtonFalseRelay = PublishRelay<Void>()
     
     // MARK: - UI
+    
+    private lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.bounces = false
+        return scrollView
+    }()
+    
+    private lazy var containerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemBackground
+        return view
+    }()
         
     private lazy var progressImageView: UIImageView = {
         let imageView = UIImageView()
@@ -99,6 +113,44 @@ final class FirstOnboardingViewController: BaseViewController, View {
         textField.isHidden = true
         return textField
     }()
+    
+    private lazy var usedNicknameStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [usedNicknameCheckButton, usedNicknameLabel])
+        stackView.axis = .horizontal
+        stackView.distribution = .fill
+        stackView.alignment = .fill
+        stackView.spacing = 12.0
+        usedNicknameCheckButton.snp.makeConstraints {
+            $0.height.width.equalTo(22.0)
+        }
+        usedNicknameCheckButton.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        usedNicknameLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        return stackView
+    }()
+    
+    private lazy var newNicknameStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [newNicknameCheckButton, newNicknameLabel])
+        stackView.axis = .horizontal
+        stackView.distribution = .fill
+        stackView.alignment = .fill
+        stackView.spacing = 12.0
+        newNicknameCheckButton.snp.makeConstraints {
+            $0.height.width.equalTo(22.0)
+        }
+        newNicknameCheckButton.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        newNicknameLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        return stackView
+    }()
+    
+    private lazy var nicknameStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [usedNicknameStackView,
+                                                       newNicknameStackView])
+        stackView.axis = .vertical
+        stackView.distribution = .equalSpacing
+        stackView.alignment = .leading
+        stackView.spacing = 24.0
+        return stackView
+    }()
 
     // MARK: - Life Cycle
     
@@ -106,6 +158,7 @@ final class FirstOnboardingViewController: BaseViewController, View {
         super.viewDidLoad()
         configLayout()
         configNavigationBar()
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -224,7 +277,30 @@ extension FirstOnboardingViewController {
             .drive(newNicknameTextField.rx.becomeResponder)
             .disposed(by: disposeBag)
             
-        // MARK: Control Event
+        // MARK: Event
+        
+        RxKeyboard.instance.visibleHeight
+            .skip(1)
+            .drive(onNext: { [weak self] keyboardVisibleHeight in
+                guard let self = self else { return }
+                
+                let window = UIApplication.shared.windows.first
+                let extra = window!.safeAreaInsets.bottom
+                let heightStack: CGFloat = self.progressImageView.frame.height +
+                self.infoLabel1.frame.height +
+                self.infoLabel2.frame.height +
+                self.nicknameStackView.frame.height +
+                self.newNicknameTextField.frame.height + 40 + 40 + 20 + 40 + 20
+                let safeLayoutHeight = self.view.safeAreaLayoutGuide.layoutFrame.height
+                let inset = keyboardVisibleHeight - (safeLayoutHeight - heightStack) - extra + 8.0
+                if keyboardVisibleHeight > safeLayoutHeight - heightStack {
+                    self.scrollView.contentInset.bottom = inset
+                    self.scrollView.scroll(to: .bottom)
+                } else {
+                    self.scrollView.contentInset.bottom = 0
+                }
+            })
+            .disposed(by: disposeBag)
         
         editingDidBegin
             .map { return UIColor.main2 }
@@ -256,46 +332,11 @@ private extension FirstOnboardingViewController {
     }
     
     func configLayout() {
-        let usedNicknameStackView: UIStackView = {
-            let stackView = UIStackView(arrangedSubviews: [usedNicknameCheckButton, usedNicknameLabel])
-            stackView.axis = .horizontal
-            stackView.distribution = .fill
-            stackView.alignment = .fill
-            stackView.spacing = 12.0
-            usedNicknameCheckButton.snp.makeConstraints {
-                $0.height.width.equalTo(22.0)
-            }
-            usedNicknameCheckButton.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-            usedNicknameLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
-            return stackView
-        }()
+        let touch = UITapGestureRecognizer(target: self, action: #selector(tapGesture))
+        containerView.addGestureRecognizer(touch)
         
-        let newNicknameStackView: UIStackView = {
-            let stackView = UIStackView(arrangedSubviews: [newNicknameCheckButton, newNicknameLabel])
-            stackView.axis = .horizontal
-            stackView.distribution = .fill
-            stackView.alignment = .fill
-            stackView.spacing = 12.0
-            newNicknameCheckButton.snp.makeConstraints {
-                $0.height.width.equalTo(22.0)
-            }
-            newNicknameCheckButton.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-            newNicknameLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
-            return stackView
-        }()
-        
-        let nicknameStackView: UIStackView = {
-            let stackView = UIStackView(arrangedSubviews: [usedNicknameStackView,
-                                                           newNicknameStackView])
-            stackView.axis = .vertical
-            stackView.distribution = .equalSpacing
-            stackView.alignment = .leading
-            stackView.spacing = 24.0
-            return stackView
-        }()
-
-        view.backgroundColor = .systemBackground
-        
+        view.addSubview(scrollView)
+        scrollView.addSubview(containerView)
         [
             progressImageView,
             infoLabel1,
@@ -304,10 +345,20 @@ private extension FirstOnboardingViewController {
             newNicknameTextField,
             nextButton
             
-        ].forEach { view.addSubview($0) }
+        ].forEach { containerView.addSubview($0) }
+        
+        scrollView.snp.makeConstraints {
+            $0.leading.trailing.top.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+        
+        containerView.snp.makeConstraints {
+            $0.leading.trailing.top.bottom.equalTo(scrollView.contentLayoutGuide)
+            $0.width.equalTo(scrollView.frameLayoutGuide)
+            $0.height.equalTo(view.safeAreaLayoutGuide.snp.height)
+        }
         
         progressImageView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).offset(40.0)
+            $0.top.equalToSuperview().inset(40.0)
             $0.centerX.equalToSuperview()
         }
     
@@ -339,6 +390,10 @@ private extension FirstOnboardingViewController {
         }
     }
     
+    @objc func tapGesture() {
+        self.view.endEditing(true)
+    }
+    
     // TODO: 화면이동 수정!
     @objc func tapNextButton() {
         UserManager.nickName = newNicknameTextField.text ?? ""
@@ -347,5 +402,3 @@ private extension FirstOnboardingViewController {
         Log.debug("nickname: \(UserManager.nickName)")
     }
 }
-
-// TODO: keyboard 스크롤 뷰로 감싸줘야함

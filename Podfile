@@ -26,6 +26,7 @@ target 'FANNI-iOS' do
 	pod 'RxViewController', '~> 2.0.0'
 	pod 'RxGesture', '~> 4.0.4'
 	pod 'RxAlamofire', '~> 6.1.1'
+	pod 'RxKeyboard', '~> 2.0.0'
   
 	
 	# UI 

@@ -66,6 +66,9 @@ PODS:
   - RxKakaoSDKUser (2.13.1):
     - KakaoSDKUser (= 2.13.1)
     - RxKakaoSDKAuth (= 2.13.1)
+  - RxKeyboard (2.0.0):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
@@ -94,6 +97,7 @@ DEPENDENCIES:
   - RxKakaoSDKAuth (~> 2.13.1)
   - RxKakaoSDKCommon (~> 2.13.1)
   - RxKakaoSDKUser (~> 2.13.1)
+  - RxKeyboard (~> 2.0.0)
   - RxSwift (~> 6.5.0)
   - RxViewController (~> 2.0.0)
   - SnapKit (~> 5.6.0)
@@ -121,6 +125,7 @@ SPEC REPOS:
     - RxKakaoSDKAuth
     - RxKakaoSDKCommon
     - RxKakaoSDKUser
+    - RxKeyboard
     - RxRelay
     - RxSwift
     - RxViewController
@@ -160,6 +165,7 @@ SPEC CHECKSUMS:
   RxKakaoSDKAuth: a9fc4cbc2bc2ea1e1e46d75558ef06022b7bb3b3
   RxKakaoSDKCommon: 3b317abb6b2cef1a18ba6626ea8233c117d5930c
   RxKakaoSDKUser: fbeac97d5a0ab0581b28672ee43562df3e50e968
+  RxKeyboard: 4f5863f43b4ff0cbb2a20b94688d6b80c8a43c14
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   RxViewController: 56486fa0afd629a1d6b5ba077f3b8cd9dc31b5d2
@@ -168,6 +174,6 @@ SPEC CHECKSUMS:
   URLNavigator: 9e277a422a5c131a3e37970c2558e0e866cc22bd
   WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: 2082bfae529b59579723c046b88a0a8eba1911fd
+PODFILE CHECKSUM: c766b4ed24c96e64cfc06809a0153f5461a7d02b
 
 COCOAPODS: 1.11.3
