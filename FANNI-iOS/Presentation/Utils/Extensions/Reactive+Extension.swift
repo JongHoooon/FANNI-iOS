@@ -8,9 +8,10 @@
 import UIKit
 import RxSwift
 
-// MARK: - Agreement View
+// MARK: - UIButton
 
 extension Reactive where Base: UIButton {
+    
     var isCheck: Binder<Bool> {
         return Binder(self.base) { button, bool in
             switch bool {
@@ -19,9 +20,7 @@ extension Reactive where Base: UIButton {
             }
         }
     }
-}
-
-extension Reactive where Base: UIButton {
+    
     var isEnable: Binder<Bool> {
         return Binder(self.base) { button, bool in
             switch bool {
@@ -36,17 +35,16 @@ extension Reactive where Base: UIButton {
     }
 }
 
-// MARK: - OnboardingFirst View
+// MARK: - UITextField
 
 extension Reactive where Base: UITextField {
+    
     var borderColor: Binder<UIColor?> {
         return Binder(self.base) { textField, color in
             textField.layer.borderColor = color?.cgColor
         }
     }
-}
-
-extension Reactive where Base: UITextField {
+    
     var isHiddenAnimatioin: Binder<Bool> {
         return Binder(self.base) { textField, bool in
             switch bool {
@@ -65,9 +63,7 @@ extension Reactive where Base: UITextField {
             }
         }
     }
-}
-
-extension Reactive where Base: UITextField {
+    
     var becomeResponder: Binder<Bool> {
         return Binder(self.base) { textField, bool in
             switch bool {
