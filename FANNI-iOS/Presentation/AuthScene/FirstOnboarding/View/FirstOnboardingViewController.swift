@@ -283,22 +283,11 @@ extension FirstOnboardingViewController {
             .skip(1)
             .drive(onNext: { [weak self] keyboardVisibleHeight in
                 guard let self = self else { return }
-                
                 let window = UIApplication.shared.windows.first
                 let extra = window!.safeAreaInsets.bottom
-                let heightStack: CGFloat = self.progressImageView.frame.height +
-                self.infoLabel1.frame.height +
-                self.infoLabel2.frame.height +
-                self.nicknameStackView.frame.height +
-                self.newNicknameTextField.frame.height + 40 + 40 + 20 + 40 + 20
-                let safeLayoutHeight = self.view.safeAreaLayoutGuide.layoutFrame.height
-                let inset = keyboardVisibleHeight - (safeLayoutHeight - heightStack) - extra + 8.0
-                if keyboardVisibleHeight > safeLayoutHeight - heightStack {
-                    self.scrollView.contentInset.bottom = inset
-                    self.scrollView.scroll(to: .bottom)
-                } else {
-                    self.scrollView.contentInset.bottom = 0
-                }
+                let textFieldY: CGFloat = self.containerView.frame.height - self.newNicknameTextField.frame.maxY
+                let keyboardY: CGFloat = keyboardVisibleHeight - extra
+                self.scrollView.contentInset.bottom = keyboardY > textFieldY ? keyboardVisibleHeight - extra + 16.0 : 0
             })
             .disposed(by: disposeBag)
         
@@ -332,6 +321,8 @@ private extension FirstOnboardingViewController {
     }
     
     func configLayout() {
+        view.backgroundColor = .systemBackground
+        
         let touch = UITapGestureRecognizer(target: self, action: #selector(tapGesture))
         containerView.addGestureRecognizer(touch)
         
@@ -371,7 +362,7 @@ private extension FirstOnboardingViewController {
             $0.top.equalTo(infoLabel1.snp.bottom).offset(16.0)
             $0.leading.trailing.equalTo(infoLabel1)
         }
-        
+         
         nicknameStackView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(20.0)
             $0.top.equalTo(infoLabel2.snp.bottom).offset(40.0)
