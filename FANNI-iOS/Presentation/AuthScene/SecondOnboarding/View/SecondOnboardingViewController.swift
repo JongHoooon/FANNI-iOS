@@ -10,6 +10,7 @@ import SnapKit
 import ReactorKit
 import RxSwift
 import RxCocoa
+import RxKeyboard
 import DropDown
 
 final class SecondOnboardingViewController: BaseViewController, View {
@@ -19,6 +20,18 @@ final class SecondOnboardingViewController: BaseViewController, View {
     let inputModeRelay = PublishRelay<InputMode>()
     
     // MARK: - UI
+    
+    private lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.showsVerticalScrollIndicator = false
+        return scrollView
+    }()
+    
+    private lazy var containerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemBackground
+        return view
+    }()
     
     private lazy var progressImageView: UIImageView = {
         let imageView = UIImageView()
@@ -50,6 +63,7 @@ final class SecondOnboardingViewController: BaseViewController, View {
         let button = UIButton()
         button.setTitle("기념일 선택", for: .normal)
         button.setTitleColor(.Font.font3, for: .normal)
+        button.titleLabel?.font = .pretendar(weight: ._400, size: 16.0)
         button.titleLabel?.textAlignment = .left
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor.deactiveTextField.cgColor
@@ -126,7 +140,7 @@ final class SecondOnboardingViewController: BaseViewController, View {
         textField.placeholder = "텍스트를 입력해주세요."
         textField.font = .pretendar(weight: ._400, size: 16.0)
         textField.textColor = .Font.font1
-        textField.tintColor = .main1
+        textField.tintColor = .label
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 3.0, height: 52.0))
         textField.leftViewMode = .always
         textField.clearButtonMode = .whileEditing
@@ -368,6 +382,19 @@ extension SecondOnboardingViewController {
                 }
             })
             .disposed(by: disposeBag)
+        
+        // MARK: Event
+        
+        RxKeyboard.instance.visibleHeight
+            .skip(1)
+            .drive(onNext: { [weak self] keyboardVisibleHeight in
+                guard let self = self else { return }
+//                if anniversaryTextField.isFirstResponder &&{
+//
+//                }
+                
+            })
+            
     }
 }
 
@@ -389,6 +416,11 @@ private extension SecondOnboardingViewController {
         
         view.backgroundColor = .systemBackground
         
+        let touch = UITapGestureRecognizer(target: self, action: #selector(endEditing))
+        containerView.addGestureRecognizer(touch)
+        
+        view.addSubview(scrollView)
+        scrollView.addSubview(containerView)
         [
             progressImageView,
             infoLabel,
@@ -402,10 +434,20 @@ private extension SecondOnboardingViewController {
             buttonStackView,
             previousButton,
             nextButton
-        ].forEach { view.addSubview($0) }
+        ].forEach { containerView.addSubview($0) }
+        
+        scrollView.snp.makeConstraints {
+            $0.leading.trailing.top.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+        
+        containerView.snp.makeConstraints {
+            $0.leading.trailing.top.bottom.equalTo(scrollView.contentLayoutGuide)
+            $0.width.equalTo(scrollView.frameLayoutGuide)
+            $0.height.equalTo(view.safeAreaLayoutGuide.snp.height)
+        }
         
         progressImageView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).offset(40.0)
+            $0.top.equalToSuperview().offset(40.0)
             $0.centerX.equalToSuperview()
         }
         
@@ -573,5 +615,9 @@ private extension SecondOnboardingViewController {
     
     @objc func tapPreviousButton() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func endEditing() {
+        self.view.endEditing(true)
     }
 }

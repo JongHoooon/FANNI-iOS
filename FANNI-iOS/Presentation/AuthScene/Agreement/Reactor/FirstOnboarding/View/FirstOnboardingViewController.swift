@@ -23,7 +23,6 @@ final class FirstOnboardingViewController: BaseViewController, View {
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsVerticalScrollIndicator = false
-        scrollView.bounces = false
         return scrollView
     }()
     
@@ -106,7 +105,7 @@ final class FirstOnboardingViewController: BaseViewController, View {
         textField.layer.borderWidth = 1.0
         textField.layer.cornerRadius = 12.0
         textField.layer.borderColor = UIColor.deactiveTextField.cgColor
-        textField.tintColor = .main1
+        textField.tintColor = .label
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16.0, height: 56.0))
         textField.leftViewMode = .always
         textField.clearButtonMode = .whileEditing
@@ -159,12 +158,6 @@ final class FirstOnboardingViewController: BaseViewController, View {
         configLayout()
         configNavigationBar()
         
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if reactor?.currentState.isReponder ?? false {
-            newNicknameTextField.endEditing(true)
-        }
     }
     
     // MARK: - Init
@@ -323,7 +316,7 @@ private extension FirstOnboardingViewController {
     func configLayout() {
         view.backgroundColor = .systemBackground
         
-        let touch = UITapGestureRecognizer(target: self, action: #selector(tapGesture))
+        let touch = UITapGestureRecognizer(target: self, action: #selector(endEditing))
         containerView.addGestureRecognizer(touch)
         
         view.addSubview(scrollView)
@@ -381,7 +374,7 @@ private extension FirstOnboardingViewController {
         }
     }
     
-    @objc func tapGesture() {
+    @objc func endEditing() {
         self.view.endEditing(true)
     }
     
