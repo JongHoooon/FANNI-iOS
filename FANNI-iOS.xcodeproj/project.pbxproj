@@ -19,6 +19,10 @@
 		6CD359BC29BA0AF100900E82 /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD359BB29BA0AF100900E82 /* EmptyResponse.swift */; };
 		6CD359BE29BA0AFC00900E82 /* EmptyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD359BD29BA0AFC00900E82 /* EmptyRequest.swift */; };
 		6CD359C029BA0B0900900E82 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD359BF29BA0B0900900E82 /* NetworkError.swift */; };
+		6CD359C329BA0BC500900E82 /* TemplateAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD359C229BA0BC500900E82 /* TemplateAPI.swift */; };
+		6CD359C529BA0C0000900E82 /* TemplateAPI+template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD359C429BA0C0000900E82 /* TemplateAPI+template.swift */; };
+		6CD359C829BA0C4500900E82 /* TemplateDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD359C729BA0C4500900E82 /* TemplateDTO.swift */; };
+		6CD359CA29BA0C8500900E82 /* URLInfo+Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD359C929BA0C8500900E82 /* URLInfo+Template.swift */; };
 		7FAF329169E341BDB541F61A /* Pods_FANNI_iOS_FANNI_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5C6D2236BB239EA86431BAA /* Pods_FANNI_iOS_FANNI_iOSUITests.framework */; };
 		AC31C3EB8B867AA450BCB6B8 /* Pods_FANNI_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D9235962052B2694D7EAE4 /* Pods_FANNI_iOS.framework */; };
 		ED280BCF299D17120089570C /* AuthViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED280BCE299D17120089570C /* AuthViewReactor.swift */; };
@@ -80,6 +84,10 @@
 		6CD359BB29BA0AF100900E82 /* EmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
 		6CD359BD29BA0AFC00900E82 /* EmptyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyRequest.swift; sourceTree = "<group>"; };
 		6CD359BF29BA0B0900900E82 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		6CD359C229BA0BC500900E82 /* TemplateAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateAPI.swift; sourceTree = "<group>"; };
+		6CD359C429BA0C0000900E82 /* TemplateAPI+template.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TemplateAPI+template.swift"; sourceTree = "<group>"; };
+		6CD359C729BA0C4500900E82 /* TemplateDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateDTO.swift; sourceTree = "<group>"; };
+		6CD359C929BA0C8500900E82 /* URLInfo+Template.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLInfo+Template.swift"; sourceTree = "<group>"; };
 		B9D9235962052B2694D7EAE4 /* Pods_FANNI_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FANNI_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C01F0E1E90526330A260CB27 /* Pods-FANNI-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FANNI-iOS.release.xcconfig"; path = "Target Support Files/Pods-FANNI-iOS/Pods-FANNI-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		C82B1C940FE4960C36FA7CBB /* Pods-FANNI-iOS-FANNI-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FANNI-iOS-FANNI-iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-FANNI-iOS-FANNI-iOSUITests/Pods-FANNI-iOS-FANNI-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +154,7 @@
 		2509A57929921510004953BA /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				6CD359C129BA0BAE00900E82 /* Template */,
 				6CD359AE29BA0A5700900E82 /* Base */,
 				2509A57629921504004953BA /* TempDomain.swift */,
 			);
@@ -155,6 +164,7 @@
 		2509A57A2992151A004953BA /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				6CD359C629BA0C1E00900E82 /* Template */,
 				ED4842F4299BC88B0055E5AC /* KakaoAuthService.swift */,
 				ED451F42299BEC72000AA855 /* UserManager.swift */,
 			);
@@ -185,6 +195,24 @@
 				6CD359BF29BA0B0900900E82 /* NetworkError.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		6CD359C129BA0BAE00900E82 /* Template */ = {
+			isa = PBXGroup;
+			children = (
+				6CD359C229BA0BC500900E82 /* TemplateAPI.swift */,
+				6CD359C429BA0C0000900E82 /* TemplateAPI+template.swift */,
+				6CD359C929BA0C8500900E82 /* URLInfo+Template.swift */,
+			);
+			path = Template;
+			sourceTree = "<group>";
+		};
+		6CD359C629BA0C1E00900E82 /* Template */ = {
+			isa = PBXGroup;
+			children = (
+				6CD359C729BA0C4500900E82 /* TemplateDTO.swift */,
+			);
+			path = Template;
 			sourceTree = "<group>";
 		};
 		EC069C8759A3ED040879BF84 /* Pods */ = {
@@ -653,7 +681,9 @@
 				2509A58129921596004953BA /* TempCommon.swift in Sources */,
 				ED3E3D8D2998C11B00AEBFE5 /* AgreementReactor.swift in Sources */,
 				ED451F45299BEF5F000AA855 /* TestViewController.swift in Sources */,
+				6CD359C829BA0C4500900E82 /* TemplateDTO.swift in Sources */,
 				6CD359B229BA0A8B00900E82 /* NetworkAPI+URLInfo.swift in Sources */,
+				6CD359CA29BA0C8500900E82 /* URLInfo+Template.swift in Sources */,
 				EDB7C3FD298FC9C100D60A9E /* AuthViewController.swift in Sources */,
 				EDB7C3F9298FC9C100D60A9E /* AppDelegate.swift in Sources */,
 				6CD359B629BA0AB000900E82 /* NetworkAPI+RequestInfo.swift in Sources */,
@@ -672,9 +702,11 @@
 				ED3E3D312997F31E00AEBFE5 /* tempInfrastructure.swift in Sources */,
 				ED3E3D44299818AE00AEBFE5 /* UIFont+Extenstion.swift in Sources */,
 				ED3E3D39299803BD00AEBFE5 /* UIColor+Extension.swift in Sources */,
+				6CD359C329BA0BC500900E82 /* TemplateAPI.swift in Sources */,
 				ED280BCF299D17120089570C /* AuthViewReactor.swift in Sources */,
 				6CD359C029BA0B0900900E82 /* NetworkError.swift in Sources */,
 				ED451F41299BE9CB000AA855 /* NSNotification+Extension.swift in Sources */,
+				6CD359C529BA0C0000900E82 /* TemplateAPI+template.swift in Sources */,
 				6CD359BA29BA0ADD00900E82 /* NetworkAPIProtocol+Request.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
