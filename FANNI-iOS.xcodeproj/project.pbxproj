@@ -243,6 +243,7 @@
 			children = (
 				ED3E3D332997F85B00AEBFE5 /* Auth */,
 				ED3E3D47299896E200AEBFE5 /* Agreement */,
+				ED050B0929A0CF2F008E2961 /* FirstOnboarding */,
 				ED792F5929A1399600A14792 /* SecondOnboarding */,
 			);
 			path = AuthScene;
@@ -305,7 +306,6 @@
 			isa = PBXGroup;
 			children = (
 				ED3E3D8C2998C11B00AEBFE5 /* AgreementReactor.swift */,
-				ED050B0929A0CF2F008E2961 /* FirstOnboarding */,
 			);
 			path = Reactor;
 			sourceTree = "<group>";

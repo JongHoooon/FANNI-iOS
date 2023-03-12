@@ -20,25 +20,25 @@ final class FirstOnboardingViewController: BaseViewController, View {
     
     // MARK: - UI
     
-    private lazy var scrollView: UIScrollView = {
+    private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsVerticalScrollIndicator = false
         return scrollView
     }()
     
-    private lazy var containerView: UIView = {
+    private let containerView: UIView = {
         let view = UIView()
         view.backgroundColor = .systemBackground
         return view
     }()
         
-    private lazy var progressImageView: UIImageView = {
+    private let progressImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "progress1")
         return imageView
     }()
     
-    private lazy var infoLabel1: UILabel = {
+    private let infoLabel1: UILabel = {
         let label = UILabel()
         label.text = "\"\(UserManager.nickName)\"님,\n만나서 반갑습니다!"
         label.font = .pretendar(weight: ._700, size: 24.0)
@@ -47,7 +47,7 @@ final class FirstOnboardingViewController: BaseViewController, View {
         return label
     }()
     
-    private lazy var infoLabel2: UILabel = {
+    private let infoLabel2: UILabel = {
         let label = UILabel()
         label.text = "FANNI에서 사용하실 이름을 알려주세요.\n모든 가족들에게 이 이름으로 보이니\n가급적 설명이나 모두가 아는 애칭으로 설정해 주세요."
         label.font = .pretendar(weight: ._400, size: 14.0)
@@ -56,13 +56,13 @@ final class FirstOnboardingViewController: BaseViewController, View {
         return label
     }()
     
-    private lazy var usedNicknameCheckButton: UIButton = {
+    private let usedNicknameCheckButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "checkBox0"), for: .normal)
         return button
     }()
     
-    private lazy var usedNicknameLabel: UILabel = {
+    private let usedNicknameLabel: UILabel = {
         let label = UILabel()
         label.text = "\"\(UserManager.nickName)\" 그대로 사용할게요."
         label.font = .pretendar(weight: ._500, size: 16.0)
@@ -71,13 +71,13 @@ final class FirstOnboardingViewController: BaseViewController, View {
         return label
     }()
     
-    private lazy var newNicknameCheckButton: UIButton = {
+    private let newNicknameCheckButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "checkBox0"), for: .normal)
         return button
     }()
     
-    private lazy var newNicknameLabel: UILabel = {
+    private let newNicknameLabel: UILabel = {
         let label = UILabel()
         label.text = "새로 설정할게요."
         label.font = .pretendar(weight: ._500, size: 16.0)
@@ -97,7 +97,7 @@ final class FirstOnboardingViewController: BaseViewController, View {
         return button
     }()
     
-    private lazy var newNicknameTextField: CustomTextField = {
+    private let newNicknameTextField: CustomTextField = {
         let textField = CustomTextField()
         textField.placeholder = "사용하실 이름을 입력해주세요."
         textField.font = .pretendar(weight: ._400, size: 16.0)
@@ -177,9 +177,11 @@ final class FirstOnboardingViewController: BaseViewController, View {
 extension FirstOnboardingViewController {
     
     func bind(reactor: FirstOnboardingReactor) {
-        
-        // MARK: Action
-        
+        bindAction(reactor)
+        bindState(reactor)
+    }
+    
+    private func bindAction(_ reactor: Reactor) {
         newNicknameTextField.rx.controlEvent(.editingDidEndOnExit)
             .observe(on: MainScheduler.asyncInstance)
             .map { Reactor.Action.editingDidEnd }
@@ -193,6 +195,18 @@ extension FirstOnboardingViewController {
         let editingDidBegin = newNicknameTextField.rx.controlEvent(.editingDidBegin)
             .observe(on: MainScheduler.asyncInstance)
             .share()
+        
+        editingDidBegin
+            .map { return UIColor.main2 }
+            .asDriver(onErrorJustReturn: .deactiveTextField)
+            .drive(newNicknameTextField.rx.borderColor)
+            .disposed(by: disposeBag)
+        
+        editingDidEnd
+            .map { return UIColor.deactiveTextField }
+            .asDriver(onErrorJustReturn: .main2)
+            .drive(newNicknameTextField.rx.borderColor)
+            .disposed(by: disposeBag)
         
         editingDidBegin
             .map { Reactor.Action.editingDidBegin }
@@ -222,9 +236,9 @@ extension FirstOnboardingViewController {
             .map { Reactor.Action.inputNewNickname($0) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
-
-        // MARK: State
-
+    }
+    
+    private func bindState(_ reactor: Reactor) {
         let usedNicknameButonState = reactor.state.asObservable()
             .subscribe(on: MainScheduler.asyncInstance)
             .map { $0.usedNicknameButton }
@@ -284,17 +298,6 @@ extension FirstOnboardingViewController {
             })
             .disposed(by: disposeBag)
         
-        editingDidBegin
-            .map { return UIColor.main2 }
-            .asDriver(onErrorJustReturn: .deactiveTextField)
-            .drive(newNicknameTextField.rx.borderColor)
-            .disposed(by: disposeBag)
-        
-        editingDidEnd
-            .map { return UIColor.deactiveTextField }
-            .asDriver(onErrorJustReturn: .main2)
-            .drive(newNicknameTextField.rx.borderColor)
-            .disposed(by: disposeBag)
     }
 }
 

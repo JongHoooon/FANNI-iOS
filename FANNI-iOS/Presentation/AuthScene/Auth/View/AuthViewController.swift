@@ -14,7 +14,7 @@ final class AuthViewController: BaseViewController, View {
     
     // MARK: - UI
     
-    private lazy var firstLabel: UILabel = {
+    private let firstLabel: UILabel = {
         var label = UILabel()
         label.text = "무료 회원 가입"
         label.font = .pretendar(weight: ._700, size: 16.0)
@@ -22,7 +22,7 @@ final class AuthViewController: BaseViewController, View {
         return label
     }()
     
-    private lazy var secondLabel: UILabel = {
+    private let secondLabel: UILabel = {
         var label = UILabel()
         let text = "FANNI를\n이용해보시겠어요?"
         label.text = text
@@ -36,7 +36,7 @@ final class AuthViewController: BaseViewController, View {
         return label
     }()
     
-    private lazy var kakaoLoginButton: UIButton = {
+    private let kakaoLoginButton: UIButton = {
         var button = UIButton()
         button.setTitle("  KakaoTalk으로 시작하기", for: .normal)
         button.setTitleColor(.black, for: .normal)
@@ -48,7 +48,7 @@ final class AuthViewController: BaseViewController, View {
         return button
     }()
     
-    private lazy var appleLoginButton: UIButton = {
+    private let appleLoginButton: UIButton = {
         var button = UIButton()
         button.setTitle("  Apple로 시작하기", for: .normal)
         button.setTitleColor(.systemBackground, for: .normal)
@@ -62,7 +62,7 @@ final class AuthViewController: BaseViewController, View {
         return button
     }()
     
-    private lazy var googleLoginButton: UIButton = {
+    private let googleLoginButton: UIButton = {
         var button = UIButton()
         button.setTitle("  Google로 시작하기", for: .normal)
         button.setTitleColor(.black, for: .normal)
@@ -101,9 +101,11 @@ final class AuthViewController: BaseViewController, View {
 extension AuthViewController {
     
     func bind(reactor: AuthReactor) {
-        
-        // MARK: Action
-        
+        bindAction(reactor)
+        bindState(reactor)
+    }
+    
+    private func bindAction(_ reactor: Reactor) {
         kakaoLoginButton.rx.tap
             .map { Reactor.Action.tapKakaoLogin }
             .bind(to: reactor.action)
@@ -113,9 +115,9 @@ extension AuthViewController {
             .map { Reactor.Action.tapGoogleLogin(view: self) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
-        
-        // MARK: - State
-        
+    }
+    
+    private func bindState(_ reactor: Reactor) {
         NotificationCenter.default.rx.notification(.loginSuccess)
             .asObservable()
             .subscribe(onNext: { [weak self] _ in

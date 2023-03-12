@@ -15,7 +15,7 @@ final class AgreementViewController: BaseViewController, View {
     
     // MARK: - UI
     
-    private lazy var infoLabel: UILabel = {
+    private let infoLabel: UILabel = {
         let label = UILabel()
         label.text = "약관에 동의하시면\n회원가입이 완료됩니다."
         label.font = .pretendar(weight: ._700, size: 24.0)
@@ -35,13 +35,13 @@ final class AgreementViewController: BaseViewController, View {
         return button
     }()
     
-    private lazy var utilizationCheckButton: UIButton = {
+    private let utilizationCheckButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "checkBox0"), for: .normal)
         return button
     }()
     
-    private lazy var utilizationButton: UIButton = {
+    private let utilizationButton: UIButton = {
         let button = UIButton()
         button.setTitle("이용약관 (필수)", for: .normal)
         button.titleLabel?.font = .pretendar(weight: ._400, size: 14.0)
@@ -50,13 +50,13 @@ final class AgreementViewController: BaseViewController, View {
         return button
     }()
     
-    private lazy var personalInfoCheckButton: UIButton = {
+    private let personalInfoCheckButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "checkBox0"), for: .normal)
         return button
     }()
     
-    private lazy var personalInfoButton: UIButton = {
+    private let personalInfoButton: UIButton = {
         let button = UIButton()
         button.setTitle("개인정보 처리방침 (필수)", for: .normal)
         button.titleLabel?.font = .pretendar(weight: ._400, size: 14.0)
@@ -65,13 +65,13 @@ final class AgreementViewController: BaseViewController, View {
         return button
     }()
     
-    private lazy var marketingCheckButton: UIButton = {
+    private let marketingCheckButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "checkBox0"), for: .normal)
         return button
     }()
     
-    private lazy var marketingButton: UIButton = {
+    private let marketingButton: UIButton = {
         let button = UIButton()
         button.setTitle("마케팅 수신 동의 (선택)", for: .normal)
         button.titleLabel?.font = .pretendar(weight: ._400, size: 14.0)
@@ -80,7 +80,7 @@ final class AgreementViewController: BaseViewController, View {
         return button
     }()
     
-    private lazy var allView: UIView = {
+    private let allView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(dynamicProvider: { collection in
             if collection.userInterfaceStyle == .light {
@@ -93,12 +93,12 @@ final class AgreementViewController: BaseViewController, View {
         return view
     }()
     
-    private lazy var allCheckButton: UIButton = {
+    private let allCheckButton: UIButton = {
         let button = UIButton()
         return button
     }()
     
-    private lazy var allButton: UIButton = {
+    private let allButton: UIButton = {
         let button = UIButton()
         button.setTitle("약관 전체동의", for: .normal)
         button.titleLabel?.font = .pretendar(weight: ._500, size: 16.0)
@@ -132,9 +132,11 @@ final class AgreementViewController: BaseViewController, View {
 extension AgreementViewController {
     
     func bind(reactor: AgreementReactor) {
-        
-        // MARK: Action
-        
+        bindAction(reactor)
+        bindState(reactor)
+    }
+    
+    private func bindAction(_ reactor: Reactor) {
         allCheckButton.rx.tap
             .map { Reactor.Action.tapAllCheckButton }
             .bind(to: reactor.action)
@@ -154,9 +156,9 @@ extension AgreementViewController {
             .map { Reactor.Action.tapMarketingCheckButton }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
-        
-        // MARK: State
-
+    }
+    
+    private func bindState(_ reactor: Reactor) {
         reactor.state.asObservable().map { $0.allCheckButton }
             .distinctUntilChanged()
             .asDriver(onErrorJustReturn: false)

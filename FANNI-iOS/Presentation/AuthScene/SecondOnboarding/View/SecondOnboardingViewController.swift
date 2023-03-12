@@ -21,25 +21,25 @@ final class SecondOnboardingViewController: BaseViewController, View {
     
     // MARK: - UI
     
-    private lazy var scrollView: UIScrollView = {
+    private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsVerticalScrollIndicator = false
         return scrollView
     }()
     
-    private lazy var containerView: UIView = {
+    private let containerView: UIView = {
         let view = UIView()
         view.backgroundColor = .systemBackground
         return view
     }()
     
-    private lazy var progressImageView: UIImageView = {
+    private let progressImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "progress2")
         return imageView
     }()
     
-    private lazy var infoLabel: UILabel = {
+    private let infoLabel: UILabel = {
         let label = UILabel()
         label.text = "첫 기념일로\n\(UserManager.nickName)님의 생일을\n알려주시겠어요?"
         label.font = .pretendar(weight: ._700, size: 24.0)
@@ -48,7 +48,7 @@ final class SecondOnboardingViewController: BaseViewController, View {
         return label
     }()
     
-    private lazy var hiddendInfoLabel1: UILabel = {
+    private let hiddendInfoLabel1: UILabel = {
         let label = UILabel()
         label.text = "어떤 기념일인가요?"
         label.font = .pretendar(weight: ._700, size: 24.0)
@@ -79,7 +79,7 @@ final class SecondOnboardingViewController: BaseViewController, View {
         return button
     }()
     
-    private lazy var vectorImageView: UIImageView = {
+    private let vectorImageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "downVector"))
         imageView.isHidden = true
         imageView.alpha = 0
@@ -124,7 +124,7 @@ final class SecondOnboardingViewController: BaseViewController, View {
         return dropDown
     }()
     
-    private lazy var hiddendInfoLabel2: UILabel = {
+    private let hiddendInfoLabel2: UILabel = {
         let label = UILabel()
         label.text = "기념일 날짜를 알려주세요."
         label.font = .pretendar(weight: ._500, size: 16.0)
@@ -151,7 +151,7 @@ final class SecondOnboardingViewController: BaseViewController, View {
         return textField
     }()
     
-    private lazy var hiddenTextFieldBottomView: UIView = {
+    private let hiddenTextFieldBottomView: UIView = {
         let view = UIView()
         view.backgroundColor = .deactiveTextField
         view.isHidden = true
@@ -159,13 +159,13 @@ final class SecondOnboardingViewController: BaseViewController, View {
         return view
     }()
     
-    private lazy var lunarCheckButton: UIButton = {
+    private let lunarCheckButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "checkBox0"), for: .normal)
         return button
     }()
     
-    private lazy var lunarLabel: UILabel = {
+    private let lunarLabel: UILabel = {
         let label = UILabel()
         label.text = "음력"
         label.font = .pretendar(weight: ._500, size: 16.0)
@@ -174,13 +174,13 @@ final class SecondOnboardingViewController: BaseViewController, View {
         return label
     }()
     
-    private lazy var otherAnniversaryCheckButton: UIButton = {
+    private let otherAnniversaryCheckButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "checkBox0"), for: .normal)
         return button
     }()
     
-    private lazy var otherAnniversaryLabel: UILabel = {
+    private let otherAnniversaryLabel: UILabel = {
         let label = UILabel()
         label.text = "다른 기념일로 설정할게요."
         label.font = .pretendar(weight: ._500, size: 16.0)
@@ -200,21 +200,34 @@ final class SecondOnboardingViewController: BaseViewController, View {
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16.0, height: 56.0))
         textField.leftViewMode = .always
         textField.inputView = datePicker
-        let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let barButton = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(done))
+        let flexible = UIBarButtonItem(
+            barButtonSystemItem: .flexibleSpace,
+            target: nil,
+            action: nil
+        )
+        let barButton = UIBarButtonItem(
+            title: "완료",
+            style: .done,
+            target: self,
+            action: #selector(done)
+        )
         barButton.tintColor = .main1
-        let toolBar = UIToolbar(frame: CGRect(x: 0.0, y: 0.0, width: self.view.frame.width, height: 44.0))
+        let toolBar = UIToolbar(frame: CGRect(
+            x: 0.0,
+            y: 0.0,
+            width: self.view.frame.width,
+            height: 44.0
+        ))
         toolBar.setItems([flexible, barButton], animated: true)
         textField.inputAccessoryView = toolBar
-        textField.clearButtonMode = .whileEditing
+        textField.clearButtonMode = .always
         textField.tintColor = .clear
         textField.addTarget(self, action: #selector(editDidBegin), for: .editingDidBegin)
         textField.addTarget(self, action: #selector(editDidEnd), for: .editingDidEnd)
         return textField
     }()
     
-    private lazy var datePicker: UIDatePicker = { [weak self] in
-        guard let self = self else { return UIDatePicker() }
+    private let datePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
         datePicker.preferredDatePickerStyle = .wheels
@@ -235,7 +248,7 @@ final class SecondOnboardingViewController: BaseViewController, View {
         return button
     }()
     
-    private lazy var nextButton: UIButton = {
+    private let nextButton: UIButton = {
         let button = UIButton()
         button.setTitle("다음", for: .normal)
         button.setTitleColor(.white, for: .normal)
@@ -312,9 +325,11 @@ final class SecondOnboardingViewController: BaseViewController, View {
 extension SecondOnboardingViewController {
     
     func bind(reactor: SecondOnboardingReactor) {
-        
-        // MARK: Action
-        
+        bindAction(reactor)
+        bindState(reactor)
+    }
+    
+    private func bindAction(_ reactor: Reactor) {
         lunarCheckButton.rx.tap
             .map { Reactor.Action.tapLunarButton }
             .bind(to: reactor.action)
@@ -343,9 +358,9 @@ extension SecondOnboardingViewController {
             .map { Reactor.Action.selectDate($0) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
-        
-        // MARK: State
-        
+    }
+    
+    private func bindState(_ reactor: Reactor) {
         reactor.state.asObservable().map { $0.checkLunarButton }
             .distinctUntilChanged()
             .asDriver(onErrorJustReturn: false)
@@ -382,19 +397,6 @@ extension SecondOnboardingViewController {
                 }
             })
             .disposed(by: disposeBag)
-        
-        // MARK: Event
-        
-        RxKeyboard.instance.visibleHeight
-            .skip(1)
-            .drive(onNext: { [weak self] keyboardVisibleHeight in
-                guard let self = self else { return }
-//                if anniversaryTextField.isFirstResponder &&{
-//
-//                }
-                
-            })
-            
     }
 }
 
