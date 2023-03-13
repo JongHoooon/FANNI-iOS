@@ -16,7 +16,7 @@ extension NetworkAPI {
         let host: String
         let port: Int?
         let path: String
-        let query: [String:String]?
+        let query: [String: String]?
         
         init(
             scheme: String = "https",

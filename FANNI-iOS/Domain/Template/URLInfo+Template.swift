@@ -8,7 +8,7 @@
 import Foundation
 
 extension NetworkAPI.URLInfo {
-    static func TemplateAPI() -> Self {
-        Self.init(host: "xxx.xxx.com", path: "path/component?id=1")
+    static func templateAPI() -> Self {
+        Self.init(host: "api.github.com", path: "search/repositories")
     }
 }

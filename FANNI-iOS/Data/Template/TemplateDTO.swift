@@ -9,7 +9,7 @@ import Foundation
 
 enum TemplateDTO {
     struct Request: Encodable {
-        
+        let id: Int
     }
     
     struct Response: Decodable {

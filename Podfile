@@ -53,6 +53,8 @@ target 'FANNI-iOS' do
   target 'FANNI-iOSTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Quick', '~> 6.1.0'
+    pod 'Nimble', '~> 11.2.1'
   end
 
   target 'FANNI-iOSUITests' do

@@ -13,6 +13,8 @@ PODS:
   - KakaoSDKUser (2.13.1):
     - KakaoSDKAuth (= 2.13.1)
   - Kingfisher (7.4.1)
+  - Nimble (11.2.1)
+  - Quick (6.1.0)
   - ReactorKit (3.2.0):
     - RxSwift (~> 6.0)
     - WeakMapTable (~> 1.1)
@@ -68,6 +70,8 @@ DEPENDENCIES:
   - KakaoSDKCommon (~> 2.13.1)
   - KakaoSDKUser (~> 2.13.1)
   - Kingfisher (~> 7.0)
+  - Nimble (~> 11.2.1)
+  - Quick (~> 6.1.0)
   - ReactorKit (~> 3.2.0)
   - RxAlamofire (~> 6.1.1)
   - RxCocoa (~> 6.5.0)
@@ -91,6 +95,8 @@ SPEC REPOS:
     - KakaoSDKCommon
     - KakaoSDKUser
     - Kingfisher
+    - Nimble
+    - Quick
     - ReactorKit
     - RxAlamofire
     - RxCocoa
@@ -115,6 +121,8 @@ SPEC CHECKSUMS:
   KakaoSDKCommon: a16807e19984a0a208c3117c7ef117f101a9a128
   KakaoSDKUser: 92d34cf6af7b123c22a7ee44424332123e356901
   Kingfisher: cd762a593a61b2fbecf7645c00f9a801a3ebfc9c
+  Nimble: 516ac503a0fafaa8e41dbb4a70a61be421fa893a
+  Quick: 6676ffb409bf04abba2ff23902af2407bfc6ac90
   ReactorKit: e8b11d6b9c415405f381669b095c154a05b59eca
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
@@ -132,6 +140,6 @@ SPEC CHECKSUMS:
   URLNavigator: 9e277a422a5c131a3e37970c2558e0e866cc22bd
   WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: 42ea9b510e6f7db3d59a08bef94a80572deb4177
+PODFILE CHECKSUM: 9a4344228fe657d093c19352d06abb1d8e7ba41c
 
 COCOAPODS: 1.12.0

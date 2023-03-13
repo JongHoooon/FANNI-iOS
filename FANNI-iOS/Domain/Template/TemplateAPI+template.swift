@@ -19,9 +19,9 @@ extension TemplateAPI {
             self.requestInfo = .init(
                 method: .get,
                 headers: nil,
-                parameters: .init()
+                parameters: request
             )
-            self.urlInfo = .TemplateAPI()
+            self.urlInfo = .templateAPI()
         }
     }
 }

@@ -10,6 +10,7 @@
 		2509A57729921504004953BA /* TempDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2509A57629921504004953BA /* TempDomain.swift */; };
 		2509A58129921596004953BA /* TempCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2509A58029921596004953BA /* TempCommon.swift */; };
 		5201E01346E13802D46963FA /* Pods_FANNI_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AED4DE771E31000676F197E /* Pods_FANNI_iOSTests.framework */; };
+		6C3B267829BF481800E26B43 /* TemplateAPI_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3B267329BF430800E26B43 /* TemplateAPI_Test.swift */; };
 		6CD359B029BA0A5F00900E82 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD359AF29BA0A5F00900E82 /* NetworkAPI.swift */; };
 		6CD359B229BA0A8B00900E82 /* NetworkAPI+URLInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD359B129BA0A8B00900E82 /* NetworkAPI+URLInfo.swift */; };
 		6CD359B429BA0A9D00900E82 /* NetworkAPI+Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD359B329BA0A9D00900E82 /* NetworkAPI+Method.swift */; };
@@ -75,6 +76,7 @@
 		2509A57629921504004953BA /* TempDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TempDomain.swift; path = "FANNI-iOS/Domain/TempDomain.swift"; sourceTree = SOURCE_ROOT; };
 		2509A58029921596004953BA /* TempCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempCommon.swift; sourceTree = "<group>"; };
 		30F5EAFECD49C961B31E43CA /* Pods-FANNI-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FANNI-iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-FANNI-iOSTests/Pods-FANNI-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6C3B267329BF430800E26B43 /* TemplateAPI_Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateAPI_Test.swift; sourceTree = "<group>"; };
 		6CD359AF29BA0A5F00900E82 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
 		6CD359B129BA0A8B00900E82 /* NetworkAPI+URLInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkAPI+URLInfo.swift"; sourceTree = "<group>"; };
 		6CD359B329BA0A9D00900E82 /* NetworkAPI+Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkAPI+Method.swift"; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				EDB7C40F298FC9C200D60A9E /* FANNI_iOSTests.swift */,
+				6C3B267329BF430800E26B43 /* TemplateAPI_Test.swift */,
 			);
 			path = "FANNI-iOSTests";
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				EDB7C407298FC9C200D60A9E /* Sources */,
 				EDB7C408298FC9C200D60A9E /* Frameworks */,
 				EDB7C409298FC9C200D60A9E /* Resources */,
+				007A8883CD4911F5D178317E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -553,6 +557,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		007A8883CD4911F5D178317E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FANNI-iOSTests/Pods-FANNI-iOSTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FANNI-iOSTests/Pods-FANNI-iOSTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FANNI-iOSTests/Pods-FANNI-iOSTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		03DDF754D65C900A7F8D43D7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -715,6 +736,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C3B267829BF481800E26B43 /* TemplateAPI_Test.swift in Sources */,
 				EDB7C410298FC9C200D60A9E /* FANNI_iOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
