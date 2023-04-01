@@ -1,6 +1,6 @@
 //
 //  Dependency+SPM.swift
-//  ProjectDescriptionHelpers
+//  MyPlugin
 //
 //  Created by 송형욱 on 2023/04/01.
 //
@@ -40,3 +40,4 @@ public extension TargetDependency.SPM {
     static let FireBaseAnalytics = TargetDependency.package(product:"FireBaseAnalytics")
     static let FirebaseCrashlytics = TargetDependency.package(product: "FirebaseCrashlytics")
 }
+

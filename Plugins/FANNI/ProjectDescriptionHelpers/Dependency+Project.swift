@@ -1,6 +1,6 @@
 //
 //  Dependency+Project.swift
-//  ProjectDescriptionHelpers
+//  MyPlugin
 //
 //  Created by 송형욱 on 2023/04/01.
 //
@@ -16,3 +16,4 @@ extension TargetDependency.Projcet {
     static let Service = TargetDependency.project(target: "Service", path: .relativeToRoot("Projects/Service"))
     static let ThirdPartyLib = TargetDependency.project(target: "ThirdPartyLib", path: .relativeToRoot("Projects/ThirdPartyLib"))
 }
+

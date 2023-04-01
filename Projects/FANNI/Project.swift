@@ -8,7 +8,7 @@
 import ProjectDescription
 import ProjectDescriptionHelpers
 
-private let name = "fanni"
+private let name = "FANNI"
 
 let project = Project.makeModule(
     name: name,

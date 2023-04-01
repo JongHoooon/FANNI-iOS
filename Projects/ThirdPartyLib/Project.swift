@@ -7,6 +7,7 @@
 
 import ProjectDescription
 import ProjectDescriptionHelpers
+import MyPlugin
 
 private let name = "ThirdPartyLib"
 
