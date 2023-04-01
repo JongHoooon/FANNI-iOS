@@ -1,0 +1,10 @@
+
+// Server URL
+Root_URL = http://
+
+// Keys
+API_KEY =
+
+// APP Settings
+APP_NAME = FANNI
+APP_BUNDLE_ID = com.fanni.FANNI

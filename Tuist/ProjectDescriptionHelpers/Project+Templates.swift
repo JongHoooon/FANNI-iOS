@@ -17,8 +17,14 @@ public extension Project {
         let settings: Settings = .settings(
             base: [:],
             configurations: [
-                .debug(name: .debug),
-                .release(name: .release)
+                .debug(
+                    name: .debug,
+                    xcconfig: .relativeToRoot("Configurations/StaticFrameworkKit-DEV.xcconfig")
+                ),
+                .release(
+                    name: .release,
+                    xcconfig: .relativeToRoot("Configurations/StaticFrameworkKit-PROD.xcconfig")
+                )
             ], defaultSettings: .recommended)
 
         let appTarget = Target(
