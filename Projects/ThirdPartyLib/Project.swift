@@ -8,8 +8,10 @@
 import ProjectDescription
 import ProjectDescriptionHelpers
 
+private let name = "ThirdPartyLib"
+
 let project = Project.makeModule(
-    name: "ThirdPartyLib",
+    name: name,
     platform: .iOS,
     product: .framework,
     packages: [
@@ -27,6 +29,9 @@ let project = Project.makeModule(
         .SPM.FireBaseAuth,
         .SPM.FireBaseAnalytics,
         .SPM.FirebaseCrashlytics
+    ],
+    schemes: [
+        .makeScheme(target: .debug, name: name)
     ]
 )
 

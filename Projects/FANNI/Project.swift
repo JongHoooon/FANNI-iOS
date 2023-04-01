@@ -8,8 +8,10 @@
 import ProjectDescription
 import ProjectDescriptionHelpers
 
+private let name = "fanni"
+
 let project = Project.makeModule(
-    name: "FANNI",
+    name: name,
     platform: .iOS,
     product: .app,
     dependencies: [
@@ -20,5 +22,9 @@ let project = Project.makeModule(
         "UIMainStoryboardFile": "",
         "UILaunchStoryboardName": "LaunchScreen",
         "ENABLE_TESTS": .boolean(true),
-    ])
+    ]),
+    schemes: [
+        .makeScheme(target: .debug, name: name),
+        .makeScheme(target: .release, name: "\(name)Release")
+    ]
 )

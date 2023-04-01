@@ -5,13 +5,14 @@ public extension Project {
         name: String,
         platform: Platform = .iOS,
         product: Product,
-        organizationName: String = "YourOrganizationName",
+        organizationName: String = "com.fanni",
         packages: [Package] = [],
-        deploymentTarget: DeploymentTarget? = .iOS(targetVersion: "15.0", devices: [.iphone, .ipad]),
+        deploymentTarget: DeploymentTarget? = .iOS(targetVersion: "15.0", devices: [.iphone]),
         dependencies: [TargetDependency] = [],
         sources: SourceFilesList = ["Sources/**"],
         resources: ResourceFileElements? = nil,
-        infoPlist: InfoPlist = .default
+        infoPlist: InfoPlist = .default,
+        schemes: [Scheme] = []
     ) -> Project {
         let settings: Settings = .settings(
             base: [:],
@@ -42,8 +43,8 @@ public extension Project {
             sources: ["Tests/**"],
             dependencies: [.target(name: name)]
         )
-
-        let schemes: [Scheme] = [.makeScheme(target: .debug, name: name)]
+        
+        let _schemes: [Scheme] = schemes
 
         let targets: [Target] = [appTarget, testTarget]
 
@@ -53,22 +54,33 @@ public extension Project {
             packages: packages,
             settings: settings,
             targets: targets,
-            schemes: schemes
+            schemes: _schemes
         )
     }
 }
 
-extension Scheme {
+public extension Scheme {
     static func makeScheme(target: ConfigurationName, name: String) -> Scheme {
+        let testAction: ProjectDescription.TestAction?
+        
+        switch target {
+        case .debug:
+            testAction = .targets(
+                ["\(name)Tests"],
+                configuration: target,
+                options: .options(coverage: true, codeCoverageTargets: ["\(name)"])
+            )
+        case .release:
+            testAction = nil
+            
+        default:
+            testAction = nil
+        }
         return Scheme(
             name: name,
             shared: true,
             buildAction: .buildAction(targets: ["\(name)"]),
-            testAction: .targets(
-                ["\(name)Tests"],
-                configuration: target,
-                options: .options(coverage: true, codeCoverageTargets: ["\(name)"])
-            ),
+            testAction: testAction,
             runAction: .runAction(configuration: target),
             archiveAction: .archiveAction(configuration: target),
             profileAction: .profileAction(configuration: target),
